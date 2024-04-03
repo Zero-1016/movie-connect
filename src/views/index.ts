@@ -1,0 +1,6 @@
+export { DetailPage } from './DetailPage'
+export { LandingPage } from './LandingPage'
+export { MainPage } from './MainPage'
+export { NotFoundPage } from './NotFound'
+export { ProfilePage } from './ProfilePage'
+export { SearchPage } from './SearchPage'
