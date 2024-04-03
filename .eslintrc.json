@@ -5,7 +5,8 @@
   ],
   "extends": [
     "next",
-    "prettier"
+    "prettier",
+    "plugin:storybook/recommended"
   ],
   "rules": {
     "no-console": [
