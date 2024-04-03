@@ -1,10 +1,7 @@
-"use server"
+'use server'
 
-
-import { NotFoundPage } from "@/views";
+import { NotFoundPage } from '@/views'
 
 export default async function Page() {
-    return (
-        <NotFoundPage/>
-    );
+  return <NotFoundPage />
 }

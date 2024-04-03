@@ -1,20 +1,20 @@
-import type { Preview } from "@storybook/react";
-import Provider from "../src/app/Provider";
+import type { Preview } from '@storybook/react'
+import Provider from '../src/app/Provider'
 
 const preview: Preview = {
-    parameters: {
-        controls: {
-            matchers: {
-                color: /(background|color)$/i,
-                date: /Date$/i,
-            },
-        },
+  parameters: {
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/i,
+      },
     },
-    decorators: (Story) => (
-        <Provider>
-            <Story/>
-        </Provider>
-    )
-};
+  },
+  decorators: Story => (
+    <Provider>
+      <Story />
+    </Provider>
+  ),
+}
 
-export default preview;
+export default preview

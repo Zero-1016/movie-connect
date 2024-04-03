@@ -1,13 +1,11 @@
-import { DetailPage } from "@/views";
+import { DetailPage } from '@/views'
 
 type Props = {
-    params: {
-        movieId: string
-    }
+  params: {
+    movieId: string
+  }
 }
 
 export default function Page({ params }: Props) {
-    return (
-        <DetailPage movieId={params.movieId}/>
-    );
+  return <DetailPage movieId={params.movieId} />
 }

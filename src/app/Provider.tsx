@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react'
 
-import FontProvider from "@/app/FontProvider";
+import FontProvider from '@/app/FontProvider'
 
 export default function Provider({ children }: { children: ReactNode }) {
-    return <FontProvider>{children}</FontProvider>
+  return <FontProvider>{children}</FontProvider>
 }

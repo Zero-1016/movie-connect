@@ -1,10 +1,8 @@
 type Props = {
-    movieId: string
+  movieId: string
 }
 
 export function DetailPage({ movieId }: Props) {
-    console.info(movieId)
-    return (
-        <div>Detail</div>
-    );
+  console.info(movieId)
+  return <div>Detail</div>
 }

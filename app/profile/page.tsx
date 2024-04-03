@@ -1,7 +1,5 @@
-import { ProfilePage } from "@/views";
+import { ProfilePage } from '@/views'
 
 export default function Page() {
-    return (
-        <ProfilePage/>
-    );
+  return <ProfilePage />
 }

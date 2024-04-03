@@ -9,7 +9,13 @@
     "lint": "next lint",
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "format:fix": "prettier --write"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npm run format:fix"
+    ]
   },
   "dependencies": {
     "next": "14.1.4",

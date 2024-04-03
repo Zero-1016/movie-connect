@@ -1,10 +1,8 @@
 type Props = {
-    keyword: string
+  keyword: string
 }
 
 export function SearchPage({ keyword }: Props) {
-    console.info(keyword)
-    return (
-        <div>Search</div>
-    );
+  console.info(keyword)
+  return <div>Search</div>
 }
