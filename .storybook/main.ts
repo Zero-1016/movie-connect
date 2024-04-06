@@ -14,16 +14,6 @@ const config: StorybookConfig = {
     name: '@storybook/nextjs',
     options: {},
   },
-  webpackFinal: async config => {
-    if (config.resolve) {
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        '@': path.resolve(__dirname, '../src/'),
-      }
-    }
-
-    return config
-  },
   docs: {
     autodocs: 'tag',
   },
