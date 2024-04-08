@@ -1,3 +1,5 @@
+import './global.css'
+
 import type { Metadata } from 'next'
 import { ReactNode } from 'react'
 
@@ -17,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body style={{ margin: 0 }}>
+      <body>
         <Provider>
           {children}
           {modal}
