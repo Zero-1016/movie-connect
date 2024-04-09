@@ -1,0 +1,1 @@
+export {LandingBackGround} from './LandingBackGround'
