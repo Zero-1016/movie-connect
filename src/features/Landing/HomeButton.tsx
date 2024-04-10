@@ -1,20 +1,15 @@
-'use client'
-
 import { ArrowRight } from 'lucide-react'
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import React from 'react'
 
 import { Button } from '@/shared/ui'
 
 export function HomeButton() {
-  const router = useRouter()
-  const onClick = () => {
-    router.push('/home')
-  }
-
   return (
-    <Button onClick={onClick}>
-      Home <ArrowRight size={32} />
-    </Button>
+    <Link href={'/home'}>
+      <Button>
+        Home <ArrowRight size={32} />
+      </Button>
+    </Link>
   )
 }

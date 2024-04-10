@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
-import FontProvider from '@/app/FontProvider'
+import RQProvider from '@/app/RQProvider'
 
 export default function Provider({ children }: { children: ReactNode }) {
-  return <FontProvider>{children}</FontProvider>
+  return <RQProvider>{children}</RQProvider>
 }

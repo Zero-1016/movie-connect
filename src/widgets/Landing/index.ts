@@ -1,1 +1,1 @@
-export {LandingBackGround} from './LandingBackGround'
+export { LandingBackGround } from './LandingBackGround'
