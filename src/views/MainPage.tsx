@@ -1,3 +1,9 @@
+import { MovieBanner } from '@/entities/ui/MovieBanner'
+
 export function MainPage() {
-  return <div>Main</div>
+  return (
+    <>
+      <MovieBanner />
+    </>
+  )
 }
