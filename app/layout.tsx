@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { ReactNode } from 'react'
 
 import Provider from '@/app/Provider'
+import { pretendard } from '@/shared/pretendard'
 
 export const metadata: Metadata = {
   title: 'Movie Connect',
@@ -19,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true}>
+      <body className={pretendard.className} suppressHydrationWarning={true}>
         <Provider>
           {children}
           {modal}

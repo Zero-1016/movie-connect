@@ -7,7 +7,7 @@ export const backgroundPosition = style({
   position: 'absolute',
   top: 0,
   left: 0,
-  zIndex: -1,
+  zIndex: 0,
 })
 
 export const landingVideo = style({

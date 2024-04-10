@@ -8,4 +8,6 @@ export const container = style({
   padding: '0 200px',
   alignItems: 'center',
   margin: '0 auto',
+  position: 'relative',
+  zIndex: 1,
 })
