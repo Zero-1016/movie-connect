@@ -1,3 +1,3 @@
 export function MovieBanner() {
-  return <div></div>
+  return <div>:)</div>
 }

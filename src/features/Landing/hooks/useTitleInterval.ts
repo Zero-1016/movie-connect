@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-export function useTextInterval(titles: string[], interval: number): string | null {
+export function useTextInterval(titles: readonly string[], interval: number): string | null {
   const [currentIndex, setCurrentIndex] = useState(0) // 현재 타이틀의 인덱스
   const [displayText, setDisplayText] = useState<string | null>(null) // 화면에 표시할 타이틀
 

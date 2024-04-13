@@ -1,3 +1,5 @@
 export { MovieBanner } from './MovieBanner'
 export { MovieCard } from './MovieCard'
+export { MovieContainer } from './MovieContainer'
+export { MovieInfinityList } from './MovieInfinityList'
 export { MovieList } from './MovieList'

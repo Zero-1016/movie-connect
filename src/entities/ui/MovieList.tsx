@@ -1,25 +1,22 @@
 'use client'
 
-import { useSuspenseQueries } from '@tanstack/react-query'
+import { MovieInfo } from '@/entities/model'
+import { MovieCard } from '@/entities/ui/MovieCard'
 
-import { getNowPlay, getPopular, getTopRated, getUpComing } from '@/entities/lib'
+import * as style from './MovieList.css'
 
-export function MovieList() {
-  const [{ data: nowPlayList }, { data: popularList }, { data: topRatedList }, { data: upcomingList }] =
-    useSuspenseQueries({
-      queries: [
-        { queryFn: () => getNowPlay(1), queryKey: ['movies', 'nowPlaying'], retry: false },
-        { queryFn: () => getPopular(1), queryKey: ['movies', 'popular'], retry: false },
-        { queryFn: () => getTopRated(1), queryKey: ['movies', 'topRated'], retry: false },
-        { queryFn: () => getUpComing(1), queryKey: ['movies', 'upcoming'], retry: false },
-      ],
-    })
+type Props = {
+  movieList: MovieInfo[]
+}
+
+export function MovieList({ movieList }: Props) {
   return (
-    <>
-      <div>{nowPlayList.results[0].title}</div>
-      <div>{popularList.results[0].title}</div>
-      <div>{topRatedList.results[0].title}</div>
-      <div>{upcomingList.results[0].title}</div>
-    </>
+    <ul className={style.container}>
+      {movieList.map(movieData => (
+        <li key={movieData.id}>
+          <MovieCard movieData={movieData} />
+        </li>
+      ))}
+    </ul>
   )
 }

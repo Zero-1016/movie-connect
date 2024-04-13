@@ -11,9 +11,6 @@ export default meta
 type Story = StoryObj<typeof MovieCard>
 
 export const Example: Story = {
-  parameters: {
-    layout: 'centered',
-  },
   args: {
     movieData: movieListMock.results[0],
   },
