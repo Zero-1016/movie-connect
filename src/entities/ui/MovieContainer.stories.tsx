@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 
+import { getNowPlay } from '@/entities/lib'
 import { MovieContainer } from '@/entities/ui/MovieContainer'
-import { movieListMock } from '@/shared/mock/movie-list.mock'
 
 const meta: Meta<typeof MovieContainer> = {
   component: MovieContainer,
@@ -18,9 +18,7 @@ const meta: Meta<typeof MovieContainer> = {
       description: '바로가기 버튼을 누를 경우 바로가게 될 링크 주소를 말합니다.',
       type: 'string',
     },
-    movieList: {
-      description: '영화들의 정보를 묶고있는 것을 얘기합니다.',
-    },
+    queryInfo: {},
   },
 }
 export default meta
@@ -32,6 +30,9 @@ export const Example: Story = {
     title: '최신 영화',
     description: '최신 영화 정보를 바로 만나보세요',
     href: '/new_movie',
-    movieList: movieListMock.results,
+    queryInfo: {
+      queryKey: ['movie', 'List'],
+      queryFn: getNowPlay,
+    },
   },
 }

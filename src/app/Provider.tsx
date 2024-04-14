@@ -1,7 +1,7 @@
-import { ReactNode } from 'react'
+import { PropsWithChildren } from 'react'
 
-import RQProvider from '@/app/RQProvider'
+import { pretendard } from '@/shared/pretendard'
 
-export default function Provider({ children }: { children: ReactNode }) {
-  return <RQProvider>{children}</RQProvider>
+export default function Provider({ children }: PropsWithChildren) {
+  return <div className={pretendard.className}>{children}</div>
 }

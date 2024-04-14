@@ -1,6 +1,7 @@
+import { useSuspenseQuery } from '@tanstack/react-query'
 import Link from 'next/link'
 
-import { MovieInfo } from '@/entities/model'
+import { ResponseData } from '@/entities/model'
 import { MovieList } from '@/entities/ui/MovieList'
 
 import * as style from './MovieContainer.css'
@@ -8,11 +9,20 @@ import * as style from './MovieContainer.css'
 type Props = {
   title: string
   description: string
-  movieList: MovieInfo[]
   href: string
+  queryInfo: {
+    queryKey: string[]
+    queryFn: (page?: number) => Promise<ResponseData>
+  }
 }
 
-export function MovieContainer({ title, description, href, movieList }: Props) {
+export function MovieContainer({ title, description, href, queryInfo }: Props) {
+  const { queryKey, queryFn } = queryInfo
+  const { data } = useSuspenseQuery({
+    queryKey: queryKey,
+    queryFn: () => queryFn(),
+  })
+
   return (
     <div className={style.container}>
       <div className={style.listHeader}>
@@ -24,7 +34,7 @@ export function MovieContainer({ title, description, href, movieList }: Props) {
           <p>바로가기</p>
         </Link>
       </div>
-      <MovieList movieList={movieList} />
+      <MovieList movieList={data.results} />
     </div>
   )
 }

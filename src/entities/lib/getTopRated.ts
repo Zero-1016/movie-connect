@@ -3,7 +3,7 @@ import { ResponseData } from '@/entities/model'
 /*
 등급별로 정렬된 영화 목록을 가져옵니다.
  */
-export async function getTopRated(page: number): Promise<ResponseData> {
+export async function getTopRated(page = 1): Promise<ResponseData> {
   const res = await fetch(`${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/top_rated?language=ko-KR&page=${page}`, {
     method: 'GET',
     headers: {

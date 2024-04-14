@@ -1,5 +1,5 @@
-import RQProvider from '@/app/RQProvider'
 import { MovieBanner } from '@/entities/ui/MovieBanner'
+import RQProvider from '@/shared/lib/RQProvider'
 import { MainList } from '@/widgets/Main'
 
 export function MainPage() {

@@ -1,5 +1,5 @@
+import { pretendard } from '../src/shared/pretendard'
 import type { Preview } from '@storybook/react'
-import Provider from '../src/app/Provider'
 
 const preview: Preview = {
   parameters: {
@@ -12,9 +12,9 @@ const preview: Preview = {
     layout: 'centered',
   },
   decorators: Story => (
-    <Provider>
+    <div className={pretendard.className}>
       <Story />
-    </Provider>
+    </div>
   ),
 }
 

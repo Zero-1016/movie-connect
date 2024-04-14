@@ -3,7 +3,7 @@ import { ResponseData } from '@/entities/model'
 /*
 곧 개봉될 영화의 정보를 불러옵니다.
  */
-export async function getUpComing(page: number): Promise<ResponseData> {
+export async function getUpComing(page = 1): Promise<ResponseData> {
   const res = await fetch(`${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/upcoming?language=ko-KR&page=${page}`, {
     method: 'GET',
     headers: {

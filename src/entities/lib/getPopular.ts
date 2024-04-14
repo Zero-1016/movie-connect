@@ -3,7 +3,7 @@ import { ResponseData } from '@/entities/model'
 /*
 인기순으로 정렬된 영화 목록을 불러옵니다.
  */
-export async function getPopular(page: number): Promise<ResponseData> {
+export async function getPopular(page = 1): Promise<ResponseData> {
   const res = await fetch(`${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/popular?language=ko-KR&page=${page}`, {
     method: 'GET',
     headers: {
