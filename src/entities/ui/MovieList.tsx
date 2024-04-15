@@ -11,12 +11,15 @@ type Props = {
 
 export function MovieList({ movieList }: Props) {
   return (
-    <ul className={style.container}>
-      {movieList.map(movieData => (
-        <li key={movieData.id}>
-          <MovieCard movieData={movieData} />
-        </li>
-      ))}
-    </ul>
+    <>
+      <div>default</div>
+      <ul className={style.container}>
+        {movieList.map(movieData => (
+          <li key={movieData.id}>
+            <MovieCard movieData={movieData} />
+          </li>
+        ))}
+      </ul>
+    </>
   )
 }

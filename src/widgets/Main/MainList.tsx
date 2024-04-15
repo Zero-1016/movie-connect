@@ -4,7 +4,7 @@ import { Suspense } from 'react'
 
 import { getPopular, getTopRated, getUpComing } from '@/entities/lib'
 import { MovieContainer } from '@/entities/ui'
-import RQProvider from '@/shared/lib/RQProvider'
+import RQProvider from '@/shared/lib/react-query/RQProvider'
 
 export function MainList() {
   const getUpComingInfo = {
