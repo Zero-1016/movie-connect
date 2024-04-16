@@ -8,15 +8,15 @@ import RQProvider from '@/shared/lib/react-query/RQProvider'
 
 export function MainList() {
   const getUpComingInfo = {
-    queryKey: ['movies', 'popular'],
+    queryKey: ['movies', 'popular', 1] as [string, string, number],
     queryFn: getUpComing,
   }
   const getTopRatedInfo = {
-    queryKey: ['movies', 'topRated'],
+    queryKey: ['movies', 'topRated', 1] as [string, string, number],
     queryFn: getTopRated,
   }
   const getPopularInfo = {
-    queryKey: ['movies', 'upcoming'],
+    queryKey: ['movies', 'upcoming', 1] as [string, string, number],
     queryFn: getPopular,
   }
 

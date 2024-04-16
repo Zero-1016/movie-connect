@@ -1,7 +1,7 @@
 'use client'
 
 import { useTextInterval } from '@/features/Landing/hooks'
-import * as style from '@/features/Landing/LandingLeftSection.css'
+import styles from '@/features/Landing/landing-left-section.module.scss'
 
 type Props = {
   subTitleList: readonly string[]
@@ -9,5 +9,5 @@ type Props = {
 
 export function SubTitle({ subTitleList }: Props) {
   const subTitle = useTextInterval(subTitleList, 100)
-  return <div className={style.subTitle}>{subTitle}</div>
+  return <div className={styles.subTitle}>{subTitle}</div>
 }

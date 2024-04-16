@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+  width: 310px;
+  height: 400px;
+  background: aliceblue;
+}
+
+.poster {
+  position: relative;
+  z-index: 1;
+}
+
+.movieCardBody {
+  position: relative;
+  z-index: 3;
+  transition: 0.6ms;
+  opacity: 0;
+  color: white;
+}
+
+.movie-card-body:hover{
+  opacity: 1;
+}

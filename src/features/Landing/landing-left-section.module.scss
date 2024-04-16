@@ -1,0 +1,27 @@
+.container {
+  height: 600px;
+  display: flex;
+  flex: 1;
+  gap: 12px;
+  color: white;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 80px;
+}
+
+.subTitle {
+  min-height: 24px;
+  min-width: 1px;
+  font-size: 20px;
+  line-height: 120%;
+  white-space: pre-wrap;
+}
+
+.links {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}

@@ -1,10 +1,10 @@
 import { LandingLeftSection, LandingRightSection } from '@/features/Landing'
 
-import * as style from './LandingContents.css'
+import styles from './landing-contents.module.scss'
 
 export function LandingContents() {
   return (
-    <section className={style.container}>
+    <section className={styles.container}>
       <LandingLeftSection />
       <LandingRightSection />
     </section>

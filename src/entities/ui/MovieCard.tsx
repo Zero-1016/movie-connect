@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { getImageUrl } from '@/entities/lib/getImageUrl'
 import { MovieInfo } from '@/entities/model'
 
-import * as style from './MovieCard.css'
+import styles from './movie-card.module.scss'
 
 type Props = {
   movieData: MovieInfo
@@ -25,9 +25,9 @@ export function MovieCard({ movieData }: Props) {
   }
 
   return (
-    <div onMouseOver={onMouseOver} onMouseLeave={onMouseLeave} className={style.container}>
-      <Image className={style.poster} src={getImageUrl(poster_path)} alt={title + '의 이미지'} fill={true} />
-      <div className={style.movieCardBody}>ddd</div>
+    <div onMouseOver={onMouseOver} onMouseLeave={onMouseLeave} className={styles.container}>
+      <Image className={styles.poster} src={getImageUrl(poster_path)} alt={title + '의 이미지'} fill={true} />
+      <div className={styles.movieCardBody}>ddd</div>
     </div>
   )
 }

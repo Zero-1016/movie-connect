@@ -1,8 +1,8 @@
-import * as style from './LandingRightSection.css'
+import styles from './landing-right-section.module.scss'
 
 export function LandingRightSection(){
-    return <div className={style.container}>
-        <div className={style.card}>1</div>
-        <div className={style.card}>2</div>
+    return <div className={styles.container}>
+        <div className={styles.card}>1</div>
+        <div className={styles.card}>2</div>
     </div>
 }

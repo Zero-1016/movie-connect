@@ -1,7 +1,7 @@
 import { Github } from 'lucide-react'
 import Link from 'next/link'
 
-import * as style from './GithubIcon.css'
+import styles from './github-icon.module.scss'
 
 type Props = {
   href: string
@@ -9,7 +9,7 @@ type Props = {
 
 export function GithubIcon({ href }: Props) {
   return (
-    <Link className={style.iconBox} href={href}>
+    <Link className={styles.iconBox} href={href}>
       <Github size={32} stroke="#000000" />
     </Link>
   )

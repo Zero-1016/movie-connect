@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import * as style from './LandingBackGround.css'
+import styles from './landing-back-ground.module.scss'
 
 export function LandingBackGround() {
   const [isLoading, setLoading] = useState(false)
@@ -10,11 +10,11 @@ export function LandingBackGround() {
   const onLoadedData = () => setLoading(true)
 
   return (
-    <div className={style.backgroundPosition}>
-      <video className={style.landingVideo} onCanPlay={onLoadedData} muted autoPlay playsInline loop>
+    <div className={styles.backgroundPosition}>
+      <video className={styles.landingVideo} onCanPlay={onLoadedData} muted autoPlay playsInline loop>
         <source src="/mp4/landing.mp4" type="video/mp4" />
       </video>
-      <div className={`${style.backGroundModal} ${isLoading && style.shadowBackGround}`} />
+      <div className={`${styles.backGroundModal} ${isLoading && styles.shadowBackGround}`} />
     </div>
   )
 }

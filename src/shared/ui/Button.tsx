@@ -1,16 +1,13 @@
-import classNames from 'classnames'
 import { ComponentPropsWithoutRef, PropsWithChildren } from 'react'
 
-import { pretendard } from '@/shared/pretendard'
-
-import * as style from './Button.css'
+import styles from './button.module.scss'
 
 type Props = ComponentPropsWithoutRef<'button'>
 
 export function Button({ children, ...rest }: PropsWithChildren<Props>) {
   return (
-    <div className={style.container}>
-      <button className={classNames(style.button, pretendard.className)} {...rest}>
+    <div className={styles.container}>
+      <button className={styles.button} {...rest}>
         {children}
       </button>
     </div>

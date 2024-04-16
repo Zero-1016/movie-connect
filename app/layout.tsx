@@ -1,9 +1,7 @@
-import './global.css'
+import './global.scss'
 
 import type { Metadata } from 'next'
 import { ReactNode } from 'react'
-
-import { pretendard } from '@/shared/pretendard'
 
 export const metadata: Metadata = {
   title: 'Movie Connect',
@@ -19,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={pretendard.className} suppressHydrationWarning={true}>
+      <body suppressHydrationWarning={true}>
         {children}
         {modal}
       </body>

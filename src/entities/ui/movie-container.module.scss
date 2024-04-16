@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.listHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
