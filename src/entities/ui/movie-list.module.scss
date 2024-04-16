@@ -5,6 +5,16 @@
   max-width: 1200px;
   display: flex;
   list-style: none;
-  overflow: hidden;
   gap: 10px;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.card {
+  position: relative;
+  width: 280px;
+  aspect-ratio: 2/3;
 }

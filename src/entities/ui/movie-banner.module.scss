@@ -1,0 +1,13 @@
+.container {
+  height: 600px;
+  width: 100%;
+  position: relative;
+}
+
+.movieCover {
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  height: 600px;
+  width: 100%;
+}

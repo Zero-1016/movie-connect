@@ -18,12 +18,18 @@
     ]
   },
   "dependencies": {
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.15.15",
+    "@mui/material-nextjs": "^5.15.11",
     "@tanstack/react-query": "^5.29.0",
     "classnames": "^2.5.1",
     "lucide-react": "^0.365.0",
-    "next": "14.1.4",
+    "next": "14.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-youtube": "^10.1.0",
     "sass": "^1.75.0",
     "storybook": "8.0.6"
   },

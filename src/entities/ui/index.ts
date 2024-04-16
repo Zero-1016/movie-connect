@@ -1,5 +1,6 @@
 export { MovieBanner } from './MovieBanner'
 export { MovieCard } from './MovieCard'
 export { MovieContainer } from './MovieContainer'
+export { MovieContainerFallback } from './MovieContainerFallback'
 export { MovieInfinityList } from './MovieInfinityList'
 export { MovieList } from './MovieList'

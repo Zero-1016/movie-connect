@@ -27,8 +27,8 @@ export function MovieContainer({ title, description, href, queryInfo }: Props) {
     <div className={styles.container}>
       <div className={styles.listHeader}>
         <div>
-          <h2>{title}</h2>
-          <h3>{description}</h3>
+          <h2 className={styles.movieTitle}>{title}</h2>
+          <h3 className={styles.movieSubTitle}>{description}</h3>
         </div>
         <Link className={styles.link} href={href}>
           <p>바로가기</p>
