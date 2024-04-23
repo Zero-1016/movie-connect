@@ -23,14 +23,12 @@ export function MovieBanner() {
             queryKey: ["movies", "video", id],
         }))
     })
-
-
-    const keyList = movieList.map(item => item.data.results.filter(v => {
-        if (v.type === "Teaser") {
-            return v.id
-        }
-    })).filter(links => links.length !== 0).map(items => items.slice(0, 1)[0].key)
-
+    
+    const keyList = movieList.reduce((acc: string[], item) => {
+        const teaser = item.data.results.reverse().find(v => v.type === "Teaser");
+        if (teaser) acc.push(teaser.key);
+        return acc;
+    }, []);
 
     const endMovie = () => {
         setMovieIndex(prev => prev + 1 > keyList.length ? 0 : prev + 1)
