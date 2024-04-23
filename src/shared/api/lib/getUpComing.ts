@@ -1,4 +1,4 @@
-import { ResponseData } from '@/entities/model'
+import { ResponseData } from '../model'
 
 /*
 곧 개봉될 영화의 정보를 불러옵니다.

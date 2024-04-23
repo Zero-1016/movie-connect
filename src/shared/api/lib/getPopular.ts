@@ -1,4 +1,4 @@
-import { ResponseData } from '@/entities/model'
+import { ResponseData } from '../model'
 
 /*
 인기순으로 정렬된 영화 목록을 불러옵니다.

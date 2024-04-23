@@ -2,10 +2,10 @@
 
 import { Suspense } from 'react'
 
-import { getPopular, getTopRated, getUpComing } from '@/entities/lib'
 import { MovieContainer, MovieContainerFallback } from '@/entities/ui'
 import RQProvider from '@/shared/lib/react-query/RQProvider'
 
+import { getPopular, getTopRated, getUpComing } from '../../shared/api/lib'
 import styles from './main-list.module.scss'
 
 export function MainList() {

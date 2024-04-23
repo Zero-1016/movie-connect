@@ -1,4 +1,4 @@
-import { GENRES } from '@/entities/constants'
+import { GENRES } from '../constants'
 
 /*
 리뷰의 아이디를 받아 한국어로 번역하여 내보냅니다.

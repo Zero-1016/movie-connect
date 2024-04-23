@@ -1,7 +1,7 @@
-import { MovieInfo } from '@/entities/model'
 import { MovieCard } from '@/entities/ui/MovieCard'
 import { useDragHandler } from "@/shared/hook/useDragHandler";
 
+import { MovieInfo } from '../../shared/api/model'
 import styles from './movie-list.module.scss'
 
 type Props = {

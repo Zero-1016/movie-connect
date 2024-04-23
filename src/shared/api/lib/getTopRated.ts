@@ -1,4 +1,4 @@
-import { ResponseData } from '@/entities/model'
+import { ResponseData } from '../model'
 
 /*
 등급별로 정렬된 영화 목록을 가져옵니다.

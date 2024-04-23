@@ -1,4 +1,4 @@
-import { Videos } from "@/entities/model/video-info";
+import { Videos } from "@/shared/api/model/video-info";
 
 export const getVideos = async (movie_id: number): Promise<Videos> => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/${movie_id}/videos?language=ko-KR`, {

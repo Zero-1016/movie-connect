@@ -3,9 +3,9 @@
 import Image from 'next/image'
 import { useState } from "react";
 
-import { getImageUrl } from '@/entities/lib/getImageUrl'
-import { MovieInfo } from '@/entities/model'
+import { getImageUrl } from '@/shared/api/lib/getImageUrl'
 
+import { MovieInfo } from '../../shared/api/model'
 import styles from './movie-card.module.scss'
 
 type Props = {

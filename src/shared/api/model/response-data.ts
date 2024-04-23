@@ -1,4 +1,4 @@
-import { MovieInfo } from '@/entities/model/movie-info'
+import { MovieInfo } from '@/shared/api/model/movie-info'
 
 export type ResponseData = {
   page: number // 현재 페이지 수

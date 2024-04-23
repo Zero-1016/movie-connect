@@ -1,0 +1,7 @@
+export { getImageUrl } from '@/shared/api/lib/getImageUrl'
+export { getMovieGenre } from '@/shared/api/lib/getMovieGenre'
+export { getNowPlay } from '@/shared/api/lib/getNowPlay'
+export { getPopular } from '@/shared/api/lib/getPopular'
+export { getTopRated } from '@/shared/api/lib/getTopRated'
+export { getUpComing } from '@/shared/api/lib/getUpComing'
+export { getVideos } from '@/shared/api/lib/getVideos'

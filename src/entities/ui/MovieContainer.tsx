@@ -1,9 +1,9 @@
 import { useSuspenseQuery } from '@tanstack/react-query'
 import Link from 'next/link'
 
-import { ResponseData } from '@/entities/model'
 import { MovieList } from '@/entities/ui/MovieList'
 
+import { ResponseData } from '../../shared/api/model'
 import styles from './movie-container.module.scss'
 
 type Props = {

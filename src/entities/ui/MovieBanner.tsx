@@ -3,11 +3,11 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 
-import { getNowPlay, getVideos } from "@/entities/lib";
-import { ResponseData } from "@/entities/model";
-import { Videos } from "@/entities/model/video-info";
 import { YoutubePlayer } from "@/entities/ui/YoutubePlayer";
+import { ResponseData } from "@/shared/api/model/response-data";
+import { Videos } from "@/shared/api/model/video-info";
 
+import { getNowPlay, getVideos } from "../../shared/api/lib";
 import styles from './movie-banner.module.scss'
 
 export function MovieBanner() {
