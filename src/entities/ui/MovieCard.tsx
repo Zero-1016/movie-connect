@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from "framer-motion"
 import Image from 'next/image'
 import { useState } from "react";
 
@@ -21,9 +22,9 @@ export function MovieCard({ movieData }: Props) {
         setIsLoad(true)
     }
     return (
-        <div className={styles.container}>
+        <motion.div whileHover={{y:-20}} className={styles.container}>
             <Image sizes="width=280 height=420" className={styles.poster} onLoad={onLoad} src={getImageUrl(poster_path)} alt={title + '의 이미지'}
                    fill={true}/>
-        </div>
+        </motion.div>
     )
 }
