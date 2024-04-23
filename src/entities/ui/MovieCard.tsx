@@ -22,7 +22,7 @@ export function MovieCard({ movieData }: Props) {
     }
     return (
         <div className={styles.container}>
-            <Image className={styles.poster} onLoad={onLoad} src={getImageUrl(poster_path)} alt={title + '의 이미지'}
+            <Image sizes="width=280 height=420" className={styles.poster} onLoad={onLoad} src={getImageUrl(poster_path)} alt={title + '의 이미지'}
                    fill={true}/>
         </div>
     )

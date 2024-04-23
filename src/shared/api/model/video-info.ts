@@ -10,7 +10,7 @@ export interface Video {
     key: string
     site: string
     size: number
-    type: string
+    type: "Teaser" | string
     official: boolean
     published_at: string
     id: string

@@ -1,13 +1,18 @@
 .container {
-  height: 600px;
-  width: 100%;
+  height: inherit;
   position: relative;
+}
+
+.blackCover {
+  position: absolute;
+  height: 100%;
+  z-index: -1;
 }
 
 .movieCover {
   position: absolute;
   z-index: 1;
   top: 0px;
-  height: 600px;
+  height: inherit;
   width: 100%;
 }
