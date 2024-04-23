@@ -21,3 +21,38 @@
 .movie-card-body:hover {
   opacity: 1;
 }
+
+.movieInfoBackGround {
+  position: relative;
+  bottom: 0;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, rgba(0, 0, 0, 0.4) 20%, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+}
+
+.movieInfo {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 40px);
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.movieTitle {
+  font-size: 20px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 2px;
+}
+
+.genreContainer {
+  display: flex;
+  gap: 3px;
+  flex-wrap: wrap;
+  white-space: pre-wrap;
+}
