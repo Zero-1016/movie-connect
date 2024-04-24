@@ -23,7 +23,7 @@ export function MovieBanner() {
             queryKey: ["movies", "video", id],
         }))
     })
-    
+
     const keyList = movieList.reduce((acc: string[], item) => {
         const teaser = item.data.results.reverse().find(v => v.type === "Teaser");
         if (teaser) acc.push(teaser.key);

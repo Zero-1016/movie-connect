@@ -1,0 +1,28 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  outline: none;
+  background: rgba(255, 255, 255, 40%);
+  padding: 10px;
+  border: 8px;
+  border-radius: 0.25rem;
+  color: white;
+}
+
+.small {
+  width: 200px;
+}
+
+.medium {
+  width: 300px;
+}
+
+.large {
+  width: 400px;
+}
+
+.full {
+  width: 100%;
+}

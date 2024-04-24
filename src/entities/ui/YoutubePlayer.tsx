@@ -1,16 +1,11 @@
+"use client"
+
 import YouTube, { YouTubeProps } from "react-youtube";
 
 type Props = {
     videoId: string
     endMovie: () => void
 }
-
-/*
-Todo
-
-새로 고침시 영상 자동 재생 현재 일시정지
-
- */
 
 export function YoutubePlayer({ videoId, endMovie }: Props) {
     const onPlayerReady: YouTubeProps['onReady'] = (event) => {
