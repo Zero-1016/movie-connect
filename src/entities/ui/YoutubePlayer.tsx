@@ -22,9 +22,10 @@ export function YoutubePlayer({ videoId, endMovie }: Props) {
             controls: 0,
             modestbranding: 1,
             setVolume: 40,
+            vq: 'hd1080'
         },
     };
 
-    return <YouTube videoId={videoId} opts={opts}
+    return <YouTube videoId={videoId} opts={opts} onError={endMovie}
                     onEnd={endMovie} onReady={onPlayerReady}/>;
 }

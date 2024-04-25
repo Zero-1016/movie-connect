@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 
-import { MovieDetailModal } from "@/entities/modal";
+import { MovieDetailModal, MovieDetailModalSkeleton } from "@/entities/modal";
 import { Modal } from "@/shared/ui/Modal";
 
 import styles from './page.module.scss'
@@ -14,7 +14,7 @@ type Props = {
 export default function Page({ params }: Props) {
     return <div className={styles.container}>
         <Modal>
-            <Suspense>
+            <Suspense fallback={<MovieDetailModalSkeleton/>}>
                 <MovieDetailModal movieId={params.movieId}/>
             </Suspense>
         </Modal>

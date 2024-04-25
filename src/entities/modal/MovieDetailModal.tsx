@@ -3,7 +3,7 @@
 import { Rating } from "@mui/material";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import Image from "next/image";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { MovieDetailLinkButton } from "@/entities/ui";
 import { QueryKey } from "@/shared/api/constants/query-key";
@@ -17,7 +17,8 @@ type Props = {
 }
 
 export function MovieDetailModal({ movieId }: Props) {
-    const [isLoading, setIsLoading] = useState(false)
+    const router = useRouter()
+
     const { data: result } = useSuspenseQuery({
         queryKey: QueryKey.movieDetail(movieId),
         queryFn: () => getMovieDetail(movieId)
@@ -25,13 +26,14 @@ export function MovieDetailModal({ movieId }: Props) {
 
     const { poster_path, title, overview, genres, release_date, vote_average } = result
 
-    const onLoad = () => {
-        setIsLoading(true)
+    const onClick = () => {
+        router.replace(`/detail/${movieId}`)
     }
 
     return <div className={styles.container}>
         <div className={styles.leftSection}>
-            <Image placeholder={'blur'} src={getImageUrl(poster_path, 300)} onLoadingComplete={onLoad} width={220} height={330}
+            <Image placeholder={'blur'} blurDataURL={getImageUrl(poster_path, 100)} src={getImageUrl(poster_path, 300)}
+                   width={220} height={330}
                    alt={title + "포스터 사진"}/>
         </div>
         <div className={styles.rightSection}>
@@ -52,7 +54,8 @@ export function MovieDetailModal({ movieId }: Props) {
                 평균 평점 : {Math.floor(vote_average * 10) / 10}
                 </span>
                 </div>
-                <MovieDetailLinkButton badge={true} size={"small"}>GET Detail info</MovieDetailLinkButton>
+                <MovieDetailLinkButton onClick={onClick} badge={true} size={"small"}>GET Detail
+                    info</MovieDetailLinkButton>
             </div>
         </div>
     </div>

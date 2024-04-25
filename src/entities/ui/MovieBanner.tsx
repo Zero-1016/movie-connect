@@ -4,9 +4,9 @@ import { useSuspenseQueries, useSuspenseQuery } from "@tanstack/react-query";
 import { useState } from "react";
 
 import { YoutubePlayer } from "@/entities/ui/YoutubePlayer";
+import { getNowPlay, getVideos } from "@/shared/api/lib";
 import { ResponseData } from "@/shared/api/model";
 
-import { getNowPlay, getVideos } from "../../shared/api/lib";
 import styles from './movie-banner.module.scss'
 
 export function MovieBanner() {

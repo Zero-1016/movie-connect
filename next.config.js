@@ -1,6 +1,14 @@
 const {join} = require("path");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    async rewrites() {
+        return [
+            {
+                source: "/pagead/:path*",
+                destination: "https://googleads.g.doubleclick.net/:path*"
+            },
+        ];
+    },
     images: {
         remotePatterns: [
             {

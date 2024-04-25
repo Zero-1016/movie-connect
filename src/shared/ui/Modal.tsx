@@ -1,17 +1,25 @@
 "use client"
 
-import { useRouter } from "next/navigation";
-import { PropsWithChildren, useLayoutEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { PropsWithChildren, useEffect } from "react";
 
 import RQProvider from "@/shared/lib/react-query/RQProvider";
 
 import styles from './modal.module.scss'
 
+/*
+Todo
+
+상세페이지로 이동하였을 경우 모달창 닫히게 하기
+ */
+
 export function Modal({ children }: PropsWithChildren) {
+    const path = usePathname()
     const router = useRouter()
     const history = window !== undefined ? window.history : []
+    const modalOpen = path.split('/')[1] === "i"
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         function getScrollbarWidth() {
             // 스크롤바를 포함하는 컨테이너를 생성
             const outer = document.createElement("div");
