@@ -16,7 +16,7 @@ Todo
 export function Modal({ children }: PropsWithChildren) {
     const path = usePathname()
     const router = useRouter()
-    const history = window !== undefined ? window.history : []
+    const history = typeof window !== "undefined" ? window.history : []
     const modalOpen = path.split('/')[1] === "i"
 
     useEffect(() => {
