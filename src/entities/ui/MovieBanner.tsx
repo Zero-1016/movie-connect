@@ -25,13 +25,13 @@ export function MovieBanner() {
     })
 
     const keyList = movieList.reduce((acc: string[], item) => {
-        const teaser = item.data.results.reverse().find(v => v.type === "Teaser");
+        const teaser = item.data.results.slice().reverse().find(v => v.type === "Teaser");
         if (teaser) acc.push(teaser.key);
         return acc;
     }, []);
 
     const endMovie = () => {
-        setMovieIndex(prev => prev + 1 > keyList.length ? 0 : prev + 1)
+        setMovieIndex(prev => prev + 1 > keyList.length - 1 ? 0 : prev + 1)
     }
 
     return (
