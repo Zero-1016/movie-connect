@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import { IMAGE_SIZE, QUERY_KEY } from "@/shared/api/constants";
 import { getImageUrl, getMovieDetail } from "@/shared/api/lib";
-import { getHour } from "@/shared/lib/util/getHours";
+import { getDecimal, getHour } from "@/shared/lib/util";
 import { Chip } from "@/shared/ui";
 
 import styles from './detail-middle-section.module.scss'
@@ -33,7 +33,7 @@ export function DetailMiddleSection({ movieId }: Props) {
             <desc className={styles.description}>{overview}</desc>
             <div className={styles.averageBox}>
                 <Chip>
-                    <StarIcon fill='#ffffff'/> {Math.floor(vote_average * 10) / 10}
+                    <StarIcon fill='#ffffff'/> {getDecimal(vote_average)}
                 </Chip>
             </div>
             <h5>상영 날짜</h5>

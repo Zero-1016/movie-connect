@@ -1,7 +1,3 @@
-"use client"
-
-import { usePathname } from "next/navigation";
-
 import { MovieDetailModal } from "@/entities/modal";
 
 type Props = {
@@ -11,7 +7,5 @@ type Props = {
 }
 
 export default function Page({ params }: Props) {
-    const isHidden = usePathname().split('/')[1] === "i"
-
-    return isHidden ? <MovieDetailModal movieId={params.movieId}/> : null
+    return <MovieDetailModal movieId={params.movieId}/>
 }

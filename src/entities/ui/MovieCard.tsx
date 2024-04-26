@@ -20,11 +20,12 @@ export function MovieCard({ movieData }: Props) {
     const { title, release_date, poster_path, adult, genre_ids, id } = movieData
 
     return (
-        <motion.div whileHover={{ y: -10, scale: 1.05 }} className={styles.container}>
-            <Link href={`/i/info/${id}`} scroll={false}>
-                <Image className={styles.poster} src={getImageUrl(poster_path, IMAGE_SIZE.poster.w342)}
+        <Link href={`/i/info/${id}`} scroll={false}>
+            <motion.div whileHover={{ y: -10, scale: 1.05 }} className={styles.container}>
+                <Image className={styles.poster} width={280} height={420}
+                       src={getImageUrl(poster_path, IMAGE_SIZE.poster.w342)}
                        alt={title + '의 이미지'}
-                       fill={true}/>
+                />
                 <div className={styles.movieInfoBackGround}>
                     <div className={styles.movieInfo}>
                         <h4 className={styles.movieTitle}>
@@ -39,7 +40,7 @@ export function MovieCard({ movieData }: Props) {
                         </div>
                     </div>
                 </div>
-            </Link>
-        </motion.div>
+            </motion.div>
+        </Link>
     )
 }

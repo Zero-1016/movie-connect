@@ -13,7 +13,7 @@ export function MovieDetailContentSkeleton() {
         <div className={styles.rightSection}>
             <div className={styles.inner}>
                 <h2 className={styles.movieTitle}><Skeleton variant={"rectangular"} width={200} height={32} sx={{ height: '100%', backgroundColor: 'rgba(255,255,255, 30%)' }}/></h2>
-                <desc className={styles.description}><Skeleton variant={"rectangular"} width={440} height={134} sx={{ height: '100%', backgroundColor: 'rgba(255,255,255, 30%)' }}/></desc>
+                <span className={styles.description}><Skeleton variant={"rectangular"} width={440} height={134} sx={{ height: '100%', backgroundColor: 'rgba(255,255,255, 30%)' }}/></span>
                 <div className={styles.chipBox}>
                     <Skeleton variant={"rectangular"} width={100} height={22} sx={{ height: '100%', backgroundColor: 'rgba(255,255,255, 30%)' }}/>
                 </div>

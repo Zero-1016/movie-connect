@@ -7,7 +7,6 @@
 .poster {
   position: relative;
   z-index: 1;
-  height: inherit;
 }
 
 .movieCardBody {
@@ -23,7 +22,7 @@
 }
 
 .movieInfoBackGround {
-  position: relative;
+  position: absolute;
   bottom: 0;
   z-index: 2;
   height: 100%;

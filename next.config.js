@@ -1,4 +1,4 @@
-const {join} = require("path");
+const path = require('path');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     async rewrites() {
@@ -20,7 +20,7 @@ const nextConfig = {
         formats: ["image/avif", "image/webp"],
     },
     sassOptions: {
-        includePaths: [join(__dirname, 'styles')],
+        includePaths: [path.join(__dirname, 'styles')],
     },
 }
 
