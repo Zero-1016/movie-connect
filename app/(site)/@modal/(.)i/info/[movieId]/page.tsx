@@ -1,7 +1,8 @@
-import { Suspense } from "react";
+"use client"
 
-import { MovieDetailModal, MovieDetailModalSkeleton } from "@/entities/modal";
-import { Modal } from "@/shared/ui/Modal";
+import { usePathname } from "next/navigation";
+
+import { MovieDetailModal } from "@/entities/modal";
 
 type Props = {
     params: {
@@ -10,9 +11,7 @@ type Props = {
 }
 
 export default function Page({ params }: Props) {
-    return <Modal>
-        <Suspense fallback={<MovieDetailModalSkeleton/>}>
-            <MovieDetailModal movieId={params.movieId}/>
-        </Suspense>
-    </Modal>
+    const isHidden = usePathname().split('/')[1] === "i"
+
+    return isHidden ? <MovieDetailModal movieId={params.movieId}/> : null
 }

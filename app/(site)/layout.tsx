@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { Footer, Header } from "@/features/Layout";
+import { Footer, Header } from "@/widgets/Layout";
 
 import styles from './layout.module.scss'
 

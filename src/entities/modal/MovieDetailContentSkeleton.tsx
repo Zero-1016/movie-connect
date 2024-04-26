@@ -2,9 +2,9 @@
 
 import { Skeleton } from "@mui/material";
 
-import styles from './movie-detail-modal.module.scss'
+import styles from './movie-detail-content.module.scss'
 
-export function MovieDetailModalSkeleton() {
+export function MovieDetailContentSkeleton() {
 
     return <div className={styles.container}>
         <div className={styles.leftSection}>

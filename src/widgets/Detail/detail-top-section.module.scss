@@ -1,0 +1,50 @@
+.container {
+  position: relative;
+  padding: 40px 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.imageContainer {
+  position: relative;
+  height: 480px;
+  width: 100%;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.blueBlur {
+  position: absolute;
+  z-index: 1;
+  height: 480px;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(54, 44, 146, 0.4) 40%, rgba(18, 98, 151, 0.4) 100%);
+}
+
+
+.blurBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  bottom: -30px;
+  left: 80px;
+  z-index: 2;
+  background: rgba(32, 40, 72, 80%);
+  border-radius: 24px;
+  padding: 40px;
+  width: 480px;
+  height: 64px;
+  backdrop-filter: blur(24px);
+}
+
+.movieTitle {
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 140%;
+}
+
+.movieSubTitle {
+  color: #6153CC;
+}

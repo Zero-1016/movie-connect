@@ -1,9 +1,8 @@
-import { Suspense } from "react";
+"use client"
 
-import { MovieDetailModal, MovieDetailModalSkeleton } from "@/entities/modal";
-import { Modal } from "@/shared/ui/Modal";
+import { usePathname } from "next/navigation";
 
-import styles from './page.module.scss'
+import { MovieDetailModal } from "@/entities/modal";
 
 type Props = {
     params: {
@@ -12,11 +11,11 @@ type Props = {
 }
 
 export default function Page({ params }: Props) {
-    return <div className={styles.container}>
-        <Modal>
-            <Suspense fallback={<MovieDetailModalSkeleton/>}>
-                <MovieDetailModal movieId={params.movieId}/>
-            </Suspense>
-        </Modal>
+    const isHidden = usePathname().split('/')[1] === "i"
+
+    if (!isHidden) return null
+
+    return <div style={{ position: 'fixed', zIndex: 9999, top: 0, left: 0 }}>
+        <MovieDetailModal movieId={params.movieId}/>
     </div>
 }

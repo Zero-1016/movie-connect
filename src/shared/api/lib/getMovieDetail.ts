@@ -1,7 +1,7 @@
 /*
 곧 개봉될 영화의 정보를 불러옵니다.
  */
-import { QueryKey } from "@/shared/api/constants/query-key";
+import { QUERY_KEY } from "@/shared/api/constants/query-key";
 import { DetailResponse } from "@/shared/api/model/detail-movie";
 
 export async function getMovieDetail(movieId: string):Promise<DetailResponse> {
@@ -12,7 +12,7 @@ export async function getMovieDetail(movieId: string):Promise<DetailResponse> {
             Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_ACCESS_TOKEN}`,
         },
         next: {
-            tags: QueryKey.movieDetail(movieId),
+            tags: QUERY_KEY.movieDetail(movieId),
         },
         cache: 'no-store',
     })

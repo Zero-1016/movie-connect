@@ -3,7 +3,7 @@
 import { Suspense } from 'react'
 
 import { MovieContainer, MovieContainerFallback } from '@/entities/ui'
-import { QueryKey } from "@/shared/api/constants/query-key";
+import { QUERY_KEY } from "@/shared/api/constants/query-key";
 import RQProvider from '@/shared/lib/react-query/RQProvider'
 
 import { getPopular, getTopRated, getUpComing } from '../../shared/api/lib'
@@ -11,15 +11,15 @@ import styles from './main-list.module.scss'
 
 export function MainList() {
     const getUpComingInfo = {
-        queryKey: QueryKey.upComing(1),
+        queryKey: QUERY_KEY.upComing(1),
         queryFn: getUpComing,
     }
     const getTopRatedInfo = {
-        queryKey: QueryKey.topRated(1),
+        queryKey: QUERY_KEY.topRated(1),
         queryFn: getTopRated,
     }
     const getPopularInfo = {
-        queryKey: QueryKey.popular(1),
+        queryKey: QUERY_KEY.popular(1),
         queryFn: getPopular,
     }
 

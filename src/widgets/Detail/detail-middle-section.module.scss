@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  gap: 80px;
+  padding: 100px 0;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.posterImage {
+  border-radius: 24px;
+}
+
+.leftSection {
+}
+
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tagLine {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 20px;
+  line-height: 30px;
+  color: #8E95A9;
+}
+
+.averageBox {
+  width: 70px;
+}

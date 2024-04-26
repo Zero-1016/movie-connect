@@ -1,3 +1,3 @@
-export const getImageUrl = (path: string, size = 400) => {
-  return `https://image.tmdb.org/t/p/w${size}${path}`
+export const getImageUrl = (path: string, size: string) => {
+    return `https://image.tmdb.org/t/p/${size}${path}`
 }
