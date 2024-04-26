@@ -1,7 +1,12 @@
+import classNames from "classnames";
 import { PropsWithChildren } from "react";
 
 import styles from './chip.module.scss'
 
-export function Chip({ children }: PropsWithChildren) {
-    return <span className={styles.container}>{children}</span>
+type Props = {
+    className?: string
+}
+
+export function Chip({ children, className }: PropsWithChildren<Props>) {
+    return <span className={classNames(styles.container, className)}>{children}</span>
 }

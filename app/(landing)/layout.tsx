@@ -1,7 +1,13 @@
 import { PropsWithChildren } from 'react'
 
-import styles from './layout.module.scss'
+const style = {
+    height: "100vh",
+    maxHeight: "100dvh",
+    width: "100%",
+    maxWidth: "100dvw",
+    overflow: "hidden",
+}
 
 export default function Layout({ children }: PropsWithChildren) {
-  return <div className={styles.container}>{children}</div>
+    return <div style={style}>{children}</div>
 }

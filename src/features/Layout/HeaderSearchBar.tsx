@@ -3,7 +3,7 @@
 import classNames from "classnames";
 import { usePathname, useRouter } from "next/navigation";
 
-import { quando } from "@/shared/quando";
+import { quando } from "@/shared/style/quando";
 
 import styles from './header-search-bar.module.scss'
 

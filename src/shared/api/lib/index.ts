@@ -1,3 +1,4 @@
+export { getImages } from './getImages'
 export { getImageUrl } from './getImageUrl'
 export { getMovieDetail } from './getMovieDetail'
 export { getMovieGenre } from './getMovieGenre'

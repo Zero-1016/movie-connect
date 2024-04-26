@@ -2,7 +2,7 @@ import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 
-import { poppins } from "@/shared/poppins";
+import { poppins } from "@/shared/style/poppins";
 
 import mainLogo from '../../../public/svg/main-logo.svg'
 import styles from './main-logo.module.scss'

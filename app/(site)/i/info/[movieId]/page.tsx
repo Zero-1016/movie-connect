@@ -8,9 +8,9 @@ type Props = {
     }
 }
 
-export default function Page({ params }: Props) {
+export default function Page({ params: { movieId } }: Props) {
 
     return <div style={{ position: 'fixed', zIndex: 9999, top: 0, left: 0 }}>
-        <MovieDetailModal movieId={params.movieId}/>
+        <MovieDetailModal movieId={movieId}/>
     </div>
 }

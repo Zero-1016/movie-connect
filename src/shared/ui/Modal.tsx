@@ -7,12 +7,6 @@ import RQProvider from "@/shared/lib/react-query/RQProvider";
 
 import styles from './modal.module.scss'
 
-/*
-Todo
-
-상세페이지로 이동하였을 경우 모달창 닫히게 하기
- */
-
 export function Modal({ children }: PropsWithChildren) {
     const path = usePathname()
     const router = useRouter()
@@ -68,8 +62,6 @@ export function Modal({ children }: PropsWithChildren) {
     }
 
     return <RQProvider>
-        <div className={styles.container} onClick={onClickBack}>
-            <div onClick={onInnerClick} className={styles.modalContent}>{children}</div>
-        </div>
+        <div className={styles.container} onClick={onClickBack}>{children}</div>
     </RQProvider>
 }

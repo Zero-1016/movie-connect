@@ -1,11 +1,13 @@
 "use client"
 import { useSuspenseQuery } from "@tanstack/react-query";
+import classNames from "classnames";
 import { StarIcon } from "lucide-react";
 import Image from "next/image";
 
 import { IMAGE_SIZE, QUERY_KEY } from "@/shared/api/constants";
 import { getImageUrl, getMovieDetail } from "@/shared/api/lib";
 import { getDecimal, getHour } from "@/shared/lib/util";
+import { poppins } from "@/shared/style";
 import { Chip } from "@/shared/ui";
 
 import styles from './detail-middle-section.module.scss'
@@ -28,20 +30,20 @@ export function DetailMiddleSection({ movieId }: Props) {
             <Image className={styles.posterImage} src={getImageUrl(poster_path, IMAGE_SIZE.poster.w500)}
                    alt={title + "포스터 이미지"} width={480} height={720}/>
         </div>
-        <div className={styles.rightSection}>
-            <h3 className={styles.tagLine}>{tagline}</h3>
-            <desc className={styles.description}>{overview}</desc>
+        <div className={classNames(styles.rightSection, poppins.className)}>
+            <h3 className={styles.tagLine}>{tagline ? tagline : title}</h3>
+            <span className={styles.description}>{overview}</span>
             <div className={styles.averageBox}>
-                <Chip>
-                    <StarIcon fill='#ffffff'/> {getDecimal(vote_average)}
+                <Chip className={styles.chip}>
+                    <StarIcon size={20} stroke="#FFAD49"/> {getDecimal(vote_average)}
                 </Chip>
             </div>
-            <h5>상영 날짜</h5>
-            <h6>{release_date}</h6>
-            <h5>재생 시간</h5>
-            <h6>{getHour(runtime)}</h6>
-            <h5>장르</h5>
-            <h6>{genres.map(genre => genre.name).join(', ')}</h6>
+            <h6 className={styles.descriptionTitle}>상영 날짜</h6>
+            <h5 className={styles.descriptionContent}>{release_date}</h5>
+            <h6 className={styles.descriptionTitle}>재생 시간</h6>
+            <h5 className={styles.descriptionContent}>{getHour(runtime)}</h5>
+            <h6 className={styles.descriptionTitle}>장르</h6>
+            <h5 className={styles.descriptionContent}>{genres.map(genre => genre.name).join(', ')}</h5>
         </div>
     </section>
 }

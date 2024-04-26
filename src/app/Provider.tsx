@@ -2,9 +2,9 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import classNames from "classnames";
 import { PropsWithChildren } from 'react'
 
-import { notoSans } from "@/shared/noto-sans";
-import { poppins } from "@/shared/poppins";
-import { quando } from "@/shared/quando";
+import { notoSans } from "@/shared/style/noto-sans";
+import { poppins } from "@/shared/style/poppins";
+import { quando } from "@/shared/style/quando";
 
 export default function Provider({ children }: PropsWithChildren) {
     return (

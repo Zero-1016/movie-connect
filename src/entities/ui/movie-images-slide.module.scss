@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  display: flex;
+  list-style: none;
+  gap: 26px;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
