@@ -1,5 +1,17 @@
 .container {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.subTitle {
+  padding: 40px 0 20px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 200%;
+}
+
+.backDropList {
   display: flex;
   list-style: none;
   gap: 26px;
@@ -8,4 +20,32 @@
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.commentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px 16px 24px 20px;
+  border-radius: 12px;
+  background-color: #fffffe;
+  color: #121829;
+}
+
+.commentHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.commentAvatar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-items: center;
 }
