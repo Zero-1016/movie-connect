@@ -23,13 +23,14 @@ export function DetailTopSection({ movieId }: Props) {
         queryFn: () => getMovieDetail(movieId)
     })
 
-    const { belongs_to_collection, backdrop_path, title, original_title } = result
+    const { belongs_to_collection, poster_path, backdrop_path, title, original_title } = result
 
+    const imagePath = backdrop_path ? getImageUrl(backdrop_path, IMAGE_SIZE.backdrop.w1280): getImageUrl(poster_path, IMAGE_SIZE.poster.w780)
 
     return <section className={styles.container}>
         <div className={styles.imageContainer}>
             <div className={styles.blueBlur}/>
-            <Image src={getImageUrl(backdrop_path, IMAGE_SIZE.backdrop.w1280)} alt={title + "포스터"} fill={true}
+            <Image src={imagePath} alt={title + "포스터"} fill={true}
                    style={{ objectFit: "cover" }}/>
         </div>
         <motion.div initial={{ y: 50 }} animate={{ y: 0, transition: { duration: 0.5 }, type: 'easeOut' }} className={styles.blurBox}>
