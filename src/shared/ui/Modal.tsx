@@ -1,5 +1,6 @@
 "use client"
 
+import CloseIcon from '@mui/icons-material/Close';
 import { usePathname, useRouter } from "next/navigation";
 import { PropsWithChildren, useEffect } from "react";
 
@@ -62,6 +63,8 @@ export function Modal({ children }: PropsWithChildren) {
     }
 
     return <RQProvider>
-        <div className={styles.container} onClick={onClickBack}>{children}</div>
+        <div className={styles.container} onClick={onClickBack}>
+            <CloseIcon className={styles.closeButton}/>
+            {children}</div>
     </RQProvider>
 }

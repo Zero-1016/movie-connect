@@ -1,4 +1,5 @@
 .container {
+  cursor: pointer;
   position: fixed;
   top: 0;
   left: 0;
@@ -19,4 +20,13 @@
   border: 2px solid #fffffe;
   padding: 20px;
   background: #101820;
+}
+
+.closeButton {
+  z-index: 9990;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 5%;
+  right: 5%;
 }

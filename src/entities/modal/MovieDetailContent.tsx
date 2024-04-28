@@ -31,9 +31,13 @@ export function MovieDetailContent({ movieId }: Props) {
         router.replace(`/detail/${movieId}`)
     }
 
+    const showImage = () => {
+        router.push(`/i/image/${movieId}/poster/${poster_path}`, {scroll: false})
+    }
+
     return <div className={styles.container}>
         <div className={styles.leftSection}>
-            <Image placeholder={'blur'} blurDataURL={getImageUrl(poster_path, IMAGE_SIZE.poster.w92)}
+            <Image onClick={showImage} placeholder={'blur'} blurDataURL={getImageUrl(poster_path, IMAGE_SIZE.poster.w92)}
                    src={getImageUrl(poster_path, IMAGE_SIZE.poster.w342)}
                    width={220} height={330}
                    alt={title + "포스터 사진"}/>
