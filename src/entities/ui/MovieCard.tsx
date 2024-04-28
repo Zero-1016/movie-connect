@@ -21,7 +21,7 @@ export function MovieCard({ movieData }: Props) {
 
     return (
         <Link href={`/i/info/${id}`} scroll={false}>
-            <motion.div whileHover={{ y: -10, scale: 1.05 }} className={styles.container}>
+            <motion.div whileHover={{ y: -10, scale: 1.02 }} className={styles.container}>
                 <Image className={styles.poster} width={280} height={420}
                        src={getImageUrl(poster_path, IMAGE_SIZE.poster.w342)}
                        alt={title + '의 이미지'}

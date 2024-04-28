@@ -1,4 +1,5 @@
 export { DetailPage } from './DetailPage'
+export { InfinityListPage } from './InfinityListPage'
 export { LandingPage } from './LandingPage'
 export { MainPage } from './MainPage'
 export { NotFoundPage } from './NotFound'

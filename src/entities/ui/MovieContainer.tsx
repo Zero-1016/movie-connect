@@ -31,7 +31,7 @@ export function MovieContainer({ title, description, href, queryInfo }: Props) {
                     <h3 className={styles.movieSubTitle}>{description}</h3>
                 </div>
                 <Link className={styles.link} href={href}>
-                    <p>바로가기</p>
+                    <p>더보기</p>
                 </Link>
             </div>
             <MovieList movieList={data.results}/>

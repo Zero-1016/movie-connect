@@ -28,25 +28,25 @@ export function MainList() {
             <div className={styles.container}>
                 <Suspense fallback={<MovieContainerFallback/>}>
                     <MovieContainer
-                        title={'지금 인기있는 영화'}
-                        description={'인기있는 영화를 지금 바로 만나보세요!'}
-                        href={'/new_movie'}
+                        title={'사람들에게 인기있는 영화'}
+                        description={'전 세계 관객들이 사랑하는 영화들을 만나보세요'}
+                        href={'/list/popular'}
                         queryInfo={getPopularInfo}
                     />
                 </Suspense>
                 <Suspense fallback={<MovieContainerFallback/>}>
                     <MovieContainer
-                        title={'상영 예정중인 영화'}
-                        description={'상영 예정인 영화를 미리 만나보세요!'}
-                        href={'/new_movie'}
+                        title={'최신 개봉 영화'}
+                        description={'개봉 예정인 신작 영화들을 미리 만나보세요'}
+                        href={'/list/upcoming'}
                         queryInfo={getUpComingInfo}
                     />
                 </Suspense>
                 <Suspense fallback={<MovieContainerFallback/>}>
                     <MovieContainer
-                        title={'인기가 많은 영화'}
-                        description={'과거부터 인기가 많은 영화를 다시 확인해보세요'}
-                        href={'/new_movie'}
+                        title={'별점이 높은 영화'}
+                        description={'평론가와 관객 모두에게 인정받은 최고의 작품들'}
+                        href={'/list/top-rated'}
                         queryInfo={getTopRatedInfo}
                     />
                 </Suspense>

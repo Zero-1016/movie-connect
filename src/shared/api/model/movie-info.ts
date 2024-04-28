@@ -14,3 +14,5 @@ export type MovieInfo = {
   vote_average: number // 평균 점수
   vote_count: number // 평균 점수를 평가한 사람들의 수
 }
+
+export type MovieType = "popular" | "upcoming" | "top-rated"

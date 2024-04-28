@@ -9,7 +9,7 @@ import { quando } from "@/shared/style/quando";
 export default function Provider({ children }: PropsWithChildren) {
     return (
         <AppRouterCacheProvider>
-            <div className={classNames(quando.className, poppins.className, notoSans.className)}>{children}</div>
+            <div className={classNames(notoSans.className, quando.className, poppins.className)}>{children}</div>
         </AppRouterCacheProvider>
     )
 }
