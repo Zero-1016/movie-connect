@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import { MovieList } from '@/entities/ui/MovieList'
+import { MovieList } from "@/entities/ui/MovieList";
 import { movieListMock } from '@/shared/mock/movie-list.mock'
 
 const meta: Meta<typeof MovieList> = {

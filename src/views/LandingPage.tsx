@@ -1,5 +1,4 @@
-import {LandingBackGround} from '@/widgets/Landing/LandingBackGround'
-import {LandingContents} from "@/widgets/Landing/LandingContents";
+import { LandingBackGround, LandingContents } from "@/widgets/landing";
 
 export function LandingPage() {
     return (

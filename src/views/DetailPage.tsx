@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 
 import RQProvider from "@/shared/lib/react-query/RQProvider";
-import { DetailBottomSection, DetailMiddleSection, DetailTopSection } from "@/widgets/Detail";
+import { DetailBottomSection, DetailMiddleSection, DetailTopSection } from "@/widgets/detail";
 
 type Props = {
     movieId: string

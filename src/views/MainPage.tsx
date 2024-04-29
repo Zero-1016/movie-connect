@@ -1,5 +1,5 @@
 import RQProvider from "@/shared/lib/react-query/RQProvider";
-import { MainBannerSection, MainList } from '@/widgets/Main'
+import { MainBannerSection, MainList } from "@/widgets/main";
 
 export function MainPage() {
   return (

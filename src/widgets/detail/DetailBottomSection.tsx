@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 
-import { MovieReviewList } from "@/entities/ui";
-import { MovieImagesSlide } from "@/entities/ui/MovieImagesSlide";
+import { MovieImagesSlide, MovieReviewList } from "@/entities/ui";
 
 type Props = {
     movieId: string
