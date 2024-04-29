@@ -57,7 +57,11 @@
 .textArea {
   border: none;
   width: 100%;
+  font-family: Bahnschrift;
 
+  &::placeholder{
+    font-family: fantasy;
+  }
   &:focus {
     outline: none;
   }
