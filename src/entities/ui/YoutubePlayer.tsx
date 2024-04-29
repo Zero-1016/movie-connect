@@ -22,8 +22,6 @@ export function YoutubePlayer({ videoId, endMovie }: Props) {
             mute:1,
             controls: 0,
             modestbranding: 1,
-            setVolume: 40,
-            vq: 'hd1080'
         },
     };
 
