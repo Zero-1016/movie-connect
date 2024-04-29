@@ -19,6 +19,7 @@ export function YoutubePlayer({ videoId, endMovie }: Props) {
             allow: "autoplay; encrypted-media;",
             autoplay: 1,
             rel: 0,
+            mute:1,
             controls: 0,
             modestbranding: 1,
             setVolume: 40,
@@ -26,6 +27,6 @@ export function YoutubePlayer({ videoId, endMovie }: Props) {
         },
     };
 
-    return <YouTube videoId={videoId} opts={opts} onError={endMovie}
+    return <YouTube videoId={videoId} onPause={(event) => event.target.playVideo()} opts={opts} onError={endMovie}
                     onEnd={endMovie} onReady={onPlayerReady}/>;
 }
