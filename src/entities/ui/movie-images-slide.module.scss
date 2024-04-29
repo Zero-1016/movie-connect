@@ -21,31 +21,3 @@
     display: none;
   }
 }
-
-.commentContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.comment {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 24px 16px 24px 20px;
-  border-radius: 12px;
-  background-color: #fffffe;
-  color: #121829;
-}
-
-.commentHeader {
-  display: flex;
-  justify-content: space-between;
-}
-
-.commentAvatar {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  justify-items: center;
-}
