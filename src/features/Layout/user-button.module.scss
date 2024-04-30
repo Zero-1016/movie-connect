@@ -1,3 +1,18 @@
-.rightSection{
-  width: 240px;
+.rightSection {
+  border: 3px solid white;
+  border-radius: 50px !important;
+  overflow: hidden;
+  width: 120px;
+}
+
+.userButton {
+  width: 100%;;
+  background: rgba(0,0,0,70%) !important;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+
+  span {
+    color: #fffffe;
+  }
 }
