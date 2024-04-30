@@ -3,6 +3,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import classNames from "classnames";
 import { StarIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { IMAGE_SIZE, QUERY_KEY } from "@/shared/api/constants";
 import { getImageUrl, getMovieDetail } from "@/shared/api/lib";
@@ -27,8 +28,10 @@ export function DetailMiddleSection({ movieId }: Props) {
 
     return <section className={styles.container}>
         <div className={styles.leftSection}>
-            <Image className={styles.posterImage} src={getImageUrl(poster_path, IMAGE_SIZE.poster.w500)}
-                   alt={title + "포스터 이미지"} width={480} height={720}/>
+            <Link href={`/i/image/${movieId}/poster/${poster_path}`} scroll={false}>
+                <Image className={styles.posterImage} src={getImageUrl(poster_path, IMAGE_SIZE.poster.w500)}
+                       alt={title + "포스터 이미지"} width={480} height={720}/>
+            </Link>
         </div>
         <div className={classNames(styles.rightSection, poppins.className)}>
             <h3 className={styles.tagLine}>{tagline ? tagline : title}</h3>

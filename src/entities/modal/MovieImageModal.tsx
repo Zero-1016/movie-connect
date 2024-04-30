@@ -22,7 +22,7 @@ export function MovieImageModal({
             getSize = IMAGE_SIZE.backdrop.w1280
             break
         case "poster":
-            getSize = IMAGE_SIZE.poster.w780
+            getSize = IMAGE_SIZE.poster.w500
             break
     }
 
@@ -32,8 +32,8 @@ export function MovieImageModal({
             height: 607
         },
         "poster": {
-            width: 780,
-            height: 1155
+            width: 500,
+            height: 750
         }
     }
 
