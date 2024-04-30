@@ -1,20 +1,30 @@
 .container {
   box-sizing: content-box;
   position: fixed;
-  width: calc(100% - 100px);
+  width: 100%;
   top: 0;
   left: 0;
   transition: transform 0.3s ease;
+  background-color: #121829;
   z-index: 1000;
+}
+
+.box {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   padding: 0 50px;
-  height: 74px;
-  background-color: #121829;
+  height: 80px;
+  padding: 0 50px;
+  background: linear-gradient(180deg, #131313 -10%, rgba(19, 19, 19, 0.00) 100%);
 }
 
 .hidden {
   transform: translateY(-100%);
+}
+
+.section {
+  display: flex;
+  gap: 10px;
 }

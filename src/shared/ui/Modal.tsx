@@ -1,12 +1,13 @@
 "use client"
 
-import CloseIcon from '@mui/icons-material/Close';
-import {useRouter} from "next/navigation";
-import {PropsWithChildren, useEffect} from "react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { PropsWithChildren, useEffect } from "react";
 
 import RQProvider from "@/shared/lib/react-query/RQProvider";
-import {getScrollbarWidth} from "@/shared/lib/util";
+import { getScrollbarWidth } from "@/shared/lib/util";
 
+import closeIcon from '../../../public/svg/close.svg';
 import styles from './modal.module.scss'
 
 export function Modal({children}: PropsWithChildren) {
@@ -42,7 +43,7 @@ export function Modal({children}: PropsWithChildren) {
 
     return <RQProvider>
         <div className={styles.container} onClick={onClickBack}>
-            <CloseIcon className={styles.closeButton}/>
+            <Image className={styles.closeButton} src={closeIcon} alt="닫기 버튼"/>
             {children}</div>
     </RQProvider>
 }

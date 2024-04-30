@@ -3,9 +3,7 @@
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 
-import { HeaderSearchBar } from "@/features/Layout/HeaderSearchBar";
-import { MainLogo } from "@/features/Layout/MainLogo";
-import { UserButton } from "@/features/Layout/UserButton";
+import { HeaderNav, HeaderSearchBar, MainLogo, UserButton } from "@/features/Layout";
 
 import styles from './header.module.scss'
 
@@ -30,9 +28,16 @@ export function Header() {
     }, []);
 
     return <header className={classNames(styles.container, isHeaderHidden && styles.hidden)}>
-        <MainLogo/>
-        <HeaderSearchBar/>
-        <UserButton/>
+        <div className={styles.box}>
+            <div className={styles.section}>
+                <MainLogo/>
+                <HeaderNav/>
+            </div>
+            <div className={styles.section}>
+                <HeaderSearchBar/>
+                <UserButton/>
+            </div>
+        </div>
     </header>
 }
 

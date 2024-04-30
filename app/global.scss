@@ -27,10 +27,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   color: white;
-  background: linear-gradient(to right, #000000, #121829);
-  background-size: 200% 200%;
-  animation: aurora 10s infinite;
-  line-height: 1;
+  background: #1A1D29;
 
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -79,7 +76,7 @@ a {
 input:-webkit-autofill, input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 1000px #32353F inset;
-  box-shadow: 0 0 0 1000px #121829 inset;
+  -webkit-box-shadow: 0 0 0 1000px #101116 inset;
+  box-shadow: 0 0 0 1000px #101116 inset;
   -webkit-text-fill-color: white;
 }

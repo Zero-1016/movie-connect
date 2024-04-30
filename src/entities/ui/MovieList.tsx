@@ -1,5 +1,5 @@
 import { MovieCard } from '@/entities/ui/MovieCard'
-import { useDragHandler } from "@/shared/hook/useDragHandler";
+import { useDragHandler } from "@/shared/hook";
 
 import { MovieInfo } from '../../shared/api/model'
 import styles from './movie-list.module.scss'
@@ -10,7 +10,7 @@ type Props = {
 
 export function MovieList({ movieList }: Props) {
 
-    const { ref, onMouseDown } = useDragHandler()
+    const { ref, onMouseDown } = useDragHandler()   
 
     return (
         <ul

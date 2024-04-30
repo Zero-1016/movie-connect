@@ -1,13 +1,14 @@
 .rightSection {
-  border: 3px solid white;
-  border-radius: 50px !important;
+  display: flex;
+  align-items: center;
   overflow: hidden;
   width: 120px;
 }
 
 .userButton {
-  width: 100%;;
-  background: rgba(0,0,0,70%) !important;
+  height: fit-content;
+  padding: 0 !important;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 12px;

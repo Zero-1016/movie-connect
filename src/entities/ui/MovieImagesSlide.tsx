@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import { IMAGE_SIZE, QUERY_KEY } from "@/shared/api/constants";
 import { getImages, getImageUrl } from "@/shared/api/lib";
-import { useDragHandler } from "@/shared/hook/useDragHandler";
+import { useDragHandler } from "@/shared/hook";
 
 import styles from './movie-images-slide.module.scss'
 
