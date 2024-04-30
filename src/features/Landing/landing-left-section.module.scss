@@ -1,11 +1,11 @@
 .container {
   height: 600px;
   display: flex;
-  flex: 1;
   gap: 12px;
   color: white;
   align-items: flex-start;
   flex-direction: column;
+  justify-content: center;
 }
 
 .title {

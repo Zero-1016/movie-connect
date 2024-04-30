@@ -1,6 +1,7 @@
 .container {
+  box-sizing: content-box;
   position: fixed;
-  width: 100%;
+  width: calc(100% - 100px);
   top: 0;
   left: 0;
   transition: transform 0.3s ease;
