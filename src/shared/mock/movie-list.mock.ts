@@ -342,4 +342,4 @@ export const movieListMock = {
   ],
   total_pages: 186,
   total_results: 3719,
-}
+} as const

@@ -3,3 +3,10 @@
   max-width: 1000px;
   margin: 40px auto 200px;
 }
+
+.searchCardBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  justify-items: stretch;
+}

@@ -1,4 +1,4 @@
-const movieDetailMock = {
+export const movieDetailMock = {
   adult: false,
   backdrop_path: '/gJL5kp5FMopB2sN4WZYnNT5uO0u.jpg',
   belongs_to_collection: {
@@ -85,4 +85,4 @@ const movieDetailMock = {
   video: false,
   vote_average: 6.915,
   vote_count: 123,
-}
+} as const

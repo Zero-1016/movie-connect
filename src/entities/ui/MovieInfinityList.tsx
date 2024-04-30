@@ -26,7 +26,6 @@ export function MovieInfinityList({ qureyFn, queryKey }: Props) {
     })
 
     useEffect(() => {
-        //감지 및 fetch
         if (inView && hasNextPage) fetchNextPage();
     }, [inView]);
 

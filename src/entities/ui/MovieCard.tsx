@@ -17,13 +17,13 @@ type Props = {
 }
 
 export function MovieCard({ movieData }: Props) {
-    const { title, release_date, poster_path, adult, genre_ids, id } = movieData
+    const { title, release_date, poster_path, adult, genre_ids, id, backdrop_path } = movieData
 
     return (
         <Link href={`/i/info/${id}`} scroll={false}>
             <motion.div whileHover={{ y: -10, scale: 1.02 }} className={styles.container}>
                 <Image className={styles.poster} width={280} height={420}
-                       src={getImageUrl(poster_path, IMAGE_SIZE.poster.w342)}
+                       src={poster_path ? getImageUrl(poster_path, IMAGE_SIZE.poster.w342) : backdrop_path ? getImageUrl(backdrop_path, IMAGE_SIZE.backdrop.w780) : ''}
                        alt={title + '의 이미지'}
                 />
                 <div className={styles.movieInfoBackGround}>
