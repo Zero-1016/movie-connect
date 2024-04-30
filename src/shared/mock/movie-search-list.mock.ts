@@ -79,4 +79,4 @@ export const movieSearchListMock: ResponseData = {
     ],
     "total_pages": 1,
     "total_results": 4
-} as const
+}

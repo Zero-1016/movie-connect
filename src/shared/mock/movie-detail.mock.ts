@@ -85,4 +85,4 @@ export const movieDetailMock = {
   video: false,
   vote_average: 6.915,
   vote_count: 123,
-} as const
+}
