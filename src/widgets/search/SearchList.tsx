@@ -1,5 +1,6 @@
 "use client"
 
+import { CircularProgress } from "@mui/material";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
@@ -15,7 +16,7 @@ type Props = {
 
 export function SearchList({ keyword }: Props) {
     const { ref, inView } = useInView()
-    const { data, fetchNextPage, isFetching } = useInfiniteQuery({
+    const { data, fetchNextPage, isFetching, hasNextPage } = useInfiniteQuery({
         queryKey: ["search", keyword],
         queryFn: ({ pageParam }) => getMovieSearch(keyword, pageParam),
         getNextPageParam: (lastPage, allPages, lastPageParam, allPageParams) => {
@@ -40,7 +41,15 @@ export function SearchList({ keyword }: Props) {
             <ul className={styles.searchCardBox}>
                 {searchResult?.map(movieData => <MovieSearchCard key={movieData.id} movieData={movieData}/>)}
             </ul>
-            <div ref={ref}/>
+            {hasNextPage && <div ref={ref} style={{
+                height: "200px",
+                display: "flex",
+                justifyContent: "center",
+                justifyItems: 'center',
+                alignItems: 'center'
+            }}>
+                <CircularProgress/>
+            </div>}
         </section>
     )
 }

@@ -1,5 +1,6 @@
 "use client"
 
+import { CircularProgress } from "@mui/material";
 import { useSuspenseInfiniteQuery } from "@tanstack/react-query";
 import classNames from "classnames";
 import { useEffect } from "react";
@@ -34,8 +35,11 @@ export function MovieInfinityList({ qureyFn, queryKey, className }: Props) {
     const result = data.pages.flatMap(item => item.results)
 
     return <>
-        <ul className={classNames(styles.container, className)}>{result.map((value, index) => <li className={styles.movieCard}
-            ref={result.length - 8 === index ? ref : null} key={value.id}><MovieCard movieData={value}/>
+        <ul className={classNames(styles.container, className)}>{result.map(value => <li key={value.id} className={styles.movieCard}>
+            <MovieCard movieData={value}/>
         </li>)}</ul>
+        <div ref={ref} className={styles.progress}>
+            <CircularProgress/>
+        </div>
     </>
 }
