@@ -1,13 +1,18 @@
 import { Skeleton } from "@mui/material";
+import classNames from "classnames";
 
 import styles from "@/entities/ui/movie-list.module.scss";
 
-export function MovieListSkeleton() {
+type Props = {
+    className?: string
+}
+
+export function MovieListSkeleton({ className }: Props) {
 
     return (
         <ul
-            className={styles.container}>
-            {Array.from({ length: 5 }).map((v, i) => (
+            className={classNames(styles.container, className)}>
+            {Array.from({ length: 4 }).map((v, i) => (
                 <li className={styles.card} key={i}>
                     <Skeleton variant='rounded' sx={{ height: '100%', backgroundColor: 'rgba(255,255,255, 30%)' }}/>
                 </li>

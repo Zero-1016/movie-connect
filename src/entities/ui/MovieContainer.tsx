@@ -34,7 +34,7 @@ export function MovieContainer({ title, description, href, queryInfo }: Props) {
                     <p>더보기</p>
                 </Link>
             </div>
-            <MovieList movieList={data.results}/>
+            <MovieList className={styles.listPadding} movieList={data.results}/>
         </div>
     )
 }

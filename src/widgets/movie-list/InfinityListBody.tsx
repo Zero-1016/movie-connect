@@ -5,6 +5,7 @@ import { Suspense, useMemo } from "react";
 import { MovieInfinityList } from "@/entities/ui";
 import { getPopular, getTopRated, getUpComing } from "@/shared/api/lib";
 import { MovieType } from "@/shared/api/model/movie-info";
+import { MovieInfinitySkeletonList } from "@/widgets/movie-list/MovieInfinitySkeletonList";
 
 import styles from './infinity-list-body.module.scss'
 
@@ -24,7 +25,10 @@ export function InfinityListBody({ type }: Props) {
         }
     }, [type])
 
-    return <Suspense>
-        <div className={styles.container}><MovieInfinityList queryKey={queryKey} qureyFn={qureyFn}/></div>
-    </Suspense>
+    return <div className={styles.container}>
+        <Suspense fallback={
+            <MovieInfinitySkeletonList/>}>
+            <MovieInfinityList queryKey={queryKey} qureyFn={qureyFn}/>
+        </Suspense>
+    </div>
 }

@@ -1,3 +1,5 @@
+import classNames from "classnames";
+
 import { MovieCard } from '@/entities/ui/MovieCard'
 import { useDragHandler } from "@/shared/hook";
 
@@ -6,17 +8,18 @@ import styles from './movie-list.module.scss'
 
 type Props = {
     movieList: MovieInfo[]
+    className?: string
 }
 
-export function MovieList({ movieList }: Props) {
+export function MovieList({ movieList, className }: Props) {
 
-    const { ref, onMouseDown } = useDragHandler()   
+    const { ref, onMouseDown } = useDragHandler()
 
     return (
         <ul
             onMouseDown={onMouseDown}
             ref={ref}
-            className={styles.container}
+            className={classNames(styles.container, className)}
         >
             {movieList.map(movieData => (
                 <li className={styles.card} key={movieData.id}>
