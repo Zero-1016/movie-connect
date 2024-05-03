@@ -1,9 +1,5 @@
-"use client"
+import { FamousBody } from "@/widgets/profile";
 
-import { usePathname } from "next/navigation";
-
-export default function Page(){
-    const path = usePathname()
-    console.log(path)
-    return <div>:)</div>
+export default function Page() {
+    return <div><FamousBody/></div>
 }

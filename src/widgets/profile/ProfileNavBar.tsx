@@ -1,7 +1,7 @@
 import { AccountBox, AccountBoxOutlined, BookmarkOutlined, Reviews, ReviewsOutlined } from "@mui/icons-material";
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import ChatIcon from '@mui/icons-material/Chat';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
-import { BookMarked } from "lucide-react";
 
 import { NavButton } from "@/features/Layout";
 
@@ -10,7 +10,7 @@ import styles from './profile-nav-bar.module.scss'
 export function ProfileNavBar() {
     return <nav className={styles.navbar}>
         <NavButton activeAllow activeSvg={<AccountBox/>} notActiveSvg={<AccountBoxOutlined/>} link="/profile" title="회원정보 변경"/>
-        <NavButton activeAllow activeSvg={<BookmarkOutlined/>} notActiveSvg={<BookMarked/>} link="/profile/activity/like"
+        <NavButton activeAllow activeSvg={<BookmarkOutlined/>} notActiveSvg={<BookmarkBorderIcon/>} link="/profile/activity/like"
                    title="즐겨찾기한 영화"/>
         <NavButton activeAllow activeSvg={<Reviews/>} notActiveSvg={<ReviewsOutlined/>} link="/profile/activity/review"
                    title="작성한 리뷰"/>

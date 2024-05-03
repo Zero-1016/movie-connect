@@ -1,3 +1,5 @@
+import { ProfileBody } from "@/widgets/profile";
+
 export function ProfilePage() {
-  return <div>profile</div>
+  return <div><ProfileBody/></div>
 }
