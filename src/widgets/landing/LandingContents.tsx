@@ -1,4 +1,4 @@
-import { LandingLeftSection } from '@/features/Landing'
+import { LandingLeftSection } from "@/features/landing";
 
 import styles from './landing-contents.module.scss'
 

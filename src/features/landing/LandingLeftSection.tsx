@@ -3,9 +3,9 @@
 import classNames from 'classnames'
 import { motion } from 'framer-motion'
 
-import { subTitleList } from '@/features/Landing/constants'
-import { HomeButton } from '@/features/Landing/HomeButton'
-import { SubTitle } from '@/features/Landing/SubTitle'
+import { subTitleList } from '@/features/landing/constants'
+import { HomeButton } from '@/features/landing/HomeButton'
+import { SubTitle } from '@/features/landing/SubTitle'
 import { poppins } from '@/shared/style/poppins'
 
 import styles from './landing-left-section.module.scss'

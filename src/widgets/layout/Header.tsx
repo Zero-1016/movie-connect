@@ -3,7 +3,7 @@
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 
-import { HeaderNav, HeaderSearchBar, MainLogo, UserButton } from "@/features/Layout";
+import { HeaderNav, HeaderSearchBar, MainLogo, UserButton } from "@/features/layout";
 
 import styles from './header.module.scss'
 

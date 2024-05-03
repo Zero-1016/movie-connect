@@ -1,5 +1,5 @@
 export { FamousBody } from './FamousBody'
 export { LikeBody } from './LikeBody'
-export {ProfileBody} from './ProfileBody'
+export { ProfileBody } from './ProfileBody'
 export { ProfileNavBar } from './ProfileNavBar'
 export { ReviewBody } from './ReviewBody'

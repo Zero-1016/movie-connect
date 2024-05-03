@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import { subTitleList } from '@/features/Landing/constants'
-import { SubTitle } from '@/features/Landing/SubTitle'
+import { subTitleList } from '@/features/landing/constants'
+import { SubTitle } from '@/features/landing/SubTitle'
 
 const meta: Meta<typeof SubTitle> = {
   component: SubTitle,

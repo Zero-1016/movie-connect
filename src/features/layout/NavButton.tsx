@@ -24,6 +24,8 @@ export function NavButton({ title, notActiveSvg, activeSvg, link, activeAllow = 
         router.push(link)
     }
 
-    return <Button className={classNames(styles.button, activeAllow && isActive && styles.active)} onClick={onClick}>{isActive ? activeSvg : notActiveSvg}
+    const styleActive = activeAllow && isActive && styles.active
+
+    return <Button className={classNames(styles.button, styleActive)} onClick={onClick}>{isActive ? activeSvg : notActiveSvg}
         <span>{title}</span></Button>
 }

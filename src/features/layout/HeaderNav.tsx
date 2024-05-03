@@ -7,7 +7,7 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
 
-import { NavButton } from "@/features/Layout/NavButton";
+import { NavButton } from "@/features/layout/NavButton";
 
 import styles from './header-nav.module.scss'
 

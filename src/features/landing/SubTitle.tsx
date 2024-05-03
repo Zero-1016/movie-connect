@@ -1,7 +1,7 @@
 'use client'
 
-import { useTextInterval } from '@/features/Landing/hooks'
-import styles from '@/features/Landing/landing-left-section.module.scss'
+import { useTextInterval } from '@/features/landing/hooks'
+import styles from '@/features/landing/landing-left-section.module.scss'
 
 type Props = {
   subTitleList: readonly string[]
