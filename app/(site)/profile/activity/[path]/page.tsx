@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 import { PROFILE_PATH } from "@/features/profile/constants";
 import { FamousBody, LikeBody, ReviewBody } from "@/widgets/profile";
 
@@ -16,6 +18,7 @@ export default function Page({ params: { path } }: Props) {
         case "like":
             return <LikeBody/>
         default:
+            notFound()
             return null
     }
 }

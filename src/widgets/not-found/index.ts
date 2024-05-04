@@ -1,0 +1,1 @@
+export { NotFoundFooter } from './NotFoundFooter'
