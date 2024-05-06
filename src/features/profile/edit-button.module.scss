@@ -1,0 +1,23 @@
+.container {
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+}
+
+.button {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  min-width: 40px;
+  border-radius: 9999px;
+  padding: 0;
+  background-color: #fffffe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #767E94;
+}
+
+.inputFile {
+  display: none;
+}
