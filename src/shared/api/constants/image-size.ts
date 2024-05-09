@@ -35,4 +35,4 @@ export const IMAGE_SIZE = {
         w300: "w300",
         original: "original"
     }
-};
+} as const

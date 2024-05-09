@@ -7,7 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { useRouter } from "next/navigation";
 import { MouseEventHandler, useState } from "react";
 
-import { userMock } from "@/shared/mock/user-mock";
+import { userMock } from "@/shared/mock/data/user-mock";
 import { notoSans } from "@/shared/style";
 
 import styles from './user-button.module.scss'
@@ -48,9 +48,9 @@ export function UserButton() {
             aria-expanded={open ? 'true' : undefined}
             onClick={handleClick}
         >
-            <span className={notoSans.className}>{userData.username}</span>
-            <Avatar sx={{ width: '48px', height: '48px', border: '2px solid #02E7F5' }} src={userData.img_url}
-                    alt={userData.username + "프로필 이미지"}/>
+            <span className={notoSans.className}>{userData.nickname}</span>
+            <Avatar sx={{ width: '48px', height: '48px', border: '2px solid #02E7F5' }} src={userData.profileUrl ?? undefined}
+                    alt={userData.nickname + "프로필 이미지"}/>
         </Button>
         <Menu
             id="user-menu"

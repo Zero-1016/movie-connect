@@ -4,19 +4,18 @@ import { Avatar } from "@mui/material";
 import { useState } from "react";
 
 import { EditButton, ProfileTitle } from "@/features/profile";
-import { userMock } from "@/shared/mock";
+import { userMock } from "@/shared/mock/data";
 
 import styles from './profile-body.module.scss'
 
 export function ProfileBody() {
-    const [{ username, img_url }, setUserState] = useState(userMock)
-    const [file, setFile] = useState<File | null>(null)
+    const [{ nickname, profileUrl }, _setUserState] = useState(userMock)
+    const [_file, setFile] = useState<File | null>(null)
 
-    console.log(file)
     return <section className={styles.container}>
         <ProfileTitle/>
         <div className={styles.imageBox}>
-            <Avatar src={img_url} alt={username + "프로필 이미지"} sx={{ width: 300, height: 300 }}/>
+            <Avatar src={profileUrl ?? undefined} alt={nickname + "프로필 이미지"} sx={{ width: 300, height: 300 }}/>
             <EditButton setFile={setFile}/>
         </div>
     </section>

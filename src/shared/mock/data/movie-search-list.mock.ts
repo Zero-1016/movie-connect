@@ -1,6 +1,6 @@
-import { ResponseData } from "@/shared/api/model";
+import { MoviesResponse } from "@/shared/api/model";
 
-export const movieSearchListMock: ResponseData = {
+export const movieSearchListMock: MoviesResponse = {
     "page": 1,
     "results": [
         {

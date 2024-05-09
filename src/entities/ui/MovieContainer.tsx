@@ -2,25 +2,23 @@ import { useSuspenseQuery } from '@tanstack/react-query'
 import Link from 'next/link'
 
 import { MovieList } from '@/entities/ui/MovieList'
+import { MoviesResponse } from "@/shared/api/model";
 
-import { ResponseData } from '../../shared/api/model'
 import styles from './movie-container.module.scss'
+
 
 type Props = {
     title: string
     description: string
     href: string
-    queryInfo: {
-        queryKey: [string, string, number]
-        queryFn: (page?: number) => Promise<ResponseData>
-    }
+    queryKey: string[]
+    queryFn: () => Promise<MoviesResponse>
 }
 
-export function MovieContainer({ title, description, href, queryInfo }: Props) {
-    const { queryKey, queryFn } = queryInfo
+export function MovieContainer({ title, description, href, queryKey, queryFn }: Readonly<Props>) {
     const { data } = useSuspenseQuery({
-        queryKey: queryKey,
-        queryFn: () => queryFn(),
+        queryKey,
+        queryFn,
     })
 
     return (

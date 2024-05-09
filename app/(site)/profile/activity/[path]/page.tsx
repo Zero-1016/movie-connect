@@ -1,15 +1,14 @@
 import { notFound } from "next/navigation";
 
-import { PROFILE_PATH } from "@/features/profile/constants";
 import { FamousBody, LikeBody, ReviewBody } from "@/widgets/profile";
 
 type Props = {
     params: {
-        path: Omit<keyof typeof PROFILE_PATH, "profile">
+        path: string
     }
 }
 
-export default function Page({ params: { path } }: Props) {
+export default function Page({ params: { path } }: Readonly<Props>) {
     switch (path) {
         case "famous":
             return <FamousBody/>

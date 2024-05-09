@@ -1,10 +1,10 @@
-/*
-곧 개봉될 영화의 정보를 불러옵니다.
- */
-import { QUERY_KEY } from "@/shared/api/constants/query-key";
-import { DetailResponse } from "@/shared/api/model/detail-movie";
+import { QueryFunction } from "@tanstack/react-query";
 
-export async function getMovieDetail(movieId: string):Promise<DetailResponse> {
+import { QUERY_KEY } from "@/shared/api/constants/query-key";
+import { DetailResponse } from "@/shared/api/model";
+
+export const getDetail: QueryFunction<DetailResponse, [string, string, movieId: string]> = async ({ queryKey }) => {
+    const [_1, _2, movieId] = queryKey
     const res = await fetch(`${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/${movieId}?language=ko-KR`, {
         method: 'GET',
         headers: {
@@ -12,7 +12,7 @@ export async function getMovieDetail(movieId: string):Promise<DetailResponse> {
             Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_ACCESS_TOKEN}`,
         },
         next: {
-            tags: QUERY_KEY.movieDetail(movieId),
+            tags: QUERY_KEY.detail(movieId),
         },
         cache: 'no-store',
     })

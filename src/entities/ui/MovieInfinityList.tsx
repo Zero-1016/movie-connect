@@ -7,35 +7,41 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 import { MovieCard } from "@/entities/ui/MovieCard";
-import { ResponseData } from "@/shared/api/model";
+import { MovieRequest, MoviesResponse } from "@/shared/api/model";
 
 import styles from './movie-infinity-list.module.scss';
 
 type Props = {
-    queryKey: [string]
-    qureyFn: (page: number) => Promise<ResponseData>
+    queryKey: string[]
+    // eslint-disable-next-line unused-imports/no-unused-vars
+    qureyFn: ({ pageParam }: MovieRequest) => Promise<MoviesResponse>
     className?: string
 }
 
-export function MovieInfinityList({ qureyFn, queryKey, className }: Props) {
-    const { ref, inView } = useInView({ delay: 1000 })
-    const { data, hasNextPage, fetchNextPage } = useSuspenseInfiniteQuery({
+export function MovieInfinityList({ qureyFn, queryKey, className }: Readonly<Props>) {
+    const {
+        data,
+        hasNextPage,
+        fetchNextPage
+    } = useSuspenseInfiniteQuery({
         queryKey: queryKey,
-        queryFn: ({ pageParam }) => qureyFn(pageParam),
-        getNextPageParam(lastPage, allPages, lastPageParam, allPageParams) {
+        queryFn: ({ pageParam }) => qureyFn({ pageParam }),
+        initialPageParam: 1,
+        getNextPageParam(_1, _2, _3, allPageParams) {
             return allPageParams.length + 1;
-        },
-        initialPageParam: 1
+        }
     })
+    const { ref, inView } = useInView({ delay: 1000 })
 
     useEffect(() => {
         if (inView && hasNextPage) fetchNextPage();
-    }, [inView]);
+    }, [inView, fetchNextPage, hasNextPage]);
 
     const result = data.pages.flatMap(item => item.results)
 
     return <>
-        <ul className={classNames(styles.container, className)}>{result.map(value => <li key={value.id} className={styles.movieCard}>
+        <ul className={classNames(styles.container, className)}>{result.map(value => <li key={value.id}
+                                                                                         className={styles.movieCard}>
             <MovieCard movieData={value}/>
         </li>)}</ul>
         <div ref={ref} className={styles.progress}>

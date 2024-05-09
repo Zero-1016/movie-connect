@@ -1,17 +1,21 @@
-import { ResponseData } from '../model'
+import { QUERY_KEY } from "@/shared/api/constants";
+import { MoviesResponse } from "@/shared/api/model";
 
-/*
-등급별로 정렬된 영화 목록을 가져옵니다.
- */
-export async function getMovieSearch(query: string, page = 1): Promise<ResponseData> {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/search/movie?query=${query}&language=ko-KR&page=${page}`, {
+type Props = { pageParam: number, queryKey: [string, string, keyword: string] }
+
+export const getMovieSearch = async ({
+                                         pageParam,
+                                         queryKey
+                                     }: Props): Promise<MoviesResponse> => {
+    const [_1, _2, keyword] = queryKey
+    const res = await fetch(`${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/search/movie?query=${keyword}&language=ko-KR&page=${pageParam}`, {
         method: 'GET',
         headers: {
             accept: 'application/json',
             Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_ACCESS_TOKEN}`,
         },
         next: {
-            tags: ['movies', query],
+            tags: QUERY_KEY.search(keyword),
         },
         cache: 'no-store',
     })

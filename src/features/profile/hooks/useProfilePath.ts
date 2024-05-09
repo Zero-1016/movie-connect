@@ -2,12 +2,8 @@
 
 import { usePathname } from "next/navigation";
 
-import { PROFILE_PATH } from "@/features/profile/constants";
-
-type Title = keyof typeof PROFILE_PATH
-
 export function useProfilePath() {
-    const path = usePathname().split('/').at(-1) as Title;
+    const path = usePathname().split('/').at(-1);
 
     switch (path) {
         case "profile":
