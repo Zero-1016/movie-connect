@@ -1,0 +1,10 @@
+.movieContainer {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: fit-content;
+  margin-bottom: 100px;
+}

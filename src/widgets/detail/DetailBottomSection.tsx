@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 
-import { MovieImagesSlide, MovieReviewList } from "@/entities/ui";
+import { MovieContentForm, MovieImagesSlide } from "@/entities/ui";
 
 type Props = {
     movieId: string
@@ -13,7 +13,7 @@ export function DetailBottomSection({ movieId }: Props) {
                 <MovieImagesSlide movieId={movieId}/>
             </Suspense>
             <Suspense>
-                <MovieReviewList movieId={movieId}/>
+                <MovieContentForm movieId={movieId}/>
             </Suspense>
         </section>
     )

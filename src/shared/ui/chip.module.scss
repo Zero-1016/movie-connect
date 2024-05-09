@@ -9,3 +9,16 @@
   background: rgba(50, 53, 63, 0.8);
   white-space: nowrap;
 }
+
+.smallContainer {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  padding: 3px 6px;
+  font-size: 8px;
+  border-radius: 5px;
+  background: rgba(50, 53, 63, 0.8);
+  white-space: nowrap;
+}

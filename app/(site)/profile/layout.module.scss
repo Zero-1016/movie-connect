@@ -3,13 +3,13 @@
   margin: 0 auto;
   padding-top: 30px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
   display: flex;
   gap: 20px;
 }
 
 .section {
   width: calc(100% - 200px);
-  height: 700px;
+  min-height: 700px;
   border-radius: 20px;
 }

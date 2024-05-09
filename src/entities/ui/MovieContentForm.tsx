@@ -8,13 +8,13 @@ import { timeAgo } from "@/shared/lib/util";
 import { generateComments } from "@/shared/mock/construct";
 import { notoSans } from "@/shared/style";
 
-import styles from './movie-comment-list.module.scss'
+import styles from './movie-content-form.module.scss'
 
 type Props = {
     movieId: string
 }
 
-export function MovieReviewList({ }: Readonly<Props>) {
+export function MovieContentForm({}: Readonly<Props>) {
     const [content, setContent] = useState("")
     const comments = generateComments(4)
 
