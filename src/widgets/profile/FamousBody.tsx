@@ -9,7 +9,7 @@ type Props = {
 export function FamousBody({ famousLineList }: Props) {
     return <>
         <ProfileTitle/>
-        <div style={{padding: "20px 0 50px"}}>
+        <div style={{ padding: "20px 0 50px" }}>
             <MovieContentList contentList={famousLineList}/>
         </div>
     </>
