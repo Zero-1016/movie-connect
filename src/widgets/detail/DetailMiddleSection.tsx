@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { IMAGE_SIZE, QUERY_KEY } from "@/shared/api/constants";
-import { getImageUrl, getMovieDetail } from "@/shared/api/lib";
+import { getDetail, getImageUrl } from "@/shared/api/lib";
 import { getDecimal, getHour } from "@/shared/lib/util";
 import { poppins } from "@/shared/style";
 import { Chip } from "@/shared/ui";
@@ -17,11 +17,11 @@ type Props = {
     movieId: string
 }
 
-export function DetailMiddleSection({ movieId }: Props) {
-
+export function DetailMiddleSection({ movieId }: Readonly<Props>) {
+    const queryKey = QUERY_KEY.detail(movieId) as [string, string, string]
     const { data: result } = useSuspenseQuery({
-        queryKey: QUERY_KEY.movieDetail(movieId),
-        queryFn: () => getMovieDetail(movieId)
+        queryKey,
+        queryFn: getDetail
     })
 
     const { poster_path, title, tagline, overview, runtime, release_date, genres, vote_average } = result
@@ -34,7 +34,7 @@ export function DetailMiddleSection({ movieId }: Props) {
             </Link>
         </div>
         <div className={classNames(styles.rightSection, poppins.className)}>
-            <h3 className={styles.tagLine}>{tagline ? tagline : title}</h3>
+            <h3 className={styles.tagLine}>{tagline || title}</h3>
             <span className={styles.description}>{overview}</span>
             <div className={styles.averageBox}>
                 <Chip className={styles.chip}>

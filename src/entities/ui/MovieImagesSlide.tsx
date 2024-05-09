@@ -14,11 +14,11 @@ type Props = {
     movieId: string
 }
 
-export function MovieImagesSlide({ movieId }: Props) {
-
+export function MovieImagesSlide({ movieId }: Readonly<Props>) {
+    const queryKey = QUERY_KEY.images(movieId) as [string, string, string]
     const { data: ImageList } = useSuspenseQuery({
-        queryKey: QUERY_KEY.movieImages(movieId),
-        queryFn: () => getImages(movieId)
+        queryKey: queryKey,
+        queryFn: getImages
     })
 
     const { ref, onMouseDown } = useDragHandler()

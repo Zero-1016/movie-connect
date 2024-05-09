@@ -13,15 +13,15 @@ type Props = {
     type: MovieType
 }
 
-export function InfinityListBody({ type }: Props) {
+export function InfinityListBody({ type }: Readonly<Props>) {
     const { qureyFn, queryKey } = useMemo(() => {
         switch (type) {
             case "popular":
-                return { queryKey: ['infinity-popular'] as [string], qureyFn: getPopular }
+                return { queryKey: ['movies', 'infinity-popular'], qureyFn: getPopular }
             case "upcoming":
-                return { queryKey: ['infinity-upcoming'] as [string], qureyFn: getUpComing }
+                return { queryKey: ['movies', 'infinity-upcoming'], qureyFn: getUpComing }
             case "top-rated":
-                return { queryKey: ['infinity-top-rated'] as [string], qureyFn: getTopRated }
+                return { queryKey: ['movies', 'infinity-top-rated'], qureyFn: getTopRated }
         }
     }, [type])
 

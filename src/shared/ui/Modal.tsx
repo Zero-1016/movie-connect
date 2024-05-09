@@ -10,7 +10,7 @@ import { getScrollbarWidth } from "@/shared/lib/util";
 import closeIcon from '../../../public/svg/close.svg';
 import styles from './modal.module.scss'
 
-export function Modal({children}: PropsWithChildren) {
+export function Modal({ children }: Readonly<PropsWithChildren>) {
     const router = useRouter()
     const history = typeof window !== "undefined" ? window.history : []
 
@@ -32,13 +32,8 @@ export function Modal({children}: PropsWithChildren) {
         if (history.length) {
             router.back()
         } else {
-            router.push('/home', {scroll: true})
+            router.push('/home', { scroll: true })
         }
-    }
-
-    const onInnerClick = (e: React.MouseEvent) => {
-        e.stopPropagation()
-
     }
 
     return <RQProvider>

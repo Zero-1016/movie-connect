@@ -4,8 +4,8 @@ import { Avatar, TextareaAutosize } from "@mui/material";
 import classNames from "classnames";
 import { ChangeEventHandler, useState } from "react";
 
-import { generateMockComments } from "@/shared/api/model/comment";
 import { timeAgo } from "@/shared/lib/util";
+import { generateComments } from "@/shared/mock/construct";
 import { notoSans } from "@/shared/style";
 
 import styles from './movie-comment-list.module.scss'
@@ -14,9 +14,9 @@ type Props = {
     movieId: string
 }
 
-export function MovieReviewList({ movieId }: Props) {
+export function MovieReviewList({ }: Readonly<Props>) {
     const [content, setContent] = useState("")
-    const comments = generateMockComments(4)
+    const comments = generateComments(4)
 
     const onSubmit = () => {
 
@@ -33,12 +33,12 @@ export function MovieReviewList({ movieId }: Props) {
                 {comments.map(comment => <li className={styles.comment} key={comment.id}>
                     <div className={styles.commentHeader}>
                         <div className={styles.commentAvatar}>
-                            <Avatar src={comment.img_url}
-                                    alt={comment.username}/> {comment.username}
+                            <Avatar src={comment.writer.profileUrl ? comment.writer.profileUrl : undefined}
+                                    alt={comment.writer.nickname}/> {comment.writer.nickname}
                         </div>
-                        <div>{timeAgo(comment.create_at)}</div>
+                        <div>{timeAgo(new Date(comment.createAt))}</div>
                     </div>
-                    <div>{comment.comment}</div>
+                    <div>{comment.content}</div>
                 </li>)}
             </ul>}
             <form className={classNames(styles.formContainer, notoSans.className)} onSubmit={(e) => {

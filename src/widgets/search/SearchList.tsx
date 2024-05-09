@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 import { MovieSearchCard } from "@/entities/ui/MovieSearchCard";
+import { QUERY_KEY } from "@/shared/api/constants";
 import { getMovieSearch } from "@/shared/api/lib";
 
 import styles from './search-list.module.scss'
@@ -14,12 +15,13 @@ type Props = {
     keyword: string
 }
 
-export function SearchList({ keyword }: Props) {
+export function SearchList({ keyword }: Readonly<Props>) {
     const { ref, inView } = useInView()
+    const queryKey = QUERY_KEY.search(keyword) as [string, string, keyword: string]
     const { data, fetchNextPage, isFetching, hasNextPage } = useInfiniteQuery({
-        queryKey: ["search", keyword],
-        queryFn: ({ pageParam }) => getMovieSearch(keyword, pageParam),
-        getNextPageParam: (lastPage, allPages, lastPageParam, allPageParams) => {
+        queryKey: queryKey,
+        queryFn: ({ pageParam }) => getMovieSearch({ pageParam, queryKey }),
+        getNextPageParam: (lastPage, allPages, lastPageParam) => {
             if (lastPage.total_pages > lastPageParam)
                 return lastPageParam + 1;
 
@@ -32,7 +34,7 @@ export function SearchList({ keyword }: Props) {
         if (inView && !isFetching) {
             fetchNextPage()
         }
-    }, [inView])
+    }, [inView, isFetching, fetchNextPage])
 
     const searchResult = data?.pages.flatMap(item => item.results)
 

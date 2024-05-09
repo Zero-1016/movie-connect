@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { MovieDetailLinkButton } from "@/entities/ui";
 import { IMAGE_SIZE } from "@/shared/api/constants";
 import { QUERY_KEY } from "@/shared/api/constants/query-key";
-import { getImageUrl, getMovieDetail } from "@/shared/api/lib";
+import { getDetail, getImageUrl } from "@/shared/api/lib";
 import { Chip } from "@/shared/ui";
 
 import styles from './movie-detail-content.module.scss'
@@ -17,12 +17,13 @@ type Props = {
     movieId: string
 }
 
-export function MovieDetailContent({ movieId }: Props) {
+export function MovieDetailContent({ movieId }: Readonly<Props>) {
     const router = useRouter()
+    const queryKey = QUERY_KEY.detail(movieId) as [string, string, string]
 
     const { data: result } = useSuspenseQuery({
-        queryKey: QUERY_KEY.movieDetail(movieId),
-        queryFn: () => getMovieDetail(movieId)
+        queryKey,
+        queryFn: getDetail
     })
 
     const { poster_path, title, overview, genres, release_date, vote_average } = result
