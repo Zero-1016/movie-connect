@@ -10,5 +10,5 @@ type Props = {
 
 export function Chip({ children, className, size }: PropsWithChildren<Props>) {
     return <span
-        className={classNames(size === "default" ? styles.container : styles.smallContainer, className)}>{children}</span>
+        className={classNames(size === "small" ? styles.smallContainer : styles.container, className)}>{children}</span>
 }
