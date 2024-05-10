@@ -1,3 +1,4 @@
+import { Content } from "@/shared/api/model/content";
 import { Genre } from "@/shared/api/model/genre";
 import { MovieInfo } from '@/shared/api/model/movie-info'
 
@@ -98,4 +99,10 @@ export interface ImageResponse {
     id: number
     logos: Logo[]
     posters: Poster[]
+}
+
+export interface ContentResponse {
+    data: Content[]
+    total: number
+    curpage: number
 }
