@@ -1,2 +1,5 @@
 export { Button } from './Button'
 export { Chip } from './Chip'
+export { Modal } from './Modal'
+export { ModalContent } from './ModalContent'
+export { ProfileImage } from './ProfileImage'

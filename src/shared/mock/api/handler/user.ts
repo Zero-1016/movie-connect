@@ -8,7 +8,7 @@ const user: User[] = [
 
 export const userHandlers = [
     http.post('/user/sign-in', () => {
-        console.log('로그인');
+        console.info('로그인');
         return HttpResponse.json(user[1], {
             headers: {
                 'Set-Cookie': 'connect.sid=msw-cookie;HttpOnly;Path=/'

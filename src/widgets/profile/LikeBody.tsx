@@ -5,11 +5,11 @@ import { generateMovie } from "@/shared/mock/construct";
 import styles from './like-body.module.scss';
 
 type Props = {
-    page?: number
+    page: string
 }
 
-export function LikeBody({ page = 1 }: Readonly<Props>) {
-    const { results } = generateMovie(page + 9)
+const { results } = generateMovie(10)
+export function LikeBody({}: Readonly<Props>) {
     return <section>
         <ProfileTitle/>
         <ul className={styles.movieContainer}>

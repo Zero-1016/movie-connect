@@ -1,11 +1,12 @@
 "use client"
 
-import { Avatar, Input, InputLabel } from "@mui/material";
+import { Input, InputLabel } from "@mui/material";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 
 import { EditButton, ProfileTitle } from "@/features/profile";
 import { userMock } from "@/shared/mock/data";
+import { ProfileImage } from "@/shared/ui";
 
 import styles from './profile-body.module.scss'
 
@@ -58,7 +59,7 @@ export function ProfileBody() {
                 </InputLabel>
             </div>
             <div className={styles.imageBox}>
-                <Avatar src={profileUrl ?? undefined} alt={nickname + "프로필 이미지"} sx={{ width: 200, height: 200 }}/>
+                <ProfileImage src={profileUrl || ""} alt={nickname + "프로필 이미지"} sx={{ width: 200, height: 200 }}/>
                 <EditButton setFile={setFile}/>
             </div>
         </div>
