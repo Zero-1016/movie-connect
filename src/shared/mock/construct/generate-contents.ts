@@ -1,6 +1,6 @@
 import { Content } from "@/shared/api/model";
 
-export function generateComments(numArrays: number): Content[] {
+export function generateContents(numArrays: number): Content[] {
     const base_url = "https://source.unsplash.com/random/300x300/?cat";
     const mockData: Content[] = [];
 

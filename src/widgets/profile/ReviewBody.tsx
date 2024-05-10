@@ -1,16 +1,17 @@
 import { MovieContentList } from "@/entities/ui";
 import { ProfileTitle } from "@/features/profile";
-import { Content } from "@/shared/api/model";
+import { generateContents } from "@/shared/mock/construct";
 
 type Props = {
-    reviewList: Content[]
+    page?: number
 }
 
-export function ReviewBody({ reviewList }: Props) {
-    return <>
+export function ReviewBody({ page = 1 }: Readonly<Props>) {
+    const contentList = generateContents(page + 9)
+    return <section>
         <ProfileTitle/>
         <div style={{ padding: "20px 0 50px" }}>
-            <MovieContentList contentList={reviewList}/>
+            <MovieContentList contentList={contentList}/>
         </div>
-    </>
+    </section>
 }

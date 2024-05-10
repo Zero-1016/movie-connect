@@ -5,7 +5,7 @@ import classNames from "classnames";
 import { ChangeEventHandler, useState } from "react";
 
 import { MovieContentList } from "@/entities/ui/MovieContentList";
-import { generateComments } from "@/shared/mock/construct";
+import { generateContents } from "@/shared/mock/construct";
 import { notoSans } from "@/shared/style";
 
 import styles from './movie-content-form.module.scss'
@@ -16,7 +16,7 @@ type Props = {
 
 export function MovieContentForm({}: Readonly<Props>) {
     const [content, setContent] = useState("")
-    const comments = generateComments(4)
+    const comments = generateContents(4)
 
     const onSubmit = () => {
 

@@ -40,11 +40,11 @@ export function MovieCard({ movieData, size = "default" }: Props) {
                     return { width: 185, height: 278, src: "" }
                 }
         }
-    }, [size])
+    }, [size, poster_path, backdrop_path])
 
     return (
         <Link href={`/i/info/${id}`} scroll={false}>
-            <motion.div whileHover={{ y: -10, scale: 1.02 , zIndex: 5}}
+            <motion.div whileHover={{ y: -10, scale: 1.02, zIndex: 5 }}
                         className={size === "default" ? styles.container : styles.smallContainer}>
                 <Image className={styles.poster} width={width} height={height}
                        src={src}
