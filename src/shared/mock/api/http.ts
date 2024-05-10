@@ -1,4 +1,3 @@
-// @ts-ignore
 import { createMiddleware } from "@mswjs/http-middleware";
 import cors from 'cors'
 import express from 'express'
