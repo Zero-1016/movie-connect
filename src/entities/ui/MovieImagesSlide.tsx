@@ -36,7 +36,7 @@ export function MovieImagesSlide({ movieId }: Readonly<Props>) {
                 {backDropList.map(backDrop => <Link key={backDrop.file_path}
                                                     href={`/i/image/${movieId}/backdrop/${backDrop.file_path}`}
                                                     scroll={false}><Image
-                    src={getImageUrl(backDrop.file_path, IMAGE_SIZE.backdrop.w300)}
+                    src={getImageUrl("backdrop", backDrop.file_path, IMAGE_SIZE.backdrop.w300)}
                     alt={"배경 이미지 미리보기"} width={280} height={140}/></Link>)}
             </ul>}
         </section>

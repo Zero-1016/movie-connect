@@ -36,3 +36,6 @@ export const IMAGE_SIZE = {
         original: "original"
     }
 } as const
+
+export type ImageType = keyof typeof IMAGE_SIZE
+export type ImageSize<T extends ImageType> = keyof typeof IMAGE_SIZE[T]

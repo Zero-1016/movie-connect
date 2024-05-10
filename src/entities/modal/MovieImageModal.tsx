@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import { IMAGE_SIZE } from "@/shared/api/constants";
 import { getImageUrl } from "@/shared/api/lib";
 import { Modal } from "@/shared/ui/Modal";
 
@@ -15,16 +14,6 @@ type Props = {
 export function MovieImageModal({
                                     imageUrl, imageType, movieId
                                 }: Props) {
-    let getSize = ""
-
-    switch (imageType) {
-        case "backdrop":
-            getSize = IMAGE_SIZE.backdrop.w1280
-            break
-        case "poster":
-            getSize = IMAGE_SIZE.poster.w500
-            break
-    }
 
     const size = {
         "backdrop": {
@@ -40,8 +29,10 @@ export function MovieImageModal({
 
     return <Modal>
         <div className={styles.container}>
-            <Image src={getImageUrl("/" + imageUrl, getSize)} alt={movieId + imageType} width={size[imageType].width}
-                   height={size[imageType].height}/>
+            <Image
+                src={imageType === "backdrop" ? getImageUrl("backdrop", "/" + imageUrl, "w1280") : getImageUrl("poster", "/" + imageUrl, "w500")}
+                alt={movieId + imageType} width={size[imageType].width}
+                height={size[imageType].height}/>
         </div>
     </Modal>
 }

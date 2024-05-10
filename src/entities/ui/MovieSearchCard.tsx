@@ -20,7 +20,7 @@ export function MovieSearchCard({ movieData }: Props) {
             <div className={styles.imageBox}>
                 <Image
                     className={styles.image}
-                    src={backdrop_path ? getImageUrl(backdrop_path, IMAGE_SIZE.backdrop.w780) : poster_path ? getImageUrl(poster_path, IMAGE_SIZE.poster.w342) : ""}
+                    src={backdrop_path ? getImageUrl("backdrop", backdrop_path, IMAGE_SIZE.backdrop.w780) : poster_path ? getImageUrl("poster", poster_path, IMAGE_SIZE.poster.w342) : ""}
                     alt={title + "배너 이미지"} width={300} height={150}/>
                 <div className={styles.backGroundLinear}/>
             </div>

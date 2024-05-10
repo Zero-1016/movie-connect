@@ -29,7 +29,7 @@ export function DetailMiddleSection({ movieId }: Readonly<Props>) {
     return <section className={styles.container}>
         <div className={styles.leftSection}>
             <Link href={`/i/image/${movieId}/poster/${poster_path}`} scroll={false}>
-                <Image className={styles.posterImage} src={getImageUrl(poster_path, IMAGE_SIZE.poster.w500)}
+                <Image className={styles.posterImage} src={getImageUrl("poster", poster_path, IMAGE_SIZE.poster.w500)}
                        alt={title + "포스터 이미지"} width={480} height={720}/>
             </Link>
         </div>

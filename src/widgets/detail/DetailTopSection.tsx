@@ -25,7 +25,7 @@ export function DetailTopSection({ movieId }: Readonly<Props>) {
 
     const { belongs_to_collection, poster_path, backdrop_path, title, original_title } = result
 
-    const imagePath = backdrop_path ? getImageUrl(backdrop_path, IMAGE_SIZE.backdrop.w1280) : getImageUrl(poster_path, IMAGE_SIZE.poster.w780)
+    const imagePath = backdrop_path ? getImageUrl("backdrop", backdrop_path, IMAGE_SIZE.backdrop.w1280) : getImageUrl("poster",poster_path, IMAGE_SIZE.poster.w780)
 
     return <section className={styles.container}>
         <div className={styles.imageContainer}>

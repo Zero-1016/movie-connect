@@ -38,8 +38,8 @@ export function MovieDetailContent({ movieId }: Readonly<Props>) {
 
     return <div className={styles.container}>
         <div className={styles.leftSection}>
-            <Image onClick={showImage} placeholder={'blur'} blurDataURL={getImageUrl(poster_path, IMAGE_SIZE.poster.w92)}
-                   src={getImageUrl(poster_path, IMAGE_SIZE.poster.w342)}
+            <Image onClick={showImage} placeholder={'blur'} blurDataURL={getImageUrl("poster",poster_path, IMAGE_SIZE.poster.w92)}
+                   src={getImageUrl("poster",poster_path, IMAGE_SIZE.poster.w342)}
                    width={220} height={330}
                    alt={title + "포스터 사진"}/>
         </div>
