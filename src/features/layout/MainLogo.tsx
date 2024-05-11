@@ -1,13 +1,17 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { SITE_PATH } from '@/shared/types'
 
 import mainLogo from '../../../public/svg/main-title-logo.svg'
 import styles from './main-logo.module.scss'
 
 export function MainLogo() {
-    return <Link href={'/home'} className={styles.container}>
-        <div className={styles.leftSection}>
-            <Image src={mainLogo} alt="메인로고" height={40} width={220}/>
-        </div>
+  return (
+    <Link href={SITE_PATH.home} className={styles.container}>
+      <div className={styles.leftSection}>
+        <Image src={mainLogo} alt="메인로고" height={40} width={220} />
+      </div>
     </Link>
+  )
 }
