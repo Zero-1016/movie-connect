@@ -5,8 +5,8 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
+import { SITE_PATH } from "@/shared/constants";
 import { quando } from '@/shared/style/quando'
-import { SITE_PATH } from '@/shared/types'
 
 import deleteSvg from '../../../public/svg/close.svg'
 import searchSvg from '../../../public/svg/serach.svg'

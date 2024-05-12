@@ -8,7 +8,7 @@ import StarIcon from '@mui/icons-material/Star'
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined'
 
 import { NavButton } from '@/features/layout/NavButton'
-import { SITE_PATH } from '@/shared/types'
+import { SITE_PATH } from "@/shared/constants";
 
 import styles from './header-nav.module.scss'
 

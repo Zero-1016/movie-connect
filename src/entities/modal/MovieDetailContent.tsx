@@ -9,7 +9,7 @@ import { MovieDetailLinkButton } from '@/entities/ui'
 import { IMAGE_SIZE } from '@/shared/api/constants'
 import { QUERY_KEY } from '@/shared/api/constants/query-key'
 import { getDetail, getImageUrl } from '@/shared/api/lib'
-import { SITE_PATH } from '@/shared/types'
+import { SITE_PATH } from "@/shared/constants";
 import { Chip } from '@/shared/ui'
 
 import styles from './movie-detail-content.module.scss'
