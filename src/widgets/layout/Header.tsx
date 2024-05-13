@@ -3,12 +3,14 @@
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 
-import { HeaderNav, HeaderSearchBar, MainLogo, UserButton } from "@/features/layout";
+import { GuestButtons, HeaderNav, HeaderSearchBar, MainLogo, UserButton } from "@/features/layout";
 
 import styles from './header.module.scss'
 
+
 export function Header() {
     const [isHeaderHidden, setIsHeaderHidden] = useState(false);
+    const isLogin = false
 
     useEffect(() => {
         const handleScroll = () => {
@@ -35,7 +37,7 @@ export function Header() {
             </div>
             <div className={styles.section}>
                 <HeaderSearchBar/>
-                <UserButton/>
+                {isLogin ? <UserButton/> : <GuestButtons/>}
             </div>
         </div>
     </header>

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { IMAGE_SIZE } from '@/shared/api/constants'
 import { getImageUrl, getMovieGenre } from '@/shared/api/lib'
 import { MovieInfo } from '@/shared/api/model/movie-info'
-import { SITE_PATH } from '@/shared/types'
+import { SITE_PATH } from "@/shared/constants";
 import { Chip } from '@/shared/ui'
 
 import infoSvg from '../../../public/svg/movie-info.svg'

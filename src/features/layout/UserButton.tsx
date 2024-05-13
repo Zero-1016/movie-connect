@@ -6,9 +6,9 @@ import MenuItem from '@mui/material/MenuItem'
 import { useRouter } from 'next/navigation'
 import { MouseEventHandler, useState } from 'react'
 
+import { SITE_PATH } from "@/shared/constants";
 import { userMock } from '@/shared/mock/data/user-mock'
 import { notoSans } from '@/shared/style'
-import { SITE_PATH } from '@/shared/types'
 import { ProfileImage } from '@/shared/ui'
 
 import styles from './user-button.module.scss'
@@ -31,7 +31,7 @@ export function UserButton() {
     if (!('id' in event.target)) return
 
     if (event.target.id === 'profile') {
-      router.push(SITE_PATH.my())
+      router.push(SITE_PATH.my)
     } else {
       logout()
     }

@@ -1,3 +1,4 @@
+export { GuestButtons } from './GuestButtons'
 export { HeaderNav } from './HeaderNav'
 export { HeaderSearchBar } from './HeaderSearchBar'
 export { MainLogo } from './MainLogo'

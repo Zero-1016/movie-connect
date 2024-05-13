@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  gap: 10px;
+
+  button {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  button:first-child {
+    background-color: #090B13;
+  }
+
+  button:last-child {
+    background-color: #101820;
+  }
+}
