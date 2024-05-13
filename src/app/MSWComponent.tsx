@@ -1,15 +1,17 @@
-"use client"
-import { useEffect } from "react";
+'use client'
+import { useEffect } from 'react'
+
+import { env } from '@/shared/types'
 
 export const MSWComponent = () => {
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
-                const { worker } = require("@/shared/mock/api")
-                worker.start({ onUnhandledRequest: "bypass" })
-            }
-        }
-    }, [])
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if (env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
+        const { worker } = require('@/shared/mock/api')
+        worker.start({ onUnhandledRequest: 'bypass' })
+      }
+    }
+  }, [])
 
-    return null
+  return null
 }
