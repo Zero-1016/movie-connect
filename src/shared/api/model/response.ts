@@ -1,108 +1,97 @@
-import { Content } from "@/shared/api/model/content";
-import { Genre } from "@/shared/api/model/genre";
-import { MovieInfo } from '@/shared/api/model/movie-info'
+import { Content, ProfileContent } from '@/shared/api/model/content'
+import { Genre } from '@/shared/api/model/genre'
+import { MovieInfo, MyLikeMovie } from '@/shared/api/model/movie-info'
 
-export interface Backdrop {
-    aspect_ratio: number
-    height: number
-    iso_639_1?: string
-    file_path: string
-    vote_average: number
-    vote_count: number
-    width: number
+export type Pagination<T> = {
+  results: T[]
+  page: number
+  total_pages: number
+  total_results: number
 }
 
-export interface Logo {
-    aspect_ratio: number
-    height: number
-    iso_639_1: string
-    file_path: string
-    vote_average: number
-    vote_count: number
-    width: number
+export type ImageDetails = {
+  aspect_ratio: number
+  height: number
+  iso_639_1?: string
+  file_path: string
+  vote_average: number
+  vote_count: number
+  width: number
 }
 
-export interface Poster {
-    aspect_ratio: number
-    height: number
-    iso_639_1?: string
-    file_path: string
-    vote_average: number
-    vote_count: number
-    width: number
+export type Backdrop = ImageDetails
+
+export type Logo = ImageDetails & {
+  iso_639_1: string
 }
+
+export type Poster = ImageDetails
 
 export interface BelongsToCollection {
-    id: number
-    name: string
-    poster_path: string
-    backdrop_path: string
+  id: number
+  name: string
+  poster_path: string
+  backdrop_path: string
 }
 
 export interface ProductionCompany {
-    id: number
-    logo_path: string
-    name: string
-    origin_country: string
+  id: number
+  logo_path: string
+  name: string
+  origin_country: string
 }
 
 export interface ProductionCountry {
-    iso_3166_1: string
-    name: string
+  iso_3166_1: string
+  name: string
 }
 
 export interface SpokenLanguage {
-    english_name: string
-    iso_639_1: string
-    name: string
+  english_name: string
+  iso_639_1: string
+  name: string
 }
 
-
-export type MoviesResponse = {
-    page: number
-    results: MovieInfo[]
-    total_pages: number
-    total_results: number
-}
+export type MoviesResponse = Pagination<MovieInfo>
 
 export interface DetailResponse {
-    adult: boolean
-    backdrop_path: string
-    belongs_to_collection?: BelongsToCollection
-    budget: number
-    genres: Genre[]
-    homepage: string
-    id: number
-    imdb_id: string
-    origin_country: string[]
-    original_language: string
-    original_title: string
-    overview: string
-    popularity: number
-    poster_path: string
-    production_companies: ProductionCompany[]
-    production_countries: ProductionCountry[]
-    release_date: string
-    revenue: number
-    runtime: number
-    spoken_languages: SpokenLanguage[]
-    status: string
-    tagline: string
-    title: string
-    video: boolean
-    vote_average: number
-    vote_count: number
+  adult: boolean
+  backdrop_path: string
+  belongs_to_collection?: BelongsToCollection
+  budget: number
+  genres: Genre[]
+  homepage: string
+  id: number
+  imdb_id: string
+  origin_country: string[]
+  original_language: string
+  original_title: string
+  overview: string
+  popularity: number
+  poster_path: string
+  production_companies: ProductionCompany[]
+  production_countries: ProductionCountry[]
+  release_date: string
+  revenue: number
+  runtime: number
+  spoken_languages: SpokenLanguage[]
+  status: string
+  tagline: string
+  title: string
+  video: boolean
+  vote_average: number
+  vote_count: number
 }
 
 export interface ImageResponse {
-    backdrops: Backdrop[]
-    id: number
-    logos: Logo[]
-    posters: Poster[]
+  backdrops: Backdrop[]
+  id: number
+  logos: Logo[]
+  posters: Poster[]
 }
 
-export interface ContentResponse {
-    data: Content[]
-    total: number
-    curpage: number
-}
+export type ContentResponse = Pagination<Content>
+
+export type MyBookMarkResponse = Pagination<MyLikeMovie>
+
+export type MyReviewResponse = Pagination<ProfileContent>

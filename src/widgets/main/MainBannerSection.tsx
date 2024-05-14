@@ -1,13 +1,18 @@
-import { Suspense } from "react";
+import { Suspense } from 'react'
 
-import { MovieBanner } from "@/entities/ui";
+import { MovieBanner } from '@/entities/ui'
+import RQProvider from '@/shared/lib/react-query/RQProvider'
 
 import styles from './movie-banner-section.module.scss'
 
 export function MainBannerSection() {
-    return <section className={styles.movieContainer}>
-        <Suspense fallback={<div className={styles.movieBannerFallback}/>}>
-            <MovieBanner/>
+  return (
+    <RQProvider>
+      <section className={styles.movieContainer}>
+        <Suspense fallback={<div className={styles.movieBannerFallback} />}>
+          <MovieBanner />
         </Suspense>
-    </section>
+      </section>
+    </RQProvider>
+  )
 }
