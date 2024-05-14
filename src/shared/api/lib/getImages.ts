@@ -5,15 +5,14 @@ import { QueryFunction } from '@tanstack/react-query'
 
 import { QUERY_KEY } from '@/shared/api/constants/query-key'
 import { ImageResponse } from '@/shared/api/model'
-import { env } from '@/shared/types'
 
 export const getImages: QueryFunction<ImageResponse, [string, string, movieId: string]> = async ({ queryKey }) => {
   const [_1, _2, movieId] = queryKey
-  const res = await fetch(`${env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/${movieId}/images?languages=en-EN`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/${movieId}/images?languages=en-EN`, {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: `Bearer ${env.NEXT_PUBLIC_TMDB_ACCESS_TOKEN}`,
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_TMDB_ACCESS_TOKEN}`,
     },
     next: {
       tags: QUERY_KEY.images(movieId),
