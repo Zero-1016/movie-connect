@@ -1,7 +1,7 @@
 import { MovieImageModal } from '@/entities/modal'
 
 type Props = {
-  params: { info: [string, 'poster' | 'backdrop', string] }
+  params: { info: [movieId: string, 'poster' | 'backdrop', imageUrl: string] }
 }
 
 export default function Page({ params }: Props) {

@@ -23,22 +23,18 @@ export function MovieImageModal({ imageUrl, imageType, movieId }: Props) {
     },
   }
 
+  const imageSrc =
+    imageType === 'backdrop'
+      ? getImageUrl(imageType, '/' + imageUrl, 'w1280')
+      : getImageUrl(imageType, '/' + imageUrl, 'w500')
+
+  console.log(imageSrc)
+
   return (
     <Modal>
-      <Modal.Content>
-        <div className={styles.container}>
-          <Image
-            src={
-              imageType === 'backdrop'
-                ? getImageUrl('backdrop', '/' + imageUrl, 'w1280')
-                : getImageUrl('poster', '/' + imageUrl, 'w500')
-            }
-            alt={movieId + imageType}
-            width={size[imageType].width}
-            height={size[imageType].height}
-          />
-        </div>
-      </Modal.Content>
+      <div className={styles.container}>
+        <Image src={imageSrc} alt={movieId + imageType} width={size[imageType].width} height={size[imageType].height} />
+      </div>
     </Modal>
   )
 }

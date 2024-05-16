@@ -9,10 +9,8 @@ type Props = {
 export function DetailBottomSection({ movieId }: Props) {
   return (
     <section>
-      <Suspense>
+      <Suspense fallback={null}>
         <MovieImagesSlide movieId={movieId} />
-      </Suspense>
-      <Suspense>
         <MovieContentForm movieId={movieId} />
       </Suspense>
     </section>

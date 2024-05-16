@@ -1,60 +1,23 @@
-'use client'
+import { PropsWithChildren } from 'react'
 
-import Image from 'next/image'
-import { useRouter } from 'next/navigation'
-import { PropsWithChildren, useEffect } from 'react'
-
-import { SITE_PATH } from '@/shared/constants'
 import RQProvider from '@/shared/lib/react-query/RQProvider'
-import { getScrollbarWidth } from '@/shared/lib/util'
+import { CloseButton } from '@/shared/ui/CloseButton'
+import { ModalBackGround } from '@/shared/ui/ModalBackGround'
 
 import styles from './modal.module.scss'
 
-function Content({ children }: PropsWithChildren) {
-  const onInnerClick = (e: React.MouseEvent) => {
-    e.stopPropagation()
-  }
-
-  return (
-    <div onClick={onInnerClick} className={styles.modalContent}>
-      {children}
-    </div>
-  )
+type Props = {
+  isClose?: boolean
 }
 
-function ModalBackGround({ children }: Readonly<PropsWithChildren>) {
-  const router = useRouter()
-  const history = typeof window !== 'undefined' ? window.history : []
-
-  useEffect(() => {
-    const width = getScrollbarWidth()
-
-    if (Object.is(width, undefined)) return
-
-    document.body.style.overflow = 'hidden'
-    document.body.style.marginRight = `${width}px`
-    return () => {
-      document.body.style.overflow = 'auto'
-      document.body.style.marginRight = '0px'
-    }
-  }, [])
-
-  const onClickBack = () => {
-    if (history.length) {
-      router.back()
-    } else {
-      router.push(SITE_PATH.home, { scroll: true })
-    }
-  }
-
+export function Modal({ children, isClose = false }: Readonly<PropsWithChildren<Props>>) {
   return (
-    <RQProvider>
-      <button className={styles.container} onClick={onClickBack}>
-        <Image className={styles.closeButton} src="/public/svg/close.svg" alt="닫기 버튼" />
-        {children}
-      </button>
-    </RQProvider>
+    <section className={styles.container}>
+      <ModalBackGround />
+      {isClose && <CloseButton />}
+      <RQProvider>
+        <div className={styles.content}>{children}</div>
+      </RQProvider>
+    </section>
   )
 }
-
-export const Modal = Object.assign(ModalBackGround, { Content })
