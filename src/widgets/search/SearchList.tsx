@@ -30,10 +30,10 @@ export function SearchList({ keyword }: Readonly<Props>) {
   })
 
   useEffect(() => {
-    if (inView && !isFetching) {
-      fetchNextPage()
+    if (inView && hasNextPage && !isFetching) {
+      fetchNextPage().catch(err => console.error('Error fetching next page:', err))
     }
-  }, [inView, isFetching, fetchNextPage])
+  }, [inView, isFetching, fetchNextPage, hasNextPage])
 
   const searchResult = data?.pages.flatMap(item => item.results)
 

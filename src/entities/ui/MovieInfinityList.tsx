@@ -19,7 +19,7 @@ type Props = {
 }
 
 export function MovieInfinityList(props: Readonly<Props>) {
-  const { data, hasNextPage, fetchNextPage } = useSuspenseInfiniteQuery({
+  const { data, hasNextPage, fetchNextPage, isFetching } = useSuspenseInfiniteQuery({
     queryKey: props.queryKey,
     queryFn: ({ pageParam }) => props.qureyFn({ pageParam }),
     initialPageParam: 1,
@@ -30,8 +30,10 @@ export function MovieInfinityList(props: Readonly<Props>) {
   const { ref, inView } = useInView({ delay: 1000 })
 
   useEffect(() => {
-    if (inView && hasNextPage) fetchNextPage()
-  }, [inView, fetchNextPage, hasNextPage])
+    if (inView && hasNextPage && !isFetching) {
+      fetchNextPage().catch(err => console.error('Error fetching next page:', err))
+    }
+  }, [inView, isFetching, fetchNextPage, hasNextPage])
 
   const result = data.pages.flatMap(item => item.results)
 

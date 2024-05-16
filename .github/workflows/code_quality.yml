@@ -42,6 +42,6 @@ jobs:
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@v2024.1
         with:
-          config: qodana.yaml  # Use the configuration file
+          config: ../../qodana.yaml  # Use the configuration file
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
