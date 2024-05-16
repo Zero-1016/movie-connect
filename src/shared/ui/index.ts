@@ -1,5 +1,8 @@
 export { Button } from './Button'
 export { Chip } from './Chip'
+export { DetailLinkButton } from './DetailLinkButton'
+export { HomeButton } from './HomeButton'
 export { Modal } from './Modal'
 export { ProfileImage } from './ProfileImage'
+export { RQProvider } from './RQProvider'
 export { YoutubePlayer } from './YoutubePlayer'

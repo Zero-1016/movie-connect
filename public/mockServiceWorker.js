@@ -198,7 +198,7 @@ async function getResponse(event, client, requestId) {
     return passthrough()
   }
 
-  // Bypass initial page load requests (i.e. static assets).
+  // Bypass initial pages load requests (i.e. static assets).
   // The absence of the immediate/parent client in the map of the active clients
   // means that MSW hasn't dispatched the "MOCK_ACTIVATE" event yet
   // and is not ready to handle requests.

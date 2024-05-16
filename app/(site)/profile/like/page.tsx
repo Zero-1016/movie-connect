@@ -1,4 +1,4 @@
-import { LikeBody } from '@/widgets/profile'
+import { LikeBody } from '@/widgets/profile/section'
 
 type Props = {
   searchParams: {

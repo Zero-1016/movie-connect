@@ -1,1 +1,0 @@
-export { useTextInterval } from './useTitleInterval'

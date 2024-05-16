@@ -1,5 +1,5 @@
-import { ProfilePage } from '@/views'
+import { ProfileBody } from '@/widgets/profile/section'
 
 export default function Page() {
-  return <ProfilePage />
+  return <ProfileBody />
 }

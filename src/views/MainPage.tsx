@@ -1,10 +1,10 @@
-import { MainBannerSection, MainList } from '@/widgets/main'
+import { MainBottomSection, MainTopSection } from '@/widgets/main/section'
 
 export function MainPage() {
   return (
     <>
-      <MainBannerSection />
-      <MainList />
+      <MainTopSection />
+      <MainBottomSection />
     </>
   )
 }

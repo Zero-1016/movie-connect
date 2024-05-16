@@ -1,4 +1,4 @@
-import { ReviewBody } from '@/widgets/profile'
+import { ReviewBody } from '@/widgets/profile/section'
 
 type Props = {
   searchParams: {

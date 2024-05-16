@@ -1,4 +1,4 @@
-import { SignUpModal } from '@/entities/modal'
+import { SignUpModal } from '@/widgets/auth'
 
 export default function Page() {
   return <SignUpModal />

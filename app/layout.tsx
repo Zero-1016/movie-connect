@@ -3,7 +3,7 @@ import './global.scss'
 import type { Metadata } from 'next'
 import { ReactNode } from 'react'
 
-import Provider from '@/app/Provider'
+import Provider from '@/app/provider/Provider'
 
 export const metadata: Metadata = {
   title: 'Movie Connect',

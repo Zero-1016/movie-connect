@@ -1,1 +1,1 @@
-export { useProfilePath } from './useProfilePath'
+export { useImageOnChange } from './useImageOnChange'

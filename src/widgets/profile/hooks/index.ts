@@ -1,0 +1,1 @@
+export { useGetTitle } from './useGetTitle'

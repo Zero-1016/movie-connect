@@ -1,16 +1,10 @@
-'use client'
-
-import { Player } from '@lottiefiles/react-lottie-player'
-
-import { NotFoundFooter } from '@/widgets/not-found'
-
-import lottieJson from '../../public/lottie/movie-animation.json'
+import { NotFoundBottom, NotFoundTop } from '@/widgets/not-found/section'
 
 export function NotFoundPage() {
   return (
     <section>
-      <Player speed={2} autoplay loop src={lottieJson} style={{ width: 700, height: 600 }} />
-      <NotFoundFooter />
+      <NotFoundTop />
+      <NotFoundBottom />
     </section>
   )
 }

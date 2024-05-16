@@ -1,1 +1,0 @@
-export { NotFoundFooter } from './NotFoundFooter'

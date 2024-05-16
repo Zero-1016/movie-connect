@@ -1,8 +1,0 @@
-export type { Content } from './content'
-export type { Dates } from './date'
-export type { Genre } from './genre'
-export type { MovieInfo } from './movie-info'
-export type { MovieRequest } from './request'
-export type * from './response'
-export type { User } from './user'
-export type { Videos } from './video-info'

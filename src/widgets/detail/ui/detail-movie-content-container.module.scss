@@ -1,0 +1,18 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 100px;
+}
+
+.subTitle {
+  padding: 40px 0 20px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 200%;
+}
+
+.commentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

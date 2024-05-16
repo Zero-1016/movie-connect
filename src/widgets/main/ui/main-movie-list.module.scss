@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.listPadding {
+  padding-top: 20px;
+}
+
+.containerSkeleton {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 492px;
+}
+
+.movieTitle {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 150%;
+}
+
+.movieTitleSkeleton {
+  position: relative;
+  line-height: 150%;
+  height: 36px;
+  width: 200px;
+}
+
+.movieSubTitle {
+  position: relative;
+  width: 400px;
+  height: 20px;
+  font-size: 16px;
+  line-height: 120%;
+}
+
+.movieSubTitleSkeleton {
+  position: relative;
+  width: 300px;
+  height: 20px;
+}
+
+.listHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.listHeaderSkeleton {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.listHeaderFlex {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.linkSkeleton {
+  position: relative;
+  height: 20px;
+  width: 70px;
+}
+
+.movieList {
+  margin: 0;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  list-style: none;
+  gap: 26px;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

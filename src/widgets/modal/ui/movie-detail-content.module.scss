@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  padding: 0px 10px;
+  gap: 20px;
+  height: 100%;
+}
+
+.leftSection {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.movieTitle {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+
+.rightSection .inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.description {
+  font-size: 16px;
+  overflow: hidden;
+  line-height: 140%;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.chipBox {
+  display: flex;
+  gap: 10px;
+}
+
+.ratingBox {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}

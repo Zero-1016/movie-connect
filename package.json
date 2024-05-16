@@ -8,8 +8,6 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
     "format:fix": "prettier --write"
   },
   "lint-staged": {
@@ -41,21 +39,10 @@
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.10.0",
     "react-youtube": "^10.1.0",
-    "sass": "^1.75.0",
-    "storybook": "8.0.6"
+    "sass": "^1.75.0"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "1.2.26",
     "@next/eslint-plugin-next": "^14.1.4",
-    "@storybook/addon-essentials": "^8.0.6",
-    "@storybook/addon-interactions": "^8.0.6",
-    "@storybook/addon-links": "^8.0.6",
-    "@storybook/addon-onboarding": "^8.0.6",
-    "@storybook/addon-styling-webpack": "^1.0.0",
-    "@storybook/blocks": "^8.0.6",
-    "@storybook/nextjs": "^8.0.6",
-    "@storybook/react": "^8.0.6",
-    "@storybook/test": "^8.0.6",
     "@tanstack/eslint-plugin-query": "^5.28.11",
     "@types/node": "^20.12.5",
     "@types/react": "^18.2.74",

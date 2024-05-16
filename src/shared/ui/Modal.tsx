@@ -1,8 +1,8 @@
 import { PropsWithChildren } from 'react'
 
-import RQProvider from '@/shared/lib/react-query/RQProvider'
 import { CloseButton } from '@/shared/ui/CloseButton'
 import { ModalBackGround } from '@/shared/ui/ModalBackGround'
+import { RQProvider } from '@/shared/ui/RQProvider'
 
 import styles from './modal.module.scss'
 

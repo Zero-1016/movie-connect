@@ -1,8 +1,8 @@
-import { CircularProgress } from '@mui/material'
 import { Suspense } from 'react'
 
-import RQProvider from '@/shared/lib/react-query/RQProvider'
-import { SearchHeader, SearchList } from '@/widgets/search'
+import { RQProvider } from '@/shared/ui'
+import { SearchBottomSection, SearchTopSection } from '@/widgets/search/section'
+import { SearchBottomSkeleton } from '@/widgets/search/skeleton'
 
 type Props = {
   keyword: string
@@ -10,27 +10,13 @@ type Props = {
 
 export function SearchPage({ keyword }: Props) {
   return (
-    <RQProvider>
-      <div style={{ minHeight: 'calc(100vh - 264px)' }}>
-        <SearchHeader keyword={keyword} />
-        <Suspense
-          fallback={
-            <div
-              style={{
-                height: '200px',
-                display: 'flex',
-                justifyContent: 'center',
-                justifyItems: 'center',
-                alignItems: 'center',
-              }}
-            >
-              <CircularProgress />
-            </div>
-          }
-        >
-          <SearchList keyword={keyword} />
+    <div style={{ minHeight: 'calc(100vh - 264px)' }}>
+      <SearchTopSection keyword={keyword} />
+      <RQProvider>
+        <Suspense fallback={<SearchBottomSkeleton />}>
+          <SearchBottomSection keyword={keyword} />
         </Suspense>
-      </div>
-    </RQProvider>
+      </RQProvider>
+    </div>
   )
 }

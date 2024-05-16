@@ -1,0 +1,1 @@
+export { DetailContentForm } from './DetailContentForm'

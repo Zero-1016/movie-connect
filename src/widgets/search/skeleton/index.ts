@@ -1,0 +1,1 @@
+export { SearchBottomSkeleton } from './SearchBottomSkeleton'

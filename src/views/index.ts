@@ -1,7 +1,6 @@
 export { DetailPage } from './DetailPage'
-export { InfinityListPage } from './InfinityListPage'
 export { LandingPage } from './LandingPage'
+export { ListPage } from './listPage'
 export { MainPage } from './MainPage'
 export { NotFoundPage } from './NotFoundPage'
-export { ProfilePage } from './ProfilePage'
 export { SearchPage } from './SearchPage'

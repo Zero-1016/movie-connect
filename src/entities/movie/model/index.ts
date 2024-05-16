@@ -1,0 +1,7 @@
+export type { Content } from './content'
+export type { Genre, GenresName } from './genre'
+export type { Backdrop, ImageDetails, ImageSize, ImageType } from './image'
+export type { Movie } from './movie'
+export type { MovieRequest } from './request'
+export type { ContentResponse, DetailResponse, ImageResponse, MoviesResponse } from './response'
+export type { Videos } from './video'

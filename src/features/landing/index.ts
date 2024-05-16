@@ -1,5 +1,0 @@
-export { GithubIcon } from './GithubIcon'
-export { HomeButton } from './HomeButton'
-export { useTextInterval } from './hooks'
-export { LandingLeftSection } from './LandingLeftSection'
-export { LandingRightSection } from './LandingRightSection'
