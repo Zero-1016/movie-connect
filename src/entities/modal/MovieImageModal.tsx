@@ -28,10 +28,8 @@ export function MovieImageModal({ imageUrl, imageType, movieId }: Props) {
       ? getImageUrl(imageType, '/' + imageUrl, 'w1280')
       : getImageUrl(imageType, '/' + imageUrl, 'w500')
 
-  console.log(imageSrc)
-
   return (
-    <Modal>
+    <Modal isClose>
       <div className={styles.container}>
         <Image src={imageSrc} alt={movieId + imageType} width={size[imageType].width} height={size[imageType].height} />
       </div>

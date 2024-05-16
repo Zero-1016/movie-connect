@@ -12,9 +12,11 @@ type Props = {
 export function MovieDetailModal({ movieId }: Props) {
   return (
     <Modal isClose>
-      <Suspense fallback={<MovieDetailContentSkeleton />}>
-        <MovieDetailContent movieId={movieId} />
-      </Suspense>
+      <Modal.Content>
+        <Suspense fallback={<MovieDetailContentSkeleton />}>
+          <MovieDetailContent movieId={movieId} />
+        </Suspense>
+      </Modal.Content>
     </Modal>
   )
 }

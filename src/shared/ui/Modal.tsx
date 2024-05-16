@@ -6,18 +6,22 @@ import { ModalBackGround } from '@/shared/ui/ModalBackGround'
 
 import styles from './modal.module.scss'
 
+function Content({ children }: PropsWithChildren) {
+  return <div className={styles.content}>{children}</div>
+}
+
 type Props = {
   isClose?: boolean
 }
 
-export function Modal({ children, isClose = false }: Readonly<PropsWithChildren<Props>>) {
+function ModalContainer({ children, isClose = false }: Readonly<PropsWithChildren<Props>>) {
   return (
     <section className={styles.container}>
       <ModalBackGround />
       {isClose && <CloseButton />}
-      <RQProvider>
-        <div className={styles.content}>{children}</div>
-      </RQProvider>
+      <RQProvider>{children}</RQProvider>
     </section>
   )
 }
+
+export const Modal = Object.assign(ModalContainer, { Content })
