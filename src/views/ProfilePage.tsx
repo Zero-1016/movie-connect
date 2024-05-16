@@ -1,5 +1,5 @@
-import { ProfileBody } from "@/widgets/profile";
+import { ProfileBody } from '@/widgets/profile'
 
 export function ProfilePage() {
-  return <ProfileBody/>
+  return <ProfileBody />
 }

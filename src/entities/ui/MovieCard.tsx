@@ -25,7 +25,11 @@ export function MovieCard({ movieData, size = 'default' }: Props) {
     switch (size) {
       case 'default':
         if (poster_path) {
-          return { width: 280, height: 420, src: getImageUrl('poster', poster_path, IMAGE_SIZE.poster.w342) }
+          return {
+            width: 280,
+            height: 420,
+            src: getImageUrl('poster', poster_path, IMAGE_SIZE.poster.w342),
+          }
         } else if (backdrop_path) {
           return {
             width: 280,
@@ -37,7 +41,11 @@ export function MovieCard({ movieData, size = 'default' }: Props) {
         }
       case 'small':
         if (poster_path) {
-          return { width: 185, height: 278, src: getImageUrl('poster', poster_path, IMAGE_SIZE.poster.w185) }
+          return {
+            width: 185,
+            height: 278,
+            src: getImageUrl('poster', poster_path, IMAGE_SIZE.poster.w185),
+          }
         } else if (backdrop_path) {
           return {
             width: 185,

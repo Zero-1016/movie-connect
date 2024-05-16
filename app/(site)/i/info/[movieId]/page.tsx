@@ -1,16 +1,17 @@
-"use client"
+'use client'
 
-import { MovieDetailModal } from "@/entities/modal";
+import { MovieDetailModal } from '@/entities/modal'
 
 type Props = {
-    params: {
-        movieId: string
-    }
+  params: {
+    movieId: string
+  }
 }
 
 export default function Page({ params: { movieId } }: Props) {
-
-    return <div style={{ position: 'fixed', zIndex: 9999, top: 0, left: 0 }}>
-        <MovieDetailModal movieId={movieId}/>
+  return (
+    <div style={{ position: 'fixed', zIndex: 9999, top: 0, left: 0 }}>
+      <MovieDetailModal movieId={movieId} />
     </div>
+  )
 }

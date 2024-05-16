@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { SITE_PATH } from "@/shared/constants";
+import { SITE_PATH } from '@/shared/constants'
 
 import mainLogo from '../../../public/svg/main-title-logo.svg'
 import styles from './main-logo.module.scss'

@@ -6,7 +6,7 @@ import MenuItem from '@mui/material/MenuItem'
 import { useRouter } from 'next/navigation'
 import { MouseEventHandler, useState } from 'react'
 
-import { SITE_PATH } from "@/shared/constants";
+import { SITE_PATH } from '@/shared/constants'
 import { userMock } from '@/shared/mock/data/user-mock'
 import { notoSans } from '@/shared/style'
 import { ProfileImage } from '@/shared/ui'

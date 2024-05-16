@@ -1,5 +1,5 @@
-import { SignUpModal } from "@/entities/modal";
+import { SignUpModal } from '@/entities/modal'
 
 export default function Page() {
-    return <SignUpModal/>
+  return <SignUpModal />
 }

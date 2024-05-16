@@ -1,4 +1,4 @@
 export interface MovieRequest {
-    pageParam: number,
-    queryKey?: [string, string, string]
+  pageParam: number
+  queryKey?: [string, string, string]
 }

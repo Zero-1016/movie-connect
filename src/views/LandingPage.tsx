@@ -1,10 +1,10 @@
-import { LandingBackGround, LandingContents } from "@/widgets/landing";
+import { LandingBackGround, LandingContents } from '@/widgets/landing'
 
 export function LandingPage() {
-    return (
-        <>
-            <LandingBackGround/>
-            <LandingContents/>
-        </>
-    )
+  return (
+    <>
+      <LandingBackGround />
+      <LandingContents />
+    </>
+  )
 }

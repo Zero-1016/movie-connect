@@ -1,23 +1,11 @@
 {
-  "plugins": [
-    "unused-imports",
-    "simple-import-sort",
-    "@tanstack/query"
-  ],
-  "extends": [
-    "next",
-    "prettier",
-    "plugin:storybook/recommended"
-  ],
+  "plugins": ["unused-imports", "simple-import-sort", "@tanstack/query"],
+  "extends": ["next", "prettier", "plugin:storybook/recommended"],
   "rules": {
     "no-console": [
       "warn",
       {
-        "allow": [
-          "warn",
-          "error",
-          "info"
-        ]
+        "allow": ["warn", "error", "info"]
       }
     ],
     "unused-imports/no-unused-imports": "error",
@@ -36,7 +24,5 @@
     "ft-flow/no-types-missing-file-annotation": 0,
     "ft-flow/generic-spacing": 0
   },
-  "ignorePatterns": [
-    "**/*.d.ts"
-  ]
+  "ignorePatterns": ["**/*.d.ts"]
 }

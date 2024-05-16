@@ -18,10 +18,10 @@ type Props = {
   className?: string
 }
 
-export function MovieInfinityList({ qureyFn, queryKey, className }: Readonly<Props>) {
+export function MovieInfinityList(props: Readonly<Props>) {
   const { data, hasNextPage, fetchNextPage } = useSuspenseInfiniteQuery({
-    queryKey: queryKey,
-    queryFn: ({ pageParam }) => qureyFn({ pageParam }),
+    queryKey: props.queryKey,
+    queryFn: ({ pageParam }) => props.qureyFn({ pageParam }),
     initialPageParam: 1,
     getNextPageParam(_1, _2, _3, allPageParams) {
       return allPageParams.length + 1
@@ -37,7 +37,7 @@ export function MovieInfinityList({ qureyFn, queryKey, className }: Readonly<Pro
 
   return (
     <>
-      <ul className={classNames(styles.container, className)}>
+      <ul className={classNames(styles.container, props.className)}>
         {result.map(value => (
           <li key={value.id} className={styles.movieCard}>
             <MovieCard movieData={value} />

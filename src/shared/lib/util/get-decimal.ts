@@ -1,3 +1,3 @@
 export function getDecimal(number: number) {
-    return Math.floor(number * 10) / 10
+  return Math.floor(number * 10) / 10
 }

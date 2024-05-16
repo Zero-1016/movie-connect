@@ -1,11 +1,11 @@
-import { LikeBody } from "@/widgets/profile";
+import { LikeBody } from '@/widgets/profile'
 
 type Props = {
-    searchParams: {
-        page: string
-    }
+  searchParams: {
+    page: string
+  }
 }
 
-export default function Page({ searchParams: { page = "1" } }: Props) {
-    return <LikeBody page={page}/>
+export default function Page({ searchParams: { page = '1' } }: Props) {
+  return <LikeBody page={page} />
 }

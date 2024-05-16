@@ -1,18 +1,20 @@
-import { MovieContentList } from "@/entities/ui";
-import { ProfileTitle } from "@/features/profile";
-import { generateContents } from "@/shared/mock/construct";
+import { MovieContentList } from '@/entities/ui'
+import { ProfileTitle } from '@/features/profile'
+import { generateContents } from '@/shared/mock/construct'
 
 type Props = {
-    page: string
+  page: string
 }
 
 export function FamousBody({}: Readonly<Props>) {
-    const contentList = generateContents(10)
-    
-    return <section>
-        <ProfileTitle/>
-        <div style={{ padding: "20px 0 50px" }}>
-            <MovieContentList contentList={contentList}/>
-        </div>
+  const contentList = generateContents(10)
+
+  return (
+    <section>
+      <ProfileTitle />
+      <div style={{ padding: '20px 0 50px' }}>
+        <MovieContentList contentList={contentList} />
+      </div>
     </section>
+  )
 }

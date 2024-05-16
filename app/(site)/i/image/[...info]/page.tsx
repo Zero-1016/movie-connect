@@ -1,9 +1,9 @@
-import { MovieImageModal } from "@/entities/modal";
+import { MovieImageModal } from '@/entities/modal'
 
 type Props = {
-    params: { info: [string, "backdrop" | "poster", string] }
+  params: { info: [string, 'backdrop' | 'poster', string] }
 }
 
 export default function Page({ params }: Props) {
-    return <MovieImageModal movieId={params.info[0]} imageType={params.info[1]} imageUrl={params.info[2]}/>
+  return <MovieImageModal movieId={params.info[0]} imageType={params.info[1]} imageUrl={params.info[2]} />
 }

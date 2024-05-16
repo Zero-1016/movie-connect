@@ -1,11 +1,11 @@
-import { FamousBody } from "@/widgets/profile";
+import { FamousBody } from '@/widgets/profile'
 
 type Props = {
-    searchParams: {
-        page: string
-    }
+  searchParams: {
+    page: string
+  }
 }
 
-export default function Page({ searchParams: { page = "1" } }: Props) {
-    return <FamousBody page={page}/>
+export default function Page({ searchParams: { page = '1' } }: Props) {
+  return <FamousBody page={page} />
 }

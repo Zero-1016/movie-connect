@@ -1,19 +1,21 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react'
 
-import { Footer, Header } from "@/widgets/layout";
+import { Footer, Header } from '@/widgets/layout'
 
 import styles from './layout.module.scss'
 
 type Props = {
-    children: ReactNode,
-    modal: ReactNode
+  children: ReactNode
+  modal: ReactNode
 }
 
 export default function Layout({ children, modal }: Props) {
-    return <main className={styles.container}>
-        {modal}
-        <Header/>
-        {children}
-        <Footer/>
+  return (
+    <main className={styles.container}>
+      {modal}
+      <Header />
+      {children}
+      <Footer />
     </main>
+  )
 }
