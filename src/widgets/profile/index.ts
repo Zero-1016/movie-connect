@@ -1,0 +1,6 @@
+export { ProfileNavBar } from './LeftNavSection'
+export { ProfileTitle } from './ProfileTitle'
+export { FamousBody } from './RightFamousSection'
+export { LikeBody } from './RightLikeBody'
+export { ProfileBody } from './RightProfileSection'
+export { ReviewBody } from './RightReviewSection'

@@ -1,6 +1,6 @@
 'use client'
 
-import { MovieDetailModal } from '@/widgets/modal/section'
+import { MovieDetailModal } from '@/widgets/modal'
 
 type Props = {
   params: {

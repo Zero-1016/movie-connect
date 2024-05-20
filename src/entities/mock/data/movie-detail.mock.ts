@@ -42,13 +42,13 @@ export const movieDetailMock = {
   production_companies: [
     {
       id: 521,
-      logo_path: '/kP7t6RwGz2AvvTkvnI1uteEwHet.png',
+      logo_path: '/kP7t6RwGz2AvvTkvnI1uteEwHet.jpg',
       name: 'DreamWorks Animation',
       origin_country: 'US',
     },
     {
       id: 33,
-      logo_path: '/8lvHyhjr8oUKOOy2dKXoALWKdp0.png',
+      logo_path: '/8lvHyhjr8oUKOOy2dKXoALWKdp0.jpg',
       name: 'Universal Pictures',
       origin_country: 'US',
     },

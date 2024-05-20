@@ -1,4 +1,4 @@
-import { NotFoundBottom, NotFoundTop } from '@/widgets/not-found/section'
+import { NotFoundBottom, NotFoundTop } from '@/widgets/not-found'
 
 export function NotFoundPage() {
   return (

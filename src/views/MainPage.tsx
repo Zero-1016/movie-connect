@@ -1,4 +1,4 @@
-import { MainBottomSection, MainTopSection } from '@/widgets/main/section'
+import { MainBottomSection, MainTopSection } from '@/widgets/main'
 
 export function MainPage() {
   return (

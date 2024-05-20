@@ -1,8 +1,8 @@
 import { Suspense } from 'react'
 
+import { SearchInfinityList } from '@/entities/movie/ui'
 import { RQProvider } from '@/shared/ui'
-import { SearchBottomSection, SearchTopSection } from '@/widgets/search/section'
-import { SearchBottomSkeleton } from '@/widgets/search/skeleton'
+import { SearchBottomSkeleton, SearchTopSection } from '@/widgets/search'
 
 type Props = {
   keyword: string
@@ -14,7 +14,7 @@ export function SearchPage({ keyword }: Props) {
       <SearchTopSection keyword={keyword} />
       <RQProvider>
         <Suspense fallback={<SearchBottomSkeleton />}>
-          <SearchBottomSection keyword={keyword} />
+          <SearchInfinityList keyword={keyword} />
         </Suspense>
       </RQProvider>
     </div>

@@ -1,0 +1,1 @@
+export { OneMovieContent } from './OneMovieContent'

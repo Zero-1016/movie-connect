@@ -1,1 +1,0 @@
-export { SearchBottomSkeleton } from './SearchBottomSkeleton'

@@ -1,6 +1,5 @@
 import { MovieType } from '@/entities/movie/model/movie'
-import { InfinityListAdapter } from '@/widgets/list/section/InfinityListAdapter'
-import { InfinityListHeader } from '@/widgets/list/section/InfinityListHeader'
+import { InfinityListAdapter, InfinityListHeader } from '@/widgets/list'
 
 type Props = {
   type: MovieType

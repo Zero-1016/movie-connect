@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import { Footer, Header } from '@/widgets/layout/section'
+import { Outlet } from '@/widgets/layout'
 
 import styles from './layout.module.scss'
 
@@ -13,9 +13,7 @@ export default function Layout({ children, modal }: Props) {
   return (
     <main className={styles.container}>
       {modal}
-      <Header />
-      {children}
-      <Footer />
+      <Outlet>{children}</Outlet>
     </main>
   )
 }

@@ -1,4 +1,4 @@
-import { MovieImageModal } from '@/widgets/modal/section'
+import { MovieImageModal } from '@/widgets/modal'
 
 type Props = {
   params: { info: [movieId: string, 'poster' | 'backdrop', imageUrl: string] }

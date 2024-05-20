@@ -1,1 +1,0 @@
-export { MovieListSkeleton } from './MovieListSkeleton'
