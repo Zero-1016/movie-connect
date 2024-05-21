@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react'
 
-import { ProfileNavBar } from '@/widgets/profile/section'
+import { ProfileNavBar } from '@/widgets/profile'
 
 import styles from './layout.module.scss'
 

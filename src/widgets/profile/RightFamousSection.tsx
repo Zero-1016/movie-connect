@@ -1,5 +1,5 @@
 import { generateContents } from '@/entities/mock/generate'
-import { OneMovieContent } from '@/widgets/movie'
+import { OneMovieContent } from '@/widgets/content'
 import { ProfileTitle } from '@/widgets/profile/ProfileTitle'
 
 import styles from './movie-content.module.scss'

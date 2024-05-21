@@ -1,4 +1,4 @@
-import { FamousBody } from '@/widgets/profile/section'
+import { FamousBody } from '@/widgets/profile'
 
 type Props = {
   searchParams: {

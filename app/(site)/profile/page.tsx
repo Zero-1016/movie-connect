@@ -1,4 +1,4 @@
-import { ProfileBody } from '@/widgets/profile/section'
+import { ProfileBody } from '@/widgets/profile'
 
 export default function Page() {
   return <ProfileBody />

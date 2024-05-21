@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 import { useImageOnChange } from '@/features/profile/hooks'
 import { ProfileImage } from '@/shared/ui'
 
-import styles from './profile-image-changeButton.module.scss'
+import styles from './profile-image-change-button.module.scss'
 
 type Props = {
   profileUrl: string
