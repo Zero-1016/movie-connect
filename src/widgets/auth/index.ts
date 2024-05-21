@@ -1,2 +1,2 @@
-export { SignInModal } from './SignInModal'
-export { SignUpModal } from './SignUpModal'
+export { SignInSection } from './SignInSection'
+export { SignUpSection } from './SignUpSection'

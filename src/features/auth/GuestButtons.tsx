@@ -11,11 +11,11 @@ export function GuestButtons() {
   const router = useRouter()
 
   const moveToSignIn = () => {
-    router.push(SITE_PATH.sign_in_modal)
+    router.push(SITE_PATH.sign_in)
   }
 
   const moveToSignUp = () => {
-    router.push(SITE_PATH.sign_up_modal)
+    router.push(SITE_PATH.sign_up)
   }
 
   return (

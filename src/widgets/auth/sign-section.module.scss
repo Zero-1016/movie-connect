@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.actionBox {
+  flex: 1
+}
+
+.actionTitle {
+  text-align: left;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.form {
+  margin: 2.5rem 0;
+}
