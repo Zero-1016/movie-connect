@@ -21,7 +21,7 @@ export function SignInForm() {
   }
   return (
     <form className={styles.form}>
-      <TextFiled name={'id'} placeholder="Email" value={id} onChange={onIdChange} icon={<Mail color="#475069" />} />
+      <TextFiled name={'email'} placeholder="Email" value={id} onChange={onIdChange} icon={<Mail color="#475069" />} />
       <TextFiled
         name={'pw'}
         placeholder="password"
@@ -29,7 +29,7 @@ export function SignInForm() {
         onChange={onPasswordChange}
         icon={<KeyRound color="#475069" />}
       />
-      <SubmitButton>로그인</SubmitButton>
+      <SubmitButton>Login</SubmitButton>
     </form>
   )
 }

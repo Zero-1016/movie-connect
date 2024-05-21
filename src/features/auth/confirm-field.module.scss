@@ -5,9 +5,28 @@
   gap: 1rem;
   flex: 1 0 0;
 
-  background: rgba(0,0,0,10%);
+  background: rgba(0, 0, 0, 10%);
   border-radius: 0.75rem;
   border: 1px solid #323B54;
+}
+
+.confirmBox {
+  display: flex;
+  gap: 0.75rem;
+
+  button {
+    background: rgba(0, 0, 0, 10%);
+    border: 1px solid #323B54;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0.75rem;
+    width: 100px;
+  }
+
+  button:disabled {
+    cursor: no-drop;
+  }
 }
 
 .input {
@@ -27,7 +46,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1rem;
-  &::placeholder{
+
+  &::placeholder {
     color: #475069;
   }
 }
