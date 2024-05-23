@@ -1,35 +1,33 @@
 'use client'
 
 import { KeyRound, Mail } from 'lucide-react'
-import { ChangeEventHandler, useState } from 'react'
 
-import { TextFiled } from '@/shared/ui/TextFiled'
+import { useSignInForm } from '@/features/auth/hook'
+import { TextFiled } from '@/shared/ui'
 
 import styles from './SignForm.module.scss'
 import { SubmitButton } from './SubmitButton'
 
 export function SignInForm() {
-  const [id, setId] = useState(() => '')
-  const [pw, setPw] = useState(() => '')
+  const { handleSubmit, register, errors, isSubmitting } = useSignInForm()
 
-  const onIdChange: ChangeEventHandler<HTMLInputElement> = e => {
-    setId(e.target.value)
-  }
-
-  const onPasswordChange: ChangeEventHandler<HTMLInputElement> = e => {
-    setPw(e.target.value)
-  }
   return (
-    <form className={styles.form}>
-      <TextFiled name={'email'} placeholder="Email" value={id} onChange={onIdChange} icon={<Mail color="#475069" />} />
+    <form onSubmit={handleSubmit} className={styles.form}>
       <TextFiled
-        name={'pw'}
-        placeholder="password"
-        value={pw}
-        onChange={onPasswordChange}
+        type="email"
+        placeholder="Email"
+        error={errors['email']}
+        icon={<Mail color="#475069" />}
+        {...register('email')}
+      />
+      <TextFiled
+        type="password"
+        placeholder="Password"
+        {...register('password')}
+        error={errors['password']}
         icon={<KeyRound color="#475069" />}
       />
-      <SubmitButton>Login</SubmitButton>
+      <SubmitButton disabled={isSubmitting}>Login</SubmitButton>
     </form>
   )
 }

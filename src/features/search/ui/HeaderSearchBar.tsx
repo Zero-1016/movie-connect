@@ -4,7 +4,9 @@ import classNames from 'classnames'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { ZodError } from 'zod'
 
+import { searchKeywordSchema } from '@/features/search/schema'
 import { SITE_PATH } from '@/shared/constants'
 import { quando } from '@/shared/font'
 
@@ -17,9 +19,21 @@ export function HeaderSearchBar() {
   const onSubmit = (e: FormData) => {
     const keyword = e.get('keyword')
 
-    if (typeof keyword !== 'string') return
+    if (typeof keyword !== 'string') {
+      return
+    }
 
-    router.push(SITE_PATH.search(keyword))
+    try {
+      searchKeywordSchema.parse(keyword)
+
+      router.push(SITE_PATH.search(keyword))
+    } catch (error) {
+      if (error instanceof ZodError) {
+        console.error('Validation failed. Errors:', error.errors)
+      } else if (error instanceof Error) {
+        console.error('Unexpected error during validation:', error.message)
+      }
+    }
   }
 
   const resetValue = () => {

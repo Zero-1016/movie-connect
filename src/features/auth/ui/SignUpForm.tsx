@@ -1,39 +1,16 @@
 'use client'
 
 import { KeyRound, KeySquare, Mail, UserRound } from 'lucide-react'
-import { ChangeEventHandler, useState } from 'react'
+import { useState } from 'react'
 
-import { TextFiled } from '@/shared/ui/TextFiled'
+import { useSignUpForm } from '@/features/auth/hook'
+import { ConfirmField, TextFiled } from '@/shared/ui'
 
-import { ConfirmField } from './ConfirmField'
 import styles from './SignForm.module.scss'
 import { SubmitButton } from './SubmitButton'
 
 export function SignUpForm() {
-  const [nickname, setNickname] = useState(() => '')
-  const [email, setEmail] = useState(() => '')
-  const [pw, setPw] = useState(() => '')
-  const [confirmPw, setConfirmPw] = useState(() => '')
   const [checked, setChecked] = useState([false, false])
-
-  const onNicknameChange: ChangeEventHandler<HTMLInputElement> = e => {
-    nickNameReset()
-    setNickname(e.target.value)
-  }
-
-  const onEmailChange: ChangeEventHandler<HTMLInputElement> = e => {
-    emailReset()
-    setEmail(e.target.value)
-  }
-
-  const onPasswordChange: ChangeEventHandler<HTMLInputElement> = e => {
-    setPw(e.target.value)
-  }
-
-  const onConfirmPasswordChange: ChangeEventHandler<HTMLInputElement> = e => {
-    setConfirmPw(e.target.value)
-  }
-
   const nickNameChecked = (newState: boolean) => {
     setChecked(prevState => [newState, prevState[1]])
   }
@@ -50,48 +27,40 @@ export function SignUpForm() {
     emailChecked(true)
   }
 
-  const nickNameReset = () => {
-    nickNameChecked(false)
-  }
+  const { handleSubmit, register, errors } = useSignUpForm()
 
-  const emailReset = () => {
-    emailChecked(false)
-  }
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <ConfirmField
-        disabled={checked[0]}
-        value={nickname}
-        onChange={onNicknameChange}
-        name="name"
+        btnDisabled={checked[0]}
+        error={errors['nickname']}
         placeholder="NickName"
         confirmAPIFn={nickNameApiFn}
         icon={<UserRound color="#475069" />}
+        {...register('nickname')}
       />
       <ConfirmField
-        disabled={checked[1]}
-        value={email}
-        onChange={onEmailChange}
-        name="email"
+        btnDisabled={checked[1]}
+        type="email"
+        error={errors['email']}
         placeholder="Email"
         confirmAPIFn={emailApiFn}
         icon={<Mail color="#475069" />}
+        {...register('email')}
       />
       <TextFiled
-        name="password"
+        error={errors['password']}
         type="password"
         placeholder="Password"
-        value={pw}
-        onChange={onPasswordChange}
         icon={<KeyRound color="#475069" />}
+        {...register('password')}
       />
       <TextFiled
-        name="passwordConfirm"
+        error={errors['confirmPassword']}
         type="password"
         placeholder="PasswordConfirm"
-        value={confirmPw}
-        onChange={onConfirmPasswordChange}
         icon={<KeySquare color="#475069" />}
+        {...register('confirmPassword')}
       />
       <SubmitButton disabled={!!checked.filter(value => !value).length}>Sign Up</SubmitButton>
     </form>
