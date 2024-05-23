@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 import { SITE_PATH } from '@/shared/constants'
-import { quando } from '@/shared/font/quando'
+import { quando } from '@/shared/font'
 
 import styles from './header-search-bar.module.scss'
 

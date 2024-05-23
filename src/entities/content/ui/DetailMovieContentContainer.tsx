@@ -1,7 +1,7 @@
 'use client'
 
 import { generateContents } from '@/entities/mock/generate'
-import { DetailContentForm } from '@/features/detail/DetailContentForm'
+import { DetailContentForm } from '@/features/detail/ui'
 import { OneMovieContent } from '@/widgets/content'
 
 import styles from './detail-movie-content-container.module.scss'

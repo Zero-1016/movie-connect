@@ -1,7 +1,7 @@
-import { SignUpForm } from '@/features/auth/SignUpForm'
-import { SignLottie } from '@/widgets/auth/SignLottie'
+import { SignUpForm } from '@/features/auth/ui'
 
 import styles from './sign-section.module.scss'
+import { SignLottie } from './SignLottie'
 
 export function SignUpSection() {
   return (

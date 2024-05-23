@@ -1,4 +1,4 @@
-import { GuestButtons, UserButton } from '@/features/auth'
+import { GuestButtons, UserButton } from '@/features/auth/ui'
 
 type Props = {
   isLogin: boolean

@@ -3,10 +3,11 @@
 import { KeyRound, KeySquare, Mail, UserRound } from 'lucide-react'
 import { ChangeEventHandler, useState } from 'react'
 
-import { ConfirmField } from '@/features/auth/ConfirmField'
-import styles from '@/features/auth/SignForm.module.scss'
-import { SubmitButton } from '@/features/auth/SubmitButton'
 import { TextFiled } from '@/shared/ui/TextFiled'
+
+import { ConfirmField } from './ConfirmField'
+import styles from './SignForm.module.scss'
+import { SubmitButton } from './SubmitButton'
 
 export function SignUpForm() {
   const [nickname, setNickname] = useState(() => '')

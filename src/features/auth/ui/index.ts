@@ -1,4 +1,4 @@
 export { GuestButtons } from './GuestButtons'
-export {} from './SignInForm'
-export {} from './SignUpForm'
+export { SignInForm } from './SignInForm'
+export { SignUpForm } from './SignUpForm'
 export { UserButton } from './UserButton'

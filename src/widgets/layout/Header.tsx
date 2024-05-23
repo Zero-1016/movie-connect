@@ -2,7 +2,7 @@
 
 import classNames from 'classnames'
 
-import { HeaderSearchBar } from '@/features/search'
+import { HeaderSearchBar } from '@/features/search/ui'
 import { useScrollDown } from '@/shared/hook'
 
 import styles from './header.module.scss'

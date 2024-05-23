@@ -1,4 +1,4 @@
-import { SignInForm } from '@/features/auth/SignInForm'
+import { SignInForm } from '@/features/auth/ui'
 import { SignLottie } from '@/widgets/auth/SignLottie'
 
 import styles from './sign-section.module.scss'

@@ -3,10 +3,10 @@
 import { KeyRound, Mail } from 'lucide-react'
 import { ChangeEventHandler, useState } from 'react'
 
-import { SubmitButton } from '@/features/auth/SubmitButton'
 import { TextFiled } from '@/shared/ui/TextFiled'
 
 import styles from './SignForm.module.scss'
+import { SubmitButton } from './SubmitButton'
 
 export function SignInForm() {
   const [id, setId] = useState(() => '')
