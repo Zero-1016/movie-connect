@@ -19,7 +19,11 @@
 
   cursor: pointer;
 
+  transition: 1s;
+
   &:disabled {
+    background: rgba(123, 110, 246, 0.5);
+    border: 2px solid rgba(123, 110, 246, 0.5);
     cursor: no-drop;
   }
 }

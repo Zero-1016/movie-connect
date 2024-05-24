@@ -1,4 +1,7 @@
+import 'react-toastify/dist/ReactToastify.css'
+
 import { ReactNode } from 'react'
+import { ToastContainer } from 'react-toastify'
 
 import { Outlet } from '@/widgets/layout'
 
@@ -13,7 +16,10 @@ export default function Layout({ children, modal }: Props) {
   return (
     <main className={styles.container}>
       {modal}
-      <Outlet>{children}</Outlet>
+      <Outlet>
+        <ToastContainer autoClose={1000} />
+        {children}
+      </Outlet>
     </main>
   )
 }

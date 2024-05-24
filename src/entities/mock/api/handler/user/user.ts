@@ -10,11 +10,14 @@ const allUser = new Map()
 allUser.set(1, { id: 1, nickname: 'zero', email: 'zero@naver.com', profileUrl: null })
 
 export const userHandlers = [
-  http.post('/users/sign-up', async ({ request }) => {
-    console.info('회원가입')
-    const new_user = await request.json()
+  http.post('/user/sign-up', async ({ request }) => {
+    const new_user = (await request.json()) as {
+      nickname: string
+      email: string
+    }
 
-    allUser.set(Math.floor(Math.random() * 1000), new_user)
+    const new_id = allUser.size
+    allUser.set(new_id, { id: new_id, ...new_user, profileUrl: null })
 
     return HttpResponse.json('ok', {
       headers: {

@@ -11,8 +11,8 @@ type Props = {
   error?: FieldError
 } & React.ComponentPropsWithRef<'input'>
 
-export const TextFiled = forwardRef<HTMLInputElement, Props>(
-  ({ type = 'text', placeholder, icon, error, ...rest }, ref) => {
+export const TextFiled = React.memo(
+  forwardRef<HTMLInputElement, Props>(({ type = 'text', placeholder, icon, error, ...rest }, ref) => {
     return (
       <div>
         <label className={styles.label}>
@@ -28,7 +28,7 @@ export const TextFiled = forwardRef<HTMLInputElement, Props>(
         {error && <span className={styles.error}>{error.message}</span>}
       </div>
     )
-  },
+  }),
 )
 
 TextFiled.displayName = 'TextFiled'

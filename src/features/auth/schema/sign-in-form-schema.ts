@@ -1,8 +1,8 @@
 import { z } from 'zod'
 
-import { email, password } from './user-schema'
+import { emailSchema, passwordSchema } from './user-schema'
 
 export const signInFormSchema = z.object({
-  email,
-  password,
+  email: emailSchema,
+  password: passwordSchema,
 })

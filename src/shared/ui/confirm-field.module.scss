@@ -22,10 +22,13 @@
     cursor: pointer;
     border-radius: 0.75rem;
     width: 100px;
+
+    transition: 1s;
   }
 
   button:disabled {
     cursor: no-drop;
+    background: rgba(255, 255, 255, 50%);
   }
 }
 
