@@ -6,7 +6,7 @@ export const bookmarkHandlers = [
     const { movieId } = params
 
     if (!movieId) {
-      return HttpResponse.json({ status: 400, statusText: '영화 아이디가 없습니다.' })
+      return HttpResponse.json(null, { status: 400, statusText: '영화 아이디가 없습니다.' })
     }
 
     return HttpResponse.json(
@@ -28,7 +28,7 @@ export const bookmarkHandlers = [
     const { movieId } = params
 
     if (!movieId) {
-      return HttpResponse.json({ status: 400, statusText: '영화 아이디가 없습니다.' })
+      return HttpResponse.json(null, { status: 400, statusText: '영화 아이디가 없습니다.' })
     }
 
     return HttpResponse.json(

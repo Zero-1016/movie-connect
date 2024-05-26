@@ -3,7 +3,6 @@ import { http, HttpResponse } from 'msw'
 
 import { generateProfileContent } from '@/entities/mock/generate/profile-content'
 import { MyLikeMovie } from '@/entities/movie/model/movie'
-import { MyBookMarkResponse, MyReviewResponse } from '@/entities/movie/model/response'
 
 const allUser = new Map()
 
@@ -71,7 +70,7 @@ export const userHandlers = [
     }
     const cur_page = parseInt(page)
 
-    const responseData: MyBookMarkResponse = {
+    return HttpResponse.json({
       results: Array(faker.number.int(10))
         .fill('')
         .map(() => {
@@ -109,8 +108,7 @@ export const userHandlers = [
       page: cur_page,
       total_pages: 10,
       total_results: 190,
-    }
-    return HttpResponse.json(responseData, { status: 201 })
+    })
   }),
 
   http.get('/user/review', ({ request }) => {
@@ -118,17 +116,16 @@ export const userHandlers = [
     const page = url.searchParams.get('page')
     const movieId = url.searchParams.get('movieId')
     if (!page || !movieId) {
-      return HttpResponse.json('failure', { status: 400, statusText: '잘못된 리뷰 요청입니다.' })
+      return HttpResponse.json(null, { status: 400, statusText: '잘못된 리뷰 요청입니다.' })
     }
     const cur_page = parseInt(page)
 
-    const responseData: MyReviewResponse = {
+    return HttpResponse.json({
       results: generateProfileContent(faker.number.int(10)),
       page: cur_page,
       total_pages: 10,
       total_results: 90,
-    }
-    return HttpResponse.json(responseData, { status: 201 })
+    })
   }),
 
   http.get('/user/famousLine', ({ request }) => {
@@ -136,16 +133,15 @@ export const userHandlers = [
     const page = url.searchParams.get('page')
     const movieId = url.searchParams.get('movieId')
     if (!page || !movieId) {
-      return HttpResponse.json('failure', { status: 400, statusText: '잘못된 명대사 요청입니다.' })
+      return HttpResponse.json(null, { status: 400, statusText: '잘못된 명대사 요청입니다.' })
     }
     const cur_page = parseInt(page)
 
-    const responseData: MyReviewResponse = {
+    return HttpResponse.json({
       results: generateProfileContent(faker.number.int(10)),
       page: cur_page,
       total_pages: 10,
       total_results: 90,
-    }
-    return HttpResponse.json(responseData, { status: 201 })
+    })
   }),
 ]

@@ -53,7 +53,7 @@ export const reviewHandlers = [
     const { reviewId } = params
 
     if (!reviewId) {
-      return HttpResponse.json({ status: 400, statusText: '수정할 리뷰가 없습니다.' })
+      return HttpResponse.json(null, { status: 400, statusText: '수정할 리뷰가 없습니다.' })
     }
 
     return HttpResponse.json(reviewId, { status: 201, statusText: '리뷰를 수정하였습니다.' })
@@ -62,7 +62,7 @@ export const reviewHandlers = [
     const { reviewId } = params
 
     if (!reviewId) {
-      return HttpResponse.json({ status: 400, statusText: '삭제할 좋아요한 리뷰가 없습니다.' })
+      return HttpResponse.json(null, { status: 400, statusText: '삭제할 좋아요한 리뷰가 없습니다.' })
     }
 
     return HttpResponse.json(reviewId, { status: 201, statusText: '리뷰 좋아요를 취소하였습니다.' })
