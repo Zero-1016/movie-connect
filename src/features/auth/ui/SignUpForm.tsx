@@ -46,7 +46,7 @@ export function SignUpForm() {
       setChecked(prevState => [prevState[0], true])
     } catch (err) {
       if (err instanceof ZodError) {
-        console.error(err.errors[0].message)
+        toast.error(err.errors[0].message)
       }
     }
   }

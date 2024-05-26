@@ -4,14 +4,14 @@ import Button from '@mui/material/Button'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import { useRouter } from 'next/navigation'
-import { signOut } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 import { MouseEventHandler, useState } from 'react'
 import { toast } from 'react-toastify'
 
-import { userMock } from '@/entities/mock/data/user-mock'
 import { SITE_PATH } from '@/shared/constants'
 import { notoSans } from '@/shared/font'
 import { ProfileImage } from '@/shared/ui'
+import { getImageWithDefault } from '@/shared/util'
 
 import styles from './user-button.module.scss'
 
@@ -19,8 +19,7 @@ export function UserButton() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const router = useRouter()
   const open = Boolean(anchorEl)
-
-  const userData = userMock
+  const { data } = useSession()
   const handleClick: MouseEventHandler<HTMLButtonElement> = event => {
     setAnchorEl(event.currentTarget)
   }
@@ -38,7 +37,7 @@ export function UserButton() {
 
     if (event.target.id === 'profile') {
       router.push(SITE_PATH.my)
-    } else {
+    } else if (event.target.id === 'logout') {
       await logout()
     }
     setAnchorEl(null)
@@ -54,11 +53,11 @@ export function UserButton() {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-        <span className={notoSans.className}>{userData.nickname}</span>
+        <span className={notoSans.className}>{data?.user?.name}</span>
         <ProfileImage
           sx={{ width: '48px', height: '48px', border: '2px solid #02E7F5' }}
-          src={userData.profileUrl ?? undefined}
-          alt={userData.nickname + '프로필 이미지'}
+          src={getImageWithDefault(data?.user?.image)}
+          alt={data?.user?.name + '프로필 이미지'}
         />
       </Button>
       <Menu

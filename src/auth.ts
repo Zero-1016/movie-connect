@@ -18,16 +18,13 @@ export const {
     CredentialsProvider({
       async authorize(credentials) {
         const { email, password } = await signInFormSchema.parseAsync(credentials)
-
-        console.log(email, 'email')
-        console.log(password, 'password')
         const authResponse = await fetch(`${process.env.NEXT_PUBLIC_LOCAL_BASE_URL}/user/sign-in`, {
           method: 'POST',
           headers: {
-            accept: 'application/json',
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            email: email,
+            email,
             pw: password,
           }),
         })
@@ -36,7 +33,6 @@ export const {
           const parsed = cookie.parse(setCookie)
           cookies().set('connect.sid', parsed['connect.sid'], parsed)
         }
-
         if (!authResponse.ok) {
           return null
         }
@@ -44,10 +40,9 @@ export const {
         const user = await authResponse.json()
 
         return {
+          name: user.nickname,
           email: user.email,
-          nickname: user.nickname,
-          profileUrl: user.profileUrl,
-          ...user,
+          image: user.profileUrl,
         }
       },
     }),

@@ -1,11 +1,7 @@
 export {}
 
 declare module 'next-auth' {
-  interface User {
-    email: string
-  }
+  interface User {}
   interface Account {}
-  interface Session {
-    email: string
-  }
+  interface Session {}
 }
