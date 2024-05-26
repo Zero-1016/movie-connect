@@ -1,6 +1,7 @@
 'use client'
 
 import classNames from 'classnames'
+import { useSession } from 'next-auth/react'
 
 import { HeaderSearchBar } from '@/features/search/ui'
 import { useScrollDown } from '@/shared/hook'
@@ -11,8 +12,8 @@ import { MainLogo } from './MainLogo'
 import { UserStatusButton } from './UserStatusButton'
 
 export function Header() {
-  const isLogin = false
   const { isScrollDown } = useScrollDown()
+  const session = useSession()
 
   return (
     <header className={classNames(styles.container, isScrollDown && styles.hidden)}>
@@ -23,7 +24,7 @@ export function Header() {
         </div>
         <div className={styles.section}>
           <HeaderSearchBar />
-          <UserStatusButton isLogin={isLogin} />
+          <UserStatusButton isLogin={!!session.data} />
         </div>
       </div>
     </header>

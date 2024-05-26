@@ -2,14 +2,13 @@
 /* tslint:disable */
 
 /**
- * Mock Service Worker.
+ * Mock Service Worker (2.1.7).
  * @see https://github.com/mswjs/msw
  * - Please do NOT modify this file.
  * - Please do NOT serve this file on production.
  */
 
-const PACKAGE_VERSION = '2.3.0'
-const INTEGRITY_CHECKSUM = '26357c79639bfa20d64c0efca2a87423'
+const INTEGRITY_CHECKSUM = '223d191a56023cd36aa88c802961b911'
 const IS_MOCKED_RESPONSE = Symbol('isMockedResponse')
 const activeClientIds = new Set()
 
@@ -49,10 +48,7 @@ self.addEventListener('message', async function (event) {
     case 'INTEGRITY_CHECK_REQUEST': {
       sendToClient(client, {
         type: 'INTEGRITY_CHECK_RESPONSE',
-        payload: {
-          packageVersion: PACKAGE_VERSION,
-          checksum: INTEGRITY_CHECKSUM,
-        },
+        payload: INTEGRITY_CHECKSUM,
       })
       break
     }
@@ -75,7 +71,7 @@ self.addEventListener('message', async function (event) {
     case 'CLIENT_CLOSED': {
       activeClientIds.delete(clientId)
 
-      const remainingClients = allClients.filter(client => {
+      const remainingClients = allClients.filter((client) => {
         return client.id !== clientId
       })
 
@@ -164,11 +160,11 @@ async function resolveMainClient(event) {
   })
 
   return allClients
-    .filter(client => {
+    .filter((client) => {
       // Get only those clients that are currently visible.
       return client.visibilityState === 'visible'
     })
-    .find(client => {
+    .find((client) => {
       // Find the client ID that's recorded in the
       // set of clients that have registered the worker.
       return activeClientIds.has(client.id)
@@ -198,11 +194,18 @@ async function getResponse(event, client, requestId) {
     return passthrough()
   }
 
-  // Bypass initial pages load requests (i.e. static assets).
+  // Bypass initial page load requests (i.e. static assets).
   // The absence of the immediate/parent client in the map of the active clients
   // means that MSW hasn't dispatched the "MOCK_ACTIVATE" event yet
   // and is not ready to handle requests.
   if (!activeClientIds.has(client.id)) {
+    return passthrough()
+  }
+
+  // Bypass requests with the explicit bypass header.
+  // Such requests can be issued by "ctx.fetch()".
+  const mswIntention = request.headers.get('x-msw-intention')
+  if (['bypass', 'passthrough'].includes(mswIntention)) {
     return passthrough()
   }
 
@@ -237,7 +240,7 @@ async function getResponse(event, client, requestId) {
       return respondWithMock(clientMessage.data)
     }
 
-    case 'PASSTHROUGH': {
+    case 'MOCK_NOT_FOUND': {
       return passthrough()
     }
   }
@@ -249,7 +252,7 @@ function sendToClient(client, message, transferrables = []) {
   return new Promise((resolve, reject) => {
     const channel = new MessageChannel()
 
-    channel.port1.onmessage = event => {
+    channel.port1.onmessage = (event) => {
       if (event.data && event.data.error) {
         return reject(event.data.error)
       }
@@ -257,7 +260,10 @@ function sendToClient(client, message, transferrables = []) {
       resolve(event.data)
     }
 
-    client.postMessage(message, [channel.port2].concat(transferrables.filter(Boolean)))
+    client.postMessage(
+      message,
+      [channel.port2].concat(transferrables.filter(Boolean)),
+    )
   })
 }
 

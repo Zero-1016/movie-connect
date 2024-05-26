@@ -4,7 +4,9 @@ import Button from '@mui/material/Button'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import { useRouter } from 'next/navigation'
+import { signOut } from 'next-auth/react'
 import { MouseEventHandler, useState } from 'react'
+import { toast } from 'react-toastify'
 
 import { userMock } from '@/entities/mock/data/user-mock'
 import { SITE_PATH } from '@/shared/constants'
@@ -23,19 +25,22 @@ export function UserButton() {
     setAnchorEl(event.currentTarget)
   }
 
-  const logout = () => {
-    console.info('로그아웃을 진행합니다.')
+  const logout = async () => {
+    await toast.promise(signOut(), {
+      pending: '로그아웃 중입니다.',
+      success: '로그아웃 합니다.',
+      error: '로그아웃에 실패하였습니다.',
+    })
   }
 
-  const handleClose: MouseEventHandler<HTMLLIElement> = event => {
+  const handleClose: MouseEventHandler<HTMLLIElement> = async event => {
     if (!('id' in event.target)) return
 
     if (event.target.id === 'profile') {
       router.push(SITE_PATH.my)
     } else {
-      logout()
+      await logout()
     }
-
     setAnchorEl(null)
   }
 

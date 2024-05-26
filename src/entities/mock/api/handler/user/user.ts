@@ -27,11 +27,14 @@ export const userHandlers = [
   }),
   http.post('/user/sign-in', () => {
     console.info('로그인')
-    return HttpResponse.json(allUser.get(1), {
-      headers: {
-        'Set-Cookie': 'connect.sid=msw-cookie;HttpOnly;Path=/',
+    return HttpResponse.json(
+      { id: 1, nickname: 'zero', email: 'zero@naver.com', profileUrl: null },
+      {
+        headers: {
+          'Set-Cookie': 'connect.sid=msw-cookie;HttpOnly;Path=/',
+        },
       },
-    })
+    )
   }),
   http.post('/user/sign-out', () => {
     console.info('로그아웃')

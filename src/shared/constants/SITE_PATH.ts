@@ -4,8 +4,8 @@ type Image = 'backdrop' | 'poster'
 export const SITE_PATH = {
   home: '/home',
   my: '/profile',
-  sign_in: '/auth/sign-in',
-  sign_up: '/auth/sign-up',
+  sign_in: '/auth/signin',
+  sign_up: '/auth/signup',
   detail: (movieId: string | number) => `/detail/${movieId}`,
   list: (path: Movie) => `/list/${path}`,
   search: (keyword: string) => `/search?keyword=${keyword}`,
