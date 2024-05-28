@@ -6,6 +6,7 @@ export const SITE_PATH = {
   my: '/profile',
   sign_in: '/auth/signin',
   sign_up: '/auth/signup',
+  chat_modal: `/i/chat`,
   detail: (movieId: string | number) => `/detail/${movieId}`,
   list: (path: Movie) => `/list/${path}`,
   search: (keyword: string) => `/search?keyword=${keyword}`,

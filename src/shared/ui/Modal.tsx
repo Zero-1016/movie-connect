@@ -12,12 +12,13 @@ function Content({ children }: PropsWithChildren) {
 
 type Props = {
   isClose?: boolean
+  darkBackGround?: boolean
 }
 
-function ModalContainer({ children, isClose = false }: Readonly<PropsWithChildren<Props>>) {
+function ModalContainer({ children, isClose = false, darkBackGround = true }: Readonly<PropsWithChildren<Props>>) {
   return (
     <section className={styles.container}>
-      <ModalBackGround />
+      <ModalBackGround darkBackGround={darkBackGround} />
       {isClose && <CloseButton />}
       <RQProvider>{children}</RQProvider>
     </section>

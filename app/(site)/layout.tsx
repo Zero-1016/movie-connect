@@ -3,6 +3,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import { ReactNode } from 'react'
 import { ToastContainer } from 'react-toastify'
 
+import { ChatButton } from '@/features/chat/ui'
 import { Outlet } from '@/widgets/layout'
 
 import styles from './layout.module.scss'
@@ -17,6 +18,7 @@ export default function Layout({ children, modal }: Props) {
     <main className={styles.container}>
       {modal}
       <Outlet>
+        <ChatButton />
         <ToastContainer autoClose={1000} />
         {children}
       </Outlet>

@@ -1,9 +1,9 @@
+import { useSession } from 'next-auth/react'
+
 import { GuestButtons, UserButton } from '@/features/auth/ui'
 
-type Props = {
-  isLogin: boolean
-}
-
-export function UserStatusButton({ isLogin }: Props) {
+export function UserStatusButton() {
+  const session = useSession()
+  const isLogin = !!session.data
   return isLogin ? <UserButton /> : <GuestButtons />
 }

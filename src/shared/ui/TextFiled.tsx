@@ -7,7 +7,7 @@ import { poppins } from '@/shared/font'
 import styles from './text-filed.module.scss'
 
 type Props = {
-  icon: ReactNode
+  icon?: ReactNode
   error?: FieldError
 } & React.ComponentPropsWithRef<'input'>
 
