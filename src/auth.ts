@@ -28,16 +28,22 @@ export const {
             pw: password,
           }),
         })
-        let setCookie = authResponse.headers.get('Set-Cookie')
-        if (setCookie) {
-          const parsed = cookie.parse(setCookie)
-          cookies().set('connect.sid', parsed['connect.sid'], parsed)
+        const [accessToken, refreshToken] = [
+          authResponse.headers.get('Set-Cookie1'),
+          authResponse.headers.get('Set-Cookie2'),
+        ]
+
+        if (accessToken && refreshToken) {
+          const [accessTokenParse, refreshTokenParse] = [cookie.parse(accessToken), cookie.parse(refreshToken)]
+          cookies().set('Access-Token', accessTokenParse['Access-Token'], accessTokenParse)
+          cookies().set('Refresh-Token', refreshTokenParse['Refresh-Token'], refreshTokenParse)
         }
+
         if (!authResponse.ok) {
           return null
         }
 
-        const user = await authResponse.json()
+        const { user } = await authResponse.json()
 
         return {
           name: user.nickname,
