@@ -1,8 +1,21 @@
+.chatHeader {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  background: black;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px;
+}
+
 .chatList {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  gap: 5px;
+  gap: 20px;
 
   &::-webkit-scrollbar {
     width: 8px;
@@ -34,5 +47,8 @@
 }
 
 .chat {
+  line-height: 150%;
+  display: flex;
+  gap: 8px;
   white-space: pre-wrap;
 }

@@ -1,7 +1,8 @@
 .container {
   width: 40%;
   max-width: 450px;
-  height: 600px;
+  height: 0;
+  overflow: hidden;
 
   position: fixed;
   z-index: 9005;
@@ -11,29 +12,36 @@
   display: flex;
   flex-direction: column;
   margin: auto 0;
-  box-sizing: border-box;
+  box-sizing: content-box;
   align-content: stretch;
+  transition: 1s;
 }
 
+.isOpen {
+  height: 600px;
+  padding: 5px;
+}
 
 .content {
   width: 100%;
   height: 100%;
-  border: 2px solid #fefefe;
+  border: 1px solid #323B54;
   background-color: #101820;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
 
+  transition: 0.5s;
   ul {
-    height: calc(100% - 67px);
+    height: calc(100% - 127px);
     padding: 20px;
   }
 
   label {
     border: none;
-    border-top: 1px solid;
+    border-top: 1px solid #323B54;
     border-radius: 0;
   }
 }

@@ -7,11 +7,20 @@ import styles from '@/shared/ui/modal.module.scss'
 
 type Props = {
   darkBackGround: boolean
+  callback?: () => void
 }
 
-export function ModalBackGround({ darkBackGround }: Props) {
+export function ModalBackGround({ darkBackGround, callback }: Props) {
   useBlockScroll()
   const { onClickBack } = useHistoryBack()
 
-  return <div onClick={onClickBack} className={classNames(styles.background, darkBackGround && styles.isDark)} />
+  const onClick = () => {
+    if (callback) {
+      callback()
+    } else {
+      onClickBack()
+    }
+  }
+
+  return <div onClick={onClick} className={classNames(styles.background, darkBackGround && styles.isDark)} />
 }
