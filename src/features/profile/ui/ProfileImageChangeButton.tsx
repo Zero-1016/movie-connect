@@ -10,16 +10,16 @@ import { ProfileImage } from '@/shared/ui'
 import styles from './profile-image-change-button.module.scss'
 
 type Props = {
-  profileUrl: string
+  image: string
   nickname: string
 }
 
-export function ProfileImageChangeButton({ profileUrl, nickname }: Props) {
-  const { onChange } = useImageOnChange()
+export function ProfileImageChangeButton({ image, nickname }: Props) {
+  const { imgFile, imgRef, onChange } = useImageOnChange()
 
   return (
     <div className={styles.imageBox}>
-      <ProfileImage src={profileUrl} alt={nickname + '프로필 이미지'} sx={{ width: 200, height: 200 }} />
+      <ProfileImage src={imgFile ?? image} alt={nickname + '프로필 이미지'} sx={{ width: 200, height: 200 }} />
       <motion.label
         animate={{ background: '#fffffe' }}
         whileHover={{ background: '#142132' }}
@@ -27,7 +27,7 @@ export function ProfileImageChangeButton({ profileUrl, nickname }: Props) {
         htmlFor="file"
       >
         <Edit />
-        <input id="file" onChange={onChange} className={styles.inputFile} type={'file'} />
+        <input ref={imgRef} id="file" onChange={onChange} className={styles.inputFile} type={'file'} />
       </motion.label>
     </div>
   )

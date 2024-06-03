@@ -2,9 +2,9 @@
 
 import { Input, InputLabel } from '@mui/material'
 import Button from '@mui/material/Button'
-import { useState } from 'react'
+import { notFound } from 'next/navigation'
+import { useSession } from 'next-auth/react'
 
-import { userMock } from '@/entities/mock/data'
 import { ProfileImageChangeButton } from '@/features/profile/ui/ProfileImageChangeButton'
 import { getImageWithDefault } from '@/shared/util'
 import { ProfileTitle } from '@/widgets/profile/ProfileTitle'
@@ -12,7 +12,17 @@ import { ProfileTitle } from '@/widgets/profile/ProfileTitle'
 import styles from './right-profile-section.module.scss'
 
 export function ProfileBody() {
-  const [{ nickname, profileUrl, email }, _setUserState] = useState(userMock)
+  const session = useSession()
+
+  if (!session || !session.data || !session.data.user) {
+    notFound()
+  }
+
+  const { email, name, image } = session.data.user
+
+  if (!email || !name) {
+    notFound()
+  }
 
   return (
     <section className={styles.container}>
@@ -26,7 +36,7 @@ export function ProfileBody() {
           <InputLabel sx={{ display: 'flex', alignItems: 'center' }}>
             <span className={styles.labelName}>닉네임</span>
             <div className={styles.inputButton}>
-              <Input className={styles.input} sx={{ background: '#8E95A9' }} defaultValue={nickname} />
+              <Input className={styles.input} sx={{ background: '#8E95A9' }} defaultValue={name} />
               <Button variant="contained" size="small" className={styles.changeButton}>
                 변경 하기
               </Button>
@@ -34,23 +44,23 @@ export function ProfileBody() {
           </InputLabel>
           <InputLabel>
             <span className={styles.labelName}>이전 비밀번호</span>
-            <Input type="password" className={styles.input} sx={{ background: '#8E95A9' }} defaultValue={nickname} />
+            <Input type="password" className={styles.input} sx={{ background: '#8E95A9' }} defaultValue={name} />
           </InputLabel>
           <InputLabel>
             <span className={styles.labelName}>새 비밀번호</span>
-            <Input type="password" className={styles.input} sx={{ background: '#8E95A9' }} defaultValue={nickname} />
+            <Input type="password" className={styles.input} sx={{ background: '#8E95A9' }} defaultValue={name} />
           </InputLabel>
           <InputLabel sx={{ display: 'flex', alignItems: 'center' }}>
             <span className={styles.labelName}>비밀번호 확인</span>
             <div className={styles.inputButton}>
-              <Input type="password" className={styles.input} sx={{ background: '#8E95A9' }} defaultValue={nickname} />
+              <Input type="password" className={styles.input} sx={{ background: '#8E95A9' }} defaultValue={name} />
               <Button variant="contained" size="small" className={styles.changeButton}>
                 변경 하기
               </Button>
             </div>
           </InputLabel>
         </div>
-        <ProfileImageChangeButton profileUrl={getImageWithDefault(profileUrl)} nickname={nickname} />
+        <ProfileImageChangeButton image={getImageWithDefault(image)} nickname={name} />
       </div>
     </section>
   )

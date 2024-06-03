@@ -8,7 +8,6 @@ import { toast } from 'react-toastify'
 import { z } from 'zod'
 
 import { signInFormSchema } from '@/features/auth/schema'
-import { SITE_PATH } from '@/shared/constants'
 
 type SignInFormSchema = z.infer<typeof signInFormSchema>
 
@@ -29,7 +28,7 @@ export function useSignInForm() {
           error: '회원가입에 실패합니다.',
         },
       )
-      router.replace(SITE_PATH.home)
+      router.back()
     } catch (err) {
       if (err instanceof Error) {
         console.error(err.message)

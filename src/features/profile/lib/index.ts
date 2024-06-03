@@ -1,0 +1,1 @@
+export { putUserProfile } from './putUserProfile'
