@@ -5,6 +5,7 @@ import { useSuspenseQuery } from '@tanstack/react-query'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
+import { MovieBookMarkButton } from '@/entities/local_movie/ui'
 import { getDetail, getImageUrl } from '@/entities/movie/api'
 import { IMAGE_SIZE, SITE_PATH } from '@/shared/constants'
 import { MOVIE_QUERY_KEY } from '@/shared/constants/QUERY_KEY'
@@ -18,10 +19,9 @@ type Props = {
 
 export function MovieDetailContent({ movieId }: Readonly<Props>) {
   const router = useRouter()
-  const queryKey = MOVIE_QUERY_KEY.detail(movieId) as [string, string, string]
 
   const { data: result } = useSuspenseQuery({
-    queryKey,
+    queryKey: MOVIE_QUERY_KEY.detail(movieId),
     queryFn: getDetail,
   })
 
@@ -40,6 +40,7 @@ export function MovieDetailContent({ movieId }: Readonly<Props>) {
   return (
     <div className={styles.container}>
       <div className={styles.leftSection}>
+        <MovieBookMarkButton movieId={movieId} size="small" />
         <Image
           onClick={showImage}
           placeholder={'blur'}

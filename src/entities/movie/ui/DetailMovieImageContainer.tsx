@@ -14,9 +14,8 @@ type Props = {
 }
 
 export function DetailMovieImageContainer({ movieId }: Readonly<Props>) {
-  const queryKey = MOVIE_QUERY_KEY.images(movieId) as [string, string, string]
   const { data } = useSuspenseQuery({
-    queryKey: queryKey,
+    queryKey: MOVIE_QUERY_KEY.images(movieId),
     queryFn: getImages,
   })
 

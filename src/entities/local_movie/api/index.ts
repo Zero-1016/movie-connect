@@ -1,0 +1,1 @@
+export { getMovieBookMark } from './getMovieBookMark'

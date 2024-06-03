@@ -4,7 +4,10 @@ import { useSuspenseQuery } from '@tanstack/react-query'
 import classNames from 'classnames'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { useSession } from 'next-auth/react'
+import { Suspense } from 'react'
 
+import { MovieBookMarkButton } from '@/entities/local_movie/ui'
 import { getDetail, getImageUrl } from '@/entities/movie/api'
 import { IMAGE_SIZE } from '@/shared/constants'
 import { MOVIE_QUERY_KEY } from '@/shared/constants/QUERY_KEY'
@@ -17,9 +20,9 @@ type Props = {
 }
 
 export function DetailMovieBanner({ movieId }: Readonly<Props>) {
-  const queryKey = MOVIE_QUERY_KEY.detail(movieId) as [string, string, string]
+  const session = useSession()
   const { data: result } = useSuspenseQuery({
-    queryKey: queryKey,
+    queryKey: MOVIE_QUERY_KEY.detail(movieId),
     queryFn: getDetail,
   })
 
@@ -32,6 +35,11 @@ export function DetailMovieBanner({ movieId }: Readonly<Props>) {
   return (
     <section className={styles.container}>
       <div className={styles.imageContainer}>
+        {session.data && (
+          <Suspense fallback={null}>
+            <MovieBookMarkButton movieId={movieId} size="medium" />
+          </Suspense>
+        )}
         <div className={styles.blueBlur} />
         <Image src={imagePath} alt={title + '포스터'} fill={true} style={{ objectFit: 'cover' }} />
       </div>

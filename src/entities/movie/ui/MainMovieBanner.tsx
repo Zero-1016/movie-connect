@@ -12,10 +12,9 @@ import styles from './main-movie-banner.module.scss'
 
 export function MainMovieBanner() {
   const [movieIndex, setMovieIndex] = useState(0)
-  const queryKey = MOVIE_QUERY_KEY.nowPlay('1') as [string, string, string]
   const { data: playListData } = useSuspenseQuery<MoviesResponse>({
-    queryKey: queryKey,
-    queryFn: () => getNowPlay({ pageParam: 1, queryKey }),
+    queryKey: MOVIE_QUERY_KEY.nowPlay('1'),
+    queryFn: () => getNowPlay({ pageParam: 1, queryKey: MOVIE_QUERY_KEY.nowPlay('1') }),
   })
 
   const movieList = useSuspenseQueries({

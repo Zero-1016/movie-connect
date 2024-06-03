@@ -18,9 +18,8 @@ type Props = {
 }
 
 export function DetailMovieIntro({ movieId }: Readonly<Props>) {
-  const queryKey = MOVIE_QUERY_KEY.detail(movieId) as [string, string, string]
   const { data: result } = useSuspenseQuery({
-    queryKey,
+    queryKey: MOVIE_QUERY_KEY.detail(movieId),
     queryFn: getDetail,
   })
 
