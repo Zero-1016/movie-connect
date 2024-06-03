@@ -1,22 +1,22 @@
 import { useMutation } from '@tanstack/react-query'
 import { useSession } from 'next-auth/react'
 
-import { putUserProfile } from '@/features/profile/lib'
+import { putUserNickname } from '@/features/profile/lib'
 
 type FetchFUNC = {
   formData: FormData
-  url: string
+  nickname?: string
 }
 
-export function usePutUserProfile() {
+export function usePutUserNickname() {
   const { data: session, update } = useSession()
 
   return useMutation({
-    mutationFn: ({ formData }: FetchFUNC) => putUserProfile(formData),
-    onMutate: async ({ url }: FetchFUNC) => {
+    mutationFn: ({ formData }: FetchFUNC) => putUserNickname(formData),
+    onMutate: async ({ nickname }: FetchFUNC) => {
       const prevUser = session?.user
       if (!prevUser) return
-      await update({ image: url })
+      await update({ nickname })
       return { prevUser }
     },
     onError: async (_1, _2, context) => {

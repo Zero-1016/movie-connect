@@ -2,13 +2,13 @@
 
 import { ChangeEventHandler, useRef, useState } from 'react'
 
-import { UsePutUserProfile } from '@/features/profile/hooks/usePutUserProfile'
+import { usePutUserProfile } from './usePutUserProfile'
 
 export function useImageOnChange() {
   const [imgFile, setImageFile] = useState<string | null>(null)
   const imgRef = useRef<HTMLInputElement>(null)
 
-  const { mutateAsync } = UsePutUserProfile()
+  const { mutateAsync } = usePutUserProfile()
 
   const onChange: ChangeEventHandler<HTMLInputElement> = () => {
     if (!imgRef?.current || !imgRef.current.files) return

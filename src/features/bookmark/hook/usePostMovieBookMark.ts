@@ -1,4 +1,5 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { toast } from 'react-toastify'
 
 import { postMovieBookMark } from '@/features/bookmark/lib'
 import { LOCAL_QUERY_KEY } from '@/shared/constants'
@@ -13,10 +14,12 @@ export function UsePostMovieBookMark(movieId: string) {
         return { isLike: !prevData.isLike }
       })
     },
-    onError: () => {
-      queryClient.invalidateQueries({
-        queryKey: LOCAL_QUERY_KEY.movieBookMark(movieId),
-      })
+    onError: error => {
+      queryClient
+        .invalidateQueries({
+          queryKey: LOCAL_QUERY_KEY.movieBookMark(movieId),
+        })
+        .then(() => toast.error(error.message))
     },
   })
 }

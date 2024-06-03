@@ -25,7 +25,6 @@ export function HeaderSearchBar() {
 
     try {
       searchKeywordSchema.parse(keyword)
-
       router.push(SITE_PATH.search(keyword))
     } catch (error) {
       if (error instanceof ZodError) {
