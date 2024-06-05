@@ -1,10 +1,12 @@
 'use client'
 
+import { zodResolver } from '@hookform/resolvers/zod'
 import classNames from 'classnames'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import { ZodError } from 'zod'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { z } from 'zod'
 
 import { searchKeywordSchema } from '@/features/search/schema'
 import { SITE_PATH } from '@/shared/constants'
@@ -16,29 +18,16 @@ export function HeaderSearchBar() {
   const [isFocus, setIsFocus] = useState(false)
   const router = useRouter()
 
-  const onSubmit = (e: FormData) => {
-    const keyword = e.get('keyword')
-
-    if (typeof keyword !== 'string') {
-      return
-    }
-
-    try {
-      searchKeywordSchema.parse(keyword)
-      router.push(SITE_PATH.search(keyword))
-    } catch (error) {
-      if (error instanceof ZodError) {
-        console.error('Validation failed. Errors:', error.errors)
-      } else if (error instanceof Error) {
-        console.error('Unexpected error during validation:', error.message)
-      }
-    }
+  const onSubmit: SubmitHandler<z.infer<typeof searchKeywordSchema>> = async ({ search }) => {
+    router.push(SITE_PATH.search(search))
   }
 
-  const resetValue = () => {
-    const input = document.getElementById('keyword') as HTMLInputElement
-    input.value = ''
-  }
+  const { handleSubmit, register, reset } = useForm<z.infer<typeof searchKeywordSchema>>({
+    resolver: zodResolver(searchKeywordSchema),
+    defaultValues: {
+      search: '',
+    },
+  })
 
   const onFocus = () => {
     setIsFocus(true)
@@ -49,21 +38,20 @@ export function HeaderSearchBar() {
   }
 
   return (
-    <form action={onSubmit} className={classNames(styles.container, isFocus && styles.hover)}>
-      <label htmlFor="keyword" className={styles.label}>
+    <form onSubmit={handleSubmit(onSubmit)} className={classNames(styles.container, isFocus && styles.hover)}>
+      <label onBlur={onBlur} htmlFor="keyword" className={styles.label}>
         <div className={styles.inputBox}>
           <Image className={styles.icon} src="/svg/serach.svg" width={20} height={20} alt="검색 아이콘" />
           <input
             onFocus={onFocus}
-            onBlur={onBlur}
             placeholder="관심있는 영화제목을 입력하세요"
             id="keyword"
-            name="keyword"
             className={classNames(styles.search, quando.className)}
             type={'search'}
+            {...register('search')}
           />
         </div>
-        <Image onClick={resetValue} src="/svg/close.svg" alt="일괄 지우기 아이콘" width={20} height={20} />
+        <Image onClick={() => reset()} src="/svg/close.svg" alt="일괄 지우기 아이콘" width={20} height={20} />
       </label>
     </form>
   )
