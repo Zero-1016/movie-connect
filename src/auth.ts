@@ -14,6 +14,7 @@ export const {
     signIn: SITE_PATH.sign_in,
     newUser: SITE_PATH.sign_up,
   },
+  trustHost: true,
   providers: [
     CredentialsProvider({
       async authorize(credentials) {

@@ -4,6 +4,7 @@ import { Rating } from '@mui/material'
 import { useSuspenseQuery } from '@tanstack/react-query'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import { useSession } from 'next-auth/react'
 
 import { MovieBookMarkButton } from '@/entities/local_movie/ui'
 import { getDetail, getImageUrl } from '@/entities/movie/api'
@@ -19,6 +20,7 @@ type Props = {
 
 export function MovieDetailContent({ movieId }: Readonly<Props>) {
   const router = useRouter()
+  const session = useSession()
 
   const { data: result } = useSuspenseQuery({
     queryKey: MOVIE_QUERY_KEY.detail(movieId),
@@ -40,7 +42,7 @@ export function MovieDetailContent({ movieId }: Readonly<Props>) {
   return (
     <div className={styles.container}>
       <div className={styles.leftSection}>
-        <MovieBookMarkButton movieId={movieId} size="small" />
+        {session.data && <MovieBookMarkButton movieId={movieId} size="small" />}
         <Image
           onClick={showImage}
           placeholder={'blur'}
