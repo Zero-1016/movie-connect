@@ -6,7 +6,7 @@ import { ReactNode } from 'react'
 import { Provider } from '@/app/provider'
 
 export const metadata: Metadata = {
-  title: 'Movie Connect',
+  title: 'Movie-Connect',
   description: '사람과 영화를 연결해주는 이곳',
 }
 

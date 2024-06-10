@@ -1,4 +1,11 @@
+import { Metadata } from 'next'
+
 import { MovieImageModal } from '@/widgets/modal'
+
+export const metadata: Metadata = {
+  title: 'preview image',
+  description: 'preview image',
+}
 
 type Props = {
   params: { info: [string, 'backdrop' | 'poster', string] }

@@ -10,6 +10,13 @@ type Props = {
   }
 }
 
+export function generateMetadata({ params }: Props) {
+  return {
+    title: `${params.type} - list`,
+    description: `${params.type} - list`,
+  }
+}
+
 export default function Page({ params: { type } }: Props) {
   switch (type) {
     case 'popular':

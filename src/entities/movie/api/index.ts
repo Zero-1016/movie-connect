@@ -1,4 +1,5 @@
 export { getDetail } from './getDetail'
+export { getDetailServer } from './getDetailServer'
 export { getImages } from './getImages'
 export { getImageUrl } from './getImageUrl'
 export { getMovieGenre } from './getMovieGenre'
