@@ -46,28 +46,28 @@ export const famousLineHandlers = [
   }),
   http.post('/famousLine', async request => {
     const newFamousLine = await request
-    return HttpResponse.json(newFamousLine, { status: 201, statusText: '명대사를 작성하였습니다.' })
+    return HttpResponse.json(newFamousLine, { status: 201, statusText: 'success' })
   }),
   http.put('/famousLine', async request => {
     const newFamousLine = await request
-    return HttpResponse.json(newFamousLine, { status: 201, statusText: '명대사를 수정하였습니다.' })
+    return HttpResponse.json(newFamousLine, { status: 201, statusText: 'success' })
   }),
   http.post('/famousLine/like/:famousLineId', ({ params }) => {
     const { famousLineId } = params
 
     if (!famousLineId) {
-      return HttpResponse.json(null, { status: 400, statusText: '수정할 아이디가 없습니다.' })
+      return HttpResponse.json(null, { status: 400, statusText: 'fail' })
     }
 
-    return HttpResponse.json(famousLineId, { status: 201, statusText: '명대사를 좋아요 하였습니다.' })
+    return HttpResponse.json(famousLineId, { status: 201, statusText: 'success' })
   }),
   http.delete('/famousLine/like/:famousLineId', ({ params }) => {
     const { famousLineId } = params
 
     if (!famousLineId) {
-      return HttpResponse.json(null, { status: 400, statusText: '해당 명대사의 좋아요를 취소할 수 없습니다.' })
+      return HttpResponse.json(null, { status: 400, statusText: 'fail' })
     }
 
-    return HttpResponse.json(famousLineId, { status: 201, statusText: '명대사를 좋아요를 취소하였습니다.' })
+    return HttpResponse.json(famousLineId, { status: 201, statusText: 'success' })
   }),
 ]

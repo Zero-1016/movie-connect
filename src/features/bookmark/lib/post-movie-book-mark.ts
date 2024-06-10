@@ -3,7 +3,7 @@ export const postMovieBookMark = async (movieId: string) => {
     method: 'POST',
     credentials: 'include',
     cache: 'no-store',
-    body: JSON.parse(movieId),
+    body: JSON.stringify(movieId),
   })
 
   if (!res.ok) {

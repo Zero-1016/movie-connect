@@ -25,7 +25,7 @@ export function useSignUpForm() {
       router.replace(SITE_PATH.sign_in)
     } catch (err) {
       if (err instanceof Error) {
-        console.error(err.message)
+        toast.error(err.message)
       }
     }
   }
@@ -35,7 +35,7 @@ export function useSignUpForm() {
     formState: { errors },
     register,
     getValues,
-  } = useForm<z.infer<typeof signUpFormSchema>>({
+  } = useForm<SignUpFormSchema>({
     resolver: zodResolver(signUpFormSchema),
     defaultValues: {
       email: '',

@@ -1,5 +1,6 @@
 export { useBlockScroll } from './use-block-scroll'
 export { useDragHandler } from './use-drag-handler'
 export { useHistoryBack } from './use-history-back'
+export { usePagination } from './use-pagination'
 export { useScrollDown } from './use-scroll-down'
 export { useTextInterval } from './use-title-interval'

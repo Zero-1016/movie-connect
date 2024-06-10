@@ -26,7 +26,7 @@ export const reviewHandlers = [
               profileUrl: faker.image.avatar(),
               nickname: faker.person.fullName(),
             },
-            content: `the content is mock data in ${movieId}`,
+            content: faker.lorem.text(),
             createAt: generateDate().toString(),
             updateAt: generateDate().toString(),
             isLike: faker.datatype.boolean(),

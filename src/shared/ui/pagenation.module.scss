@@ -1,0 +1,53 @@
+.container {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.sideButton {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: #555;
+  color: white;
+}
+
+.sideButton:hover {
+  background-color: #666;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.selectButton {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: #1a1d29 !important;
+  color: white;
+}
+
+.selectButton:hover {
+  background-color: #090b13 !important;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.pageButton {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: #888;
+  color: white;
+}
+
+.pageButton:hover {
+  background-color: #999;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.isHidden {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: #333;
+  color: white;
+}
