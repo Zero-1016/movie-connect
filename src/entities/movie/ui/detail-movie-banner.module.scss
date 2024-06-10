@@ -47,3 +47,10 @@
 .movieSubTitle {
   color: #6153cc;
 }
+
+.sharePosition {
+  z-index: 10;
+  position: absolute !important;
+  bottom: 10%;
+  right: 20px;
+}

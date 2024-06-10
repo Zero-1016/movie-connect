@@ -9,6 +9,7 @@ import { Suspense } from 'react'
 
 import { MovieBookMarkButton } from '@/entities/local_movie/ui'
 import { getDetail, getImageUrl } from '@/entities/movie/api'
+import { ShareButton } from '@/features/common/ui'
 import { IMAGE_SIZE } from '@/shared/constants'
 import { MOVIE_QUERY_KEY } from '@/shared/constants/QUERY_KEY'
 import { quando } from '@/shared/font/quando'
@@ -57,6 +58,7 @@ export function DetailMovieBanner({ movieId }: Readonly<Props>) {
         )}
         <h1 className={classNames(styles.movieTitle, quando.className)}>{title}</h1>
       </motion.div>
+      <ShareButton url={window.location.href} classNames={styles.sharePosition} />
     </section>
   )
 }
